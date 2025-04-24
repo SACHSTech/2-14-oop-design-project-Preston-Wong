@@ -52,9 +52,32 @@ public class Screwdriver extends Tool {
 
     public String getReplacementUrgency() {
 
-        return null;
+        if (condition == Condition.Awful && (age >= 20)) {
+
+            return "Very Urgent";
+
+        } else if ((condition == Condition.Awful && (age <= 20)) || (condition == Condition.Bad && (age >= 20))) {
+
+            return "Urgent";
+
+        } else if ((condition == Condition.Bad && (age <= 20)) || (condition == Condition.Average && (age >= 20))) {
+
+            return "Soon";
+
+        } else {
+
+            return "Long Time";
+
+        }
 
     }
+
+    public String getName() {
+
+        return headType + " head screwdriver ";
+
+    }
+
 
     /**
      * converts tool object ot a string
@@ -63,7 +86,7 @@ public class Screwdriver extends Tool {
      */
     public String toString() {
 
-        return null;
+        return headType + " head screwdriver is in " + condition + " condition and is " + age + " years old \n";
 
     }
     

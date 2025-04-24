@@ -47,5 +47,6 @@ public abstract class Tool {
     public abstract String getMaintenance();
     public abstract String getFunction();
     public abstract String toString();
+    public abstract String getName();
 
 }

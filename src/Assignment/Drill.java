@@ -57,6 +57,13 @@ public class Drill extends Tool {
 
     }
 
+    public String getName() {
+
+        return drillType + " drill ";
+
+    }
+
+
     /**
      * converts tool object ot a string
      * 

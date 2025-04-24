@@ -17,7 +17,7 @@ public class ToolBox {
      * @param name name of the tool
      * @return the tool 
      */
-    public Tool getTool(String name) {
+    public Tool getTool(String toolName) {
 
         return null;
 
@@ -53,7 +53,7 @@ public class ToolBox {
      */
     public void removeTool(Tool tool) {
 
-
+        tools.remove(tool);
 
     }
 
@@ -126,9 +126,21 @@ public class ToolBox {
      * 
      * @return the tool that needs to be replaced 
      */
-    public Tool getMostUrgentToBeReplacedTool() {
+    public ArrayList<Tool> getToolsThatNeedToBeReplaced(String urgency) {
 
-        return null;
+        ArrayList<Tool> filteredTool = new ArrayList<>();
+
+        for (Tool tool : tools) {
+
+            if (tool.getReplacementUrgency().toUpperCase().equals(urgency.toUpperCase())) {
+
+                filteredTool.add(tool);
+
+            }            
+
+        }
+
+        return filteredTool;
 
     }
 

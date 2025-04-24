@@ -74,6 +74,12 @@ public class Hammer extends Tool {
 
     }
 
+    public String getName() {
+
+        return hammerType + " hammer ";
+
+    }
+
     /**
      * converts tool object ot a string
      * 
@@ -81,7 +87,7 @@ public class Hammer extends Tool {
      */
     public String toString() {
 
-        return hammerType + " hammer is in "  + condition + " condition and is " + age + " years old";
+        return hammerType + " hammer is in "  + condition + " condition and is " + age + " years old \n";
 
     }
 

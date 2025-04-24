@@ -56,6 +56,13 @@ public class Wrench extends Tool {
 
     }
 
+    public String getName() {
+
+        return wrenchType + " wrench ";
+
+    }
+
+
     /**
      * converts tool object ot a string
      * 
