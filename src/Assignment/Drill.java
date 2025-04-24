@@ -1,28 +1,30 @@
-public class Wrench extends Tool {
- 
-    private Wrenches wrenchType;
+package Assignment;
+
+public class Drill extends Tool {
+    
+    private Drills drillType;
     private int age;
-    private double size;
     private Condition condition;
     private boolean checkedOut;
+    private boolean isCordless;
 
-    public Wrench(Condition condition, int age, boolean checkedOut, Wrenches wrenchType, double size) {
+    public Drill(Condition condition, int age, boolean checkedOut, Drills drillType, boolean isCordless) {
 
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
         this.checkedOut = checkedOut;
-        this.wrenchType = wrenchType;
-        this.size = size;
+        this.drillType = drillType;
+        this.isCordless = isCordless;
 
     }
 
-    // enum for types of wrenches 
-    public enum Wrenches {
+    // enum for types of drills 
+    public enum  Drills {
 
-        Pipe,
-        Allen,
-        Socket
+        Hammer,
+        Impact,
+        Core
 
     }
 
@@ -65,5 +67,5 @@ public class Wrench extends Tool {
         return null;
 
     }
-    
+
 }

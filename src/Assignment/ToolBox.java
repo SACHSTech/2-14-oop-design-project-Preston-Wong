@@ -1,8 +1,9 @@
+package Assignment;
 import java.util.ArrayList;
 
 public class ToolBox {
     
-    ArrayList<Tool> tool = new ArrayList<>();
+    ArrayList<Tool> tools = new ArrayList<>();
 
     public ToolBox() {
 
@@ -41,7 +42,7 @@ public class ToolBox {
      */
     public void addTool(Tool tool) {
 
-
+        tools.add(tool);
 
     }
 
@@ -66,9 +67,9 @@ public class ToolBox {
         ArrayList<Tool> filteredToolList = new ArrayList<>();
         String[] urgency = {"Very Urgent", "Urgent", "Soon", "Not Soon", "Long Time"};
 
-        for (Tool filterTool : tool) {
+        for (int i = 0; i < urgency.length; i++) {
 
-            for (int i = 0; i < urgency.length; i++) {
+            for (Tool filterTool : tools) {
 
                 if (filterTool.getReplacementUrgency().toUpperCase().equals(urgency[i].toUpperCase())) {
 
@@ -102,7 +103,21 @@ public class ToolBox {
      */
     public Tool getOldestTool() {
 
-        return null;
+        int index = 0;
+        int oldestAge = 0;
+
+        for (int i = 0; i < tools.size(); i++) {
+
+            if (tools.get(i).getAge() > oldestAge) {
+
+                oldestAge = tools.get(i).getAge();
+                index = i;
+
+            }
+
+        }
+
+        return tools.get(index);
 
     }
 

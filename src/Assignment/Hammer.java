@@ -1,3 +1,4 @@
+package Assignment;
 public class Hammer extends Tool {
     
     private Hammers hammerType;
@@ -51,7 +52,7 @@ public class Hammer extends Tool {
 
         if (condition == Condition.Awful && (age >= 10)) {
 
-            return "Very Urget";
+            return "Very Urgent";
 
         } else if ((condition == Condition.Awful && (age <= 10)) || (condition == Condition.Bad && (age >= 10))) {
 
@@ -80,7 +81,7 @@ public class Hammer extends Tool {
      */
     public String toString() {
 
-        return hammerType + "is in "  + condition + " and is " + age + " years old";
+        return hammerType + " hammer is in "  + condition + " condition and is " + age + " years old";
 
     }
 

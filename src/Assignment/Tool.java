@@ -1,3 +1,4 @@
+package Assignment;
 public abstract class Tool {
     
     private Condition condition;
@@ -33,6 +34,12 @@ public abstract class Tool {
     public boolean isCheckedOut() {
 
         return checkedOut;
+
+    }
+
+    public int getAge() {
+
+        return age;
 
     }
 

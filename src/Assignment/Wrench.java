@@ -1,28 +1,29 @@
-public class Screwdriver extends Tool {
-
-    private Heads headType;
+package Assignment;
+public class Wrench extends Tool {
+ 
+    private Wrenches wrenchType;
     private int age;
+    private double size;
     private Condition condition;
     private boolean checkedOut;
 
-    public Screwdriver(Condition condition, int age, boolean checkedOut, Heads headType) {
+    public Wrench(Condition condition, int age, boolean checkedOut, Wrenches wrenchType, double size) {
 
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
         this.checkedOut = checkedOut;
-        this.headType = headType;
+        this.wrenchType = wrenchType;
+        this.size = size;
 
     }
 
-    // enum for types of heads 
-    public enum Heads {
+    // enum for types of wrenches 
+    public enum Wrenches {
 
-        Philips,
-        Flat,
-        Star,
-        Square,
-        Hexagon
+        Pipe,
+        Allen,
+        Socket
 
     }
 

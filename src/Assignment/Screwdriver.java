@@ -1,28 +1,29 @@
-public class Drill extends Tool {
-    
-    private Drills drillType;
+package Assignment;
+public class Screwdriver extends Tool {
+
+    private Heads headType;
     private int age;
     private Condition condition;
     private boolean checkedOut;
-    private boolean isCordless;
 
-    public Drill(Condition condition, int age, boolean checkedOut, Drills drillType, boolean isCordless) {
+    public Screwdriver(Condition condition, int age, boolean checkedOut, Heads headType) {
 
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
         this.checkedOut = checkedOut;
-        this.drillType = drillType;
-        this.isCordless = isCordless;
+        this.headType = headType;
 
     }
 
-    // enum for types of drills 
-    public enum  Drills {
+    // enum for types of heads 
+    public enum Heads {
 
-        Hammer,
-        Impact,
-        Core
+        Philips,
+        Flat,
+        Star,
+        Square,
+        Hexagon
 
     }
 
@@ -65,5 +66,5 @@ public class Drill extends Tool {
         return null;
 
     }
-
+    
 }
