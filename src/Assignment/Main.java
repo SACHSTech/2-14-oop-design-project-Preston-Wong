@@ -45,6 +45,7 @@ public class Main {
         }
 
         System.out.println(toolbox.getTool("rock hammer"));
+        System.out.println(SD1.getFunction());
 
     }
 
