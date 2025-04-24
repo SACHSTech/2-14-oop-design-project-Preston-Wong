@@ -76,7 +76,7 @@ public class Hammer extends Tool {
 
     public String getName() {
 
-        return hammerType + " hammer ";
+        return hammerType + " hammer";
 
     }
 

@@ -59,7 +59,7 @@ public class Drill extends Tool {
 
     public String getName() {
 
-        return drillType + " drill ";
+        return drillType + " drill";
 
     }
 

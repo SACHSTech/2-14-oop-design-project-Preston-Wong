@@ -17,9 +17,19 @@ public class ToolBox {
      * @param name name of the tool
      * @return the tool 
      */
-    public Tool getTool(String toolName) {
+    public String getTool(String toolName) {
 
-        return null;
+        for (Tool tool : tools) {
+
+            if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
+
+                return tool.toString();
+
+            }
+
+        }
+
+        return "You don't have a tool by that name";
 
     }
 

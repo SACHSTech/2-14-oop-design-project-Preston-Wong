@@ -58,7 +58,7 @@ public class Wrench extends Tool {
 
     public String getName() {
 
-        return wrenchType + " wrench ";
+        return wrenchType + " wrench";
 
     }
 

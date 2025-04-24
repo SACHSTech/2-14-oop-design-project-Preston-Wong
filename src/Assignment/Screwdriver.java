@@ -74,7 +74,7 @@ public class Screwdriver extends Tool {
 
     public String getName() {
 
-        return headType + " head screwdriver ";
+        return headType + " head screwdriver";
 
     }
 

@@ -44,6 +44,8 @@ public class Main {
 
         }
 
+        System.out.println(toolbox.getTool("rock hammer"));
+
     }
 
 }
