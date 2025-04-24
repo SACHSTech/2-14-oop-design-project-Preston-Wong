@@ -32,7 +32,7 @@ public class Main {
 
         for (Tool tool : toolbox.sortByMostDueForReplacement()) {
 
-            System.out.println(tool.getName());
+            System.out.println(tool.getName() + " is in " + tool.geCondition() + " condition");
 
         }
 

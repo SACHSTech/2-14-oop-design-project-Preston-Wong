@@ -49,19 +49,24 @@ public class Screwdriver extends Tool {
         switch(headType) {
 
             case Heads.Philips:
-                return headType + " head screwdriver, used to manually screw in screws that have a cross on the top";
+            
+                return "manually screw in screws that have a cross on the top";
 
             case Heads.Flat:
-                return headType + " head screwdriver, used to manually screw in screws that have a line on the top";
+            
+                return "manually screw in screws that have a line on the top";
 
             case Heads.Star:
-                return headType + " head screwdriver, used to manually screw in screws that have a star on the top";
+
+                return "manually screw in screws that have a star on the top";
 
             case Heads.Square:
-                return headType + " head screwdriver, used to manually screw in screws that have a square on the top";
+
+                return "manually screw in screws that have a square on the top";
             
             case Heads.Hexagon:
-                return headType + " head screwdriver, used to manually screw in screws that have a hexagon on the top";
+
+                return "manually screw in screws that have a hexagon on the top";
 
             default:
 

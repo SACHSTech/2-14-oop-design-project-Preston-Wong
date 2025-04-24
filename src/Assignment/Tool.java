@@ -37,6 +37,12 @@ public abstract class Tool {
 
     }
 
+    public Condition geCondition() {
+
+        return condition;
+
+    }
+
     public int getAge() {
 
         return age;
