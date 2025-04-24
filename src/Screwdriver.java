@@ -1,11 +1,11 @@
 public class Screwdriver extends Tool {
 
-    private Head headType;
+    private Heads headType;
     private int age;
     private Condition condition;
     private boolean checkedOut;
 
-    public Screwdriver(Condition condition, int age, boolean checkedOut, Head headType) {
+    public Screwdriver(Condition condition, int age, boolean checkedOut, Heads headType) {
 
         super(condition, age, checkedOut);
         this.condition = condition;
@@ -16,7 +16,7 @@ public class Screwdriver extends Tool {
     }
 
     // enum for types of heads 
-    public enum Head {
+    public enum Heads {
 
         Philips,
         Flat,

@@ -1,28 +1,26 @@
 public class Hammer extends Tool {
     
-    private Head headType;
+    private Hammers hammerType;
     private int age;
     private Condition condition;
     private boolean checkedOut;
 
-    public Hammer(Condition condition, int age, boolean checkedOut, Head headType) {
+    public Hammer(Condition condition, int age, boolean checkedOut, Hammers hammerType) {
 
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
         this.checkedOut = checkedOut;
-        this.headType = headType;
+        this.hammerType = hammerType;
 
     }
 
     // enum for types of heads 
-    public enum Head {
+    public enum Hammers {
 
-        Philips,
-        Flat,
-        Star,
-        Square,
-        Hexagon
+        Rock,
+        Hatchet,
+        Blocking
 
     }
 
