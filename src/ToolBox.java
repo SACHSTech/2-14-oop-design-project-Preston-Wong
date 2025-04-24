@@ -63,7 +63,24 @@ public class ToolBox {
      */
     public ArrayList<Tool> sortByMostDueForReplacement() {
 
-        return null;
+        ArrayList<Tool> filteredToolList = new ArrayList<>();
+        String[] urgency = {"Very Urgent", "Urgent", "Soon", "Not Soon", "Long Time"};
+
+        for (Tool filterTool : tool) {
+
+            for (int i = 0; i < urgency.length; i++) {
+
+                if (filterTool.getReplacementUrgency().toUpperCase().equals(urgency[i].toUpperCase())) {
+
+                    filteredToolList.add(filterTool);
+
+                }
+
+            }
+
+        }
+
+        return filteredToolList;
 
     }
 

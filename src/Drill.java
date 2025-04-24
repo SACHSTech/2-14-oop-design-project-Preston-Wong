@@ -4,14 +4,16 @@ public class Drill extends Tool {
     private int age;
     private Condition condition;
     private boolean checkedOut;
+    private boolean isCordless;
 
-    public Drill(Condition condition, int age, boolean checkedOut, Drills drillType) {
+    public Drill(Condition condition, int age, boolean checkedOut, Drills drillType, boolean isCordless) {
 
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
         this.checkedOut = checkedOut;
         this.drillType = drillType;
+        this.isCordless = isCordless;
 
     }
 
@@ -43,6 +45,12 @@ public class Drill extends Tool {
      */
     public String getFunction() {
     
+        return null;
+
+    }
+
+    public String getReplacementUrgency() {
+
         return null;
 
     }

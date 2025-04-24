@@ -2,16 +2,18 @@ public class Wrench extends Tool {
  
     private Wrenches wrenchType;
     private int age;
+    private double size;
     private Condition condition;
     private boolean checkedOut;
 
-    public Wrench(Condition condition, int age, boolean checkedOut, Wrenches wrenchType) {
+    public Wrench(Condition condition, int age, boolean checkedOut, Wrenches wrenchType, double size) {
 
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
         this.checkedOut = checkedOut;
         this.wrenchType = wrenchType;
+        this.size = size;
 
     }
 
@@ -43,6 +45,12 @@ public class Wrench extends Tool {
      */
     public String getFunction() {
     
+        return null;
+
+    }
+
+    public String getReplacementUrgency() {
+
         return null;
 
     }

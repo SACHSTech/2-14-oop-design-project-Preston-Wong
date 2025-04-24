@@ -49,6 +49,12 @@ public class Screwdriver extends Tool {
 
     }
 
+    public String getReplacementUrgency() {
+
+        return null;
+
+    }
+
     /**
      * converts tool object ot a string
      * 

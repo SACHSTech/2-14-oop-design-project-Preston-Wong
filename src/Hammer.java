@@ -47,6 +47,32 @@ public class Hammer extends Tool {
 
     }
 
+    public String getReplacementUrgency() {
+
+        if (condition == Condition.Awful && (age >= 10)) {
+
+            return "Very Urget";
+
+        } else if ((condition == Condition.Awful && (age <= 10)) || (condition == Condition.Bad && (age >= 10))) {
+
+            return "Urgent";
+
+        } else if ((condition == Condition.Bad && (age <= 10)) || (condition == Condition.Average && (age >= 10))) {
+
+            return "Soon";
+
+        } else if ((condition == Condition.Average && (age <= 10)) || (condition == Condition.Good && (age >= 10))) {
+
+            return "Not Soon";
+
+        } else {
+
+            return "Long Time";
+
+        } 
+
+    }
+
     /**
      * converts tool object ot a string
      * 
@@ -54,7 +80,7 @@ public class Hammer extends Tool {
      */
     public String toString() {
 
-        return null;
+        return hammerType + "is in "  + condition + " and is " + age + " years old";
 
     }
 

@@ -23,16 +23,7 @@ public abstract class Tool {
 
     }
 
-    /**
-     * calculates how urgent a tool needs to be replaced 
-     * 
-     * @return how urgent the tool needs to be replaced 
-     */
-    public String getReplacementUrgency() {
-
-        return null;
-
-    }
+    public abstract String getReplacementUrgency();
 
     /**
      * checks if the tool is checked out 
