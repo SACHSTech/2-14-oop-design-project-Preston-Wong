@@ -23,7 +23,7 @@ public class ToolBox {
 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
 
-                return tool.toString();
+                return tool.getFunction();
 
             }
 
@@ -40,6 +40,16 @@ public class ToolBox {
      * @return the tool that fits the scenario 
      */
     public Tool getToolForOcssion(String occasion) {
+
+        for (Tool tool : tools) {
+
+            if (tool.getFunction().toUpperCase().equals(occasion.toUpperCase())) {
+
+                return tool;
+
+            }
+
+        }
 
         return null;
 

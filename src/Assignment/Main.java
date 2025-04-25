@@ -20,32 +20,34 @@ public class Main {
 
         ToolBox toolbox = new ToolBox();
 
-        toolbox.addTool(hammer1);
-        toolbox.addTool(hammer2);
-        toolbox.addTool(hammer3);
+        // toolbox.addTool(hammer1);
+        // toolbox.addTool(hammer2);
+        // toolbox.addTool(hammer3);
         toolbox.addTool(SD1);
         toolbox.addTool(SD2);
 
-        System.out.println(hammer1.getReplacementUrgency());
-        System.out.println(SD1.getReplacementUrgency());
-        System.out.println(SD2.getReplacementUrgency());
+        // System.out.println(hammer1.getReplacementUrgency());
+        // System.out.println(SD1.getReplacementUrgency());
+        // System.out.println(SD2.getReplacementUrgency());
 
-        for (Tool tool : toolbox.sortByMostDueForReplacement()) {
+        // for (Tool tool : toolbox.sortByMostDueForReplacement()) {
 
-            System.out.println(tool.getName() + " is in " + tool.geCondition() + " condition");
+        //     System.out.println(tool.getName() + " is in " + tool.geCondition() + " condition");
 
-        }
+        // }
 
-        System.out.println(toolbox.getOldestTool());
+        // System.out.println(toolbox.getOldestTool());
         
-        for (Tool tool : toolbox.getToolsThatNeedToBeReplaced("urgent")) {
+        // for (Tool tool : toolbox.getToolsThatNeedToBeReplaced("urgent")) {
 
-            System.out.println(tool.getName());
+        //     System.out.println(tool.getName());
 
-        }
+        // }
 
-        System.out.println(toolbox.getTool("rock hammer"));
-        System.out.println(SD1.getFunction());
+        // System.out.println(toolbox.getTool("rock hammer"));
+        System.out.println(toolbox.getTool("Philips head screwdriver"));
+
+        System.out.println(toolbox.getToolForOcssion("manually screw in screws that have a cross on the top"));
 
     }
 

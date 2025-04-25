@@ -117,7 +117,7 @@ public class Screwdriver extends Tool {
      */
     public String toString() {
 
-        return headType + " head screwdriver is in " + condition + " condition and is " + age + " years old \n";
+        return headType + " head screwdriver - Condition: " + condition + " - Age: " + age + " years old \n";
 
     }
     

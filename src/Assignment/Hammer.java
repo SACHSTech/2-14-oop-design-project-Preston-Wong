@@ -87,7 +87,7 @@ public class Hammer extends Tool {
      */
     public String toString() {
 
-        return hammerType + " hammer is in "  + condition + " condition and is " + age + " years old \n";
+        return hammerType + " hammer - Condition: "  + condition + " - Age: " + age + " years old \n";
 
     }
 
