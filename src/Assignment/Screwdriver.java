@@ -5,6 +5,11 @@ public class Screwdriver extends Tool {
     private int age;
     private Condition condition;
     private boolean checkedOut;
+    private final String philipsFunction = "manually screw in screws that have a cross on the top";
+    private final String flatFunction = "manually screw in screws that have a line on the top";
+    private final String starFunction = "manually screw in screws that have a star on the top";
+    private final String squareFunction = "manually screw in screws that have a square on the top";
+    private final String hexagonFunction = "manually screw in screws that have a hexagon on the top";
 
     public Screwdriver(Condition condition, int age, boolean checkedOut, Heads headType) {
 
@@ -49,24 +54,24 @@ public class Screwdriver extends Tool {
         switch(headType) {
 
             case Heads.Philips:
-            
-                return "manually screw in screws that have a cross on the top";
+
+                return philipsFunction;
 
             case Heads.Flat:
             
-                return "manually screw in screws that have a line on the top";
+                return flatFunction;
 
             case Heads.Star:
 
-                return "manually screw in screws that have a star on the top";
+                return starFunction;
 
             case Heads.Square:
 
-                return "manually screw in screws that have a square on the top";
+                return squareFunction;
             
             case Heads.Hexagon:
 
-                return "manually screw in screws that have a hexagon on the top";
+                return hexagonFunction;
 
             default:
 
