@@ -1,7 +1,5 @@
 package Assignment;
 
-import Assignment.Screwdriver.Heads;
-
 public class Hammer extends Tool {
     
     private Hammers hammerType;

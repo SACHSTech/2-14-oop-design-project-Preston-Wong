@@ -7,8 +7,6 @@ public class ToolBox {
 
     public ToolBox() {
 
-
-
     }
 
     /**
@@ -170,7 +168,7 @@ public class ToolBox {
 
         for (Tool tool : tools) {
 
-            maintenance.add(tool.getMaintenance());
+            maintenance.add(tool.getName() + " - " + tool.getMaintenance());
 
         }
 
