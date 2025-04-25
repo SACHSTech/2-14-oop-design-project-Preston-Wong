@@ -178,4 +178,20 @@ public class ToolBox {
 
     }
 
+    public String getMaintenance(String name) {
+
+        for (Tool tool : tools) {
+
+            if (tool.getName().toUpperCase().equals(name.toUpperCase())) {
+
+                return "to maintain a " + tool.getName() + " - " + tool.getMaintenance();
+
+            }
+
+        }
+
+        return "that is not a valid tool name";
+
+    }
+
 }

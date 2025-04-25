@@ -47,11 +47,13 @@ public class Main {
         // System.out.println(toolbox.getTool("rock hammer"));
         System.out.println(toolbox.getTool("Philips head screwdriver"));
        
-        for (String string : toolbox.getAllToolMaintenance()) {
+        // for (String string : toolbox.getAllToolMaintenance()) {
 
-            System.out.println(string);
+        //     System.out.println(string);
 
-        }
+        // }
+
+        System.out.println(toolbox.getMaintenance("philips head screwdriver"));
 
         System.out.println(toolbox.getToolForOcssion("bend and shape metals"));
 
