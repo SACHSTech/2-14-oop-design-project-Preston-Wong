@@ -111,12 +111,13 @@ public class Main {
 
             case 7:
 
-                // how do you input ENUMS!!!!!!
-
+                // how do you put in ENUMS!
+                
             case 8:
 
                 System.out.print("What is the tool that you want to remove? ");
                 userInput2 = userInputReader.readLine();
+                toolbox.removeTool(userInput2);
                 break;
 
         }

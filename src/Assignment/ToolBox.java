@@ -170,10 +170,16 @@ public class ToolBox {
 
     }
 
+    /**
+     * a list of all the maintenance for each tool
+     * 
+     * @return list of string of all the maintenance for all tools 
+     */
     public ArrayList<String> getAllToolMaintenance() {
 
         ArrayList<String> maintenance = new ArrayList<>();
 
+        // cycles through each tool 
         for (Tool tool : tools) {
 
             maintenance.add(tool.getName() + " - " + tool.getMaintenance());
@@ -184,11 +190,19 @@ public class ToolBox {
 
     }
 
-    public String getMaintenance(String name) {
+    /**
+     * gets the maintenance for one tool 
+     * 
+     * @param toolName tool name
+     * @return maintenance for one tool 
+     */
+    public String getMaintenance(String toolName) {
 
+        // cycles through each tool 
         for (Tool tool : tools) {
 
-            if (tool.getName().toUpperCase().equals(name.toUpperCase())) {
+            // checks to see if the tool name matches with the inputted one 
+            if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
 
                 return "to maintain a " + tool.getName() + " - " + tool.getMaintenance();
 
@@ -196,22 +210,33 @@ public class ToolBox {
 
         }
 
+        // if none of them work, tells the user that the namew as not valid 
         return "that is not a valid tool name";
 
     }
 
+    /**
+     * gets the replacement urgecy for one tool 
+     * 
+     * @param toolName name of tool 
+     * @return the urgency to replace that tool 
+     */
     public String getToolReplacementUrgency(String toolName) {
 
+        // loops through all tools
         for (Tool tool : tools) {
 
+            // checks to see if the names match 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
 
+                // returns the urgency to replace
                 return tool.getReplacementUrgency();
 
             }
 
         }
 
+        // if all fail, it tells the user that it was not a valid input 
         return "not a valid tool name";
 
     }

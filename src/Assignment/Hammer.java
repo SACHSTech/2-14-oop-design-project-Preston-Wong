@@ -6,7 +6,7 @@ public class Hammer extends Tool {
     private int age;
     private Condition condition;
     private boolean checkedOut;
-    private final String rockHammerFunction = "break of split rocks";
+    private final String rockHammerFunction = "break or split rocks";
     private final String hatchetHammerFunction = "drive nails with a hatchet on the other side";
     private final String blockingHammerFunction = "bend and shape metals";
     private final String maintenance = "regulalry clean and and inspect for any damages on it";
