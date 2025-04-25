@@ -69,9 +69,17 @@ public class ToolBox {
      * 
      * @param tool tool that is removed 
      */
-    public void removeTool(Tool tool) {
+    public void removeTool(String toolName) {
 
-        tools.remove(tool);
+        for (Tool tool : tools) {
+
+            if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
+
+                tools.remove(tool);
+
+            }
+
+        }
 
     }
 

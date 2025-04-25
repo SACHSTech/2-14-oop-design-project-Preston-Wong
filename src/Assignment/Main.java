@@ -22,7 +22,6 @@ public class Main {
         Tool hammer3 = new Hammer(Condition.Average, 11, false , Hammers.Blocking); 
         Tool SD1 = new Screwdriver(Condition.Awful, 19, false, Heads.Philips);
         Tool SD2 = new Screwdriver(Condition.Awful, 50, false, Heads.Flat);
-
         ToolBox toolbox = new ToolBox();
 
         toolbox.addTool(hammer1);
@@ -31,7 +30,7 @@ public class Main {
         toolbox.addTool(SD1);
         toolbox.addTool(SD2);
 
-        while (getUserInput(toolbox) != 7) {
+        while (getUserInput(toolbox) != 9) {
 
 
 
@@ -55,10 +54,13 @@ public class Main {
         System.out.println("4: Get tool maintenance");
         System.out.println("5: Get all tool maintenance");
         System.out.println("6: Print a list of each tool by a certain replacement urgency");
-        System.out.println("7: Exit");
+        System.out.println("7: Add tool");
+        System.out.println("8: Remove tool");
+        System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
 
+        // switch case for user input 
         switch(userInput) {
 
             case 1:
@@ -105,6 +107,16 @@ public class Main {
                     System.out.println(tool.toString());
 
                 }
+                break;
+
+            case 7:
+
+                // how do you input ENUMS!!!!!!
+
+            case 8:
+
+                System.out.print("What is the tool that you want to remove? ");
+                userInput2 = userInputReader.readLine();
                 break;
 
         }
