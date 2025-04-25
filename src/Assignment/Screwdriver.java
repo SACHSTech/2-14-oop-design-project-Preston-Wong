@@ -82,8 +82,12 @@ public class Screwdriver extends Tool {
 
     }
 
+    /**
+     * gets the replacement urgency of the tool 
+     */
     public String getReplacementUrgency() {
 
+        // based on age and condition, it will returna replacement urgecy 
         if (condition == Condition.Awful && (age >= 20)) {
 
             return "Very Urgent";
@@ -104,6 +108,9 @@ public class Screwdriver extends Tool {
 
     }
 
+    /**
+     * returns the name of the screwdriver
+     */
     public String getName() {
 
         return headType + " head screwdriver";
