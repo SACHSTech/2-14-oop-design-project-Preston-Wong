@@ -46,6 +46,7 @@ public class Main {
 
         // System.out.println(toolbox.getTool("rock hammer"));
         System.out.println(toolbox.getTool("Philips head screwdriver"));
+        System.out.println(SD1.getMaintenance());
 
         System.out.println(toolbox.getToolForOcssion("manually screw in screws that have a cross on the top"));
 

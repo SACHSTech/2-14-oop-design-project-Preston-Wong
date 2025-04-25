@@ -10,6 +10,7 @@ public class Screwdriver extends Tool {
     private final String starFunction = "manually screw in screws that have a star on the top";
     private final String squareFunction = "manually screw in screws that have a square on the top";
     private final String hexagonFunction = "manually screw in screws that have a hexagon on the top";
+    private final String maintanence = "Keep away from water and avoid bending the tip out of shape";
 
     public Screwdriver(Condition condition, int age, boolean checkedOut, Heads headType) {
 
@@ -39,7 +40,7 @@ public class Screwdriver extends Tool {
      */
     public String getMaintenance() {
         
-        return null;
+        return maintanence;
 
     }
 
