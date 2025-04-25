@@ -71,8 +71,12 @@ public class Hammer extends Tool {
 
     }
 
+    /**
+     * gets the replacement urgency for hammers 
+     */
     public String getReplacementUrgency() {
 
+        // based on age and condition, returns the urgency in which it needs to be replaced 
         if (condition == Condition.Awful && (age >= 10)) {
 
             return "Very Urgent";
@@ -97,6 +101,9 @@ public class Hammer extends Tool {
 
     }
 
+    /**
+     * gets the name of the hammer 
+     */
     public String getName() {
 
         return hammerType + " hammer";
