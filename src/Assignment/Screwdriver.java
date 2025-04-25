@@ -5,11 +5,11 @@ public class Screwdriver extends Tool {
     private int age;
     private Condition condition;
     private boolean checkedOut;
-    private final String philipsFunction = "manually screw in screws that have a cross on the top";
-    private final String flatFunction = "manually screw in screws that have a line on the top";
-    private final String starFunction = "manually screw in screws that have a star on the top";
-    private final String squareFunction = "manually screw in screws that have a square on the top";
-    private final String hexagonFunction = "manually screw in screws that have a hexagon on the top";
+    private final String philipsFunction = "screw in screws that have a cross on the top";
+    private final String flatFunction = "screw in screws that have a line on the top";
+    private final String starFunction = "screw in screws that have a star on the top";
+    private final String squareFunction = "screw in screws that have a square on the top";
+    private final String hexagonFunction = "screw in screws that have a hexagon on the top";
     private final String maintanence = "Keep away from water and avoid bending the tip out of shape";
 
     public Screwdriver(Condition condition, int age, boolean checkedOut, Heads headType) {

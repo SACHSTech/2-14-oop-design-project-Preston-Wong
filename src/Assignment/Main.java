@@ -20,9 +20,9 @@ public class Main {
 
         ToolBox toolbox = new ToolBox();
 
-        // toolbox.addTool(hammer1);
-        // toolbox.addTool(hammer2);
-        // toolbox.addTool(hammer3);
+        toolbox.addTool(hammer1);
+        toolbox.addTool(hammer2);
+        toolbox.addTool(hammer3);
         toolbox.addTool(SD1);
         toolbox.addTool(SD2);
 
@@ -46,9 +46,14 @@ public class Main {
 
         // System.out.println(toolbox.getTool("rock hammer"));
         System.out.println(toolbox.getTool("Philips head screwdriver"));
-        System.out.println(SD1.getMaintenance());
+       
+        for (String string : toolbox.getAllToolMaintenance()) {
 
-        System.out.println(toolbox.getToolForOcssion("manually screw in screws that have a cross on the top"));
+            System.out.println(string);
+
+        }
+
+        System.out.println(toolbox.getToolForOcssion("bend and shape metals"));
 
     }
 

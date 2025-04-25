@@ -1,10 +1,17 @@
 package Assignment;
+
+import Assignment.Screwdriver.Heads;
+
 public class Hammer extends Tool {
     
     private Hammers hammerType;
     private int age;
     private Condition condition;
     private boolean checkedOut;
+    private final String rockHammerFunction = "break of split rocks";
+    private final String hatchetHammerFunction = "drive nails with a hatchet on the other side";
+    private final String blockingHammerFunction = "bend and shape metals";
+    private final String maintenance = "regulalry clean and and inspect for any damages on it";
 
     public Hammer(Condition condition, int age, boolean checkedOut, Hammers hammerType) {
 
@@ -32,7 +39,7 @@ public class Hammer extends Tool {
      */
     public String getMaintenance() {
         
-        return null;
+        return maintenance;
 
     }
 
@@ -44,7 +51,25 @@ public class Hammer extends Tool {
      */
     public String getFunction() {
     
-        return null;
+        switch(hammerType) {
+
+            case Hammers.Rock:
+
+                return rockHammerFunction;
+
+            case Hammers.Hatchet:
+            
+                return hatchetHammerFunction;
+
+            case Hammers.Blocking:
+
+                return blockingHammerFunction;
+
+            default:
+
+                return "You don't have a hammer on hand";
+
+        }
 
     }
 

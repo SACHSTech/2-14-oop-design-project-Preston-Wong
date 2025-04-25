@@ -164,4 +164,18 @@ public class ToolBox {
 
     }
 
+    public ArrayList<String> getAllToolMaintenance() {
+
+        ArrayList<String> maintenance = new ArrayList<>();
+
+        for (Tool tool : tools) {
+
+            maintenance.add(tool.getMaintenance());
+
+        }
+
+        return maintenance;
+
+    }
+
 }
