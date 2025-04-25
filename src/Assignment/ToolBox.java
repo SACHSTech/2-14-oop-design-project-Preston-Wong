@@ -194,4 +194,20 @@ public class ToolBox {
 
     }
 
+    public String getToolReplacementUrgency(String toolName) {
+
+        for (Tool tool : tools) {
+
+            if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
+
+                return tool.getReplacementUrgency();
+
+            }
+
+        }
+
+        return "not a valid tool name";
+
+    }
+
 }

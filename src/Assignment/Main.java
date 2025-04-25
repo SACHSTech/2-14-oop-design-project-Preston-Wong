@@ -16,7 +16,7 @@ public class Main {
         Tool hammer2 = new Hammer(Condition.Perfect, 1, false , Hammers.Rock);
         Tool hammer3 = new Hammer(Condition.Average, 11, false , Hammers.Blocking); 
         Tool SD1 = new Screwdriver(Condition.Awful, 19, false, Heads.Philips);
-        Tool SD2 = new Screwdriver(Condition.Awful, 50, false, Heads.Philips);
+        Tool SD2 = new Screwdriver(Condition.Awful, 50, false, Heads.Flat);
 
         ToolBox toolbox = new ToolBox();
 
@@ -45,7 +45,7 @@ public class Main {
         // }
 
         // System.out.println(toolbox.getTool("rock hammer"));
-        System.out.println(toolbox.getTool("Philips head screwdriver"));
+        System.out.println(toolbox.getToolReplacementUrgency("flat head screwdriver"));
        
         // for (String string : toolbox.getAllToolMaintenance()) {
 
@@ -53,7 +53,7 @@ public class Main {
 
         // }
 
-        System.out.println(toolbox.getMaintenance("philips head screwdriver"));
+        System.out.println(toolbox.getMaintenance("flat head screwdriver"));
 
         System.out.println(toolbox.getToolForOcssion("bend and shape metals"));
 
