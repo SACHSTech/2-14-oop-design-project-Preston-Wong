@@ -73,6 +73,8 @@ public class Hammer extends Tool {
 
     /**
      * gets the replacement urgency for hammers 
+     * 
+     * @return the need to replace the tool 
      */
     public String getReplacementUrgency() {
 
@@ -103,6 +105,8 @@ public class Hammer extends Tool {
 
     /**
      * gets the name of the hammer 
+     * 
+     * @return a string of the name 
      */
     public String getName() {
 

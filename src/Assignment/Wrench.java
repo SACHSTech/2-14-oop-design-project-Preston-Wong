@@ -1,4 +1,7 @@
 package Assignment;
+
+import Assignment.Hammer.Hammers;
+
 public class Wrench extends Tool {
  
     private Wrenches wrenchType;
@@ -6,6 +9,10 @@ public class Wrench extends Tool {
     private double size;
     private Condition condition;
     private boolean checkedOut;
+    private final String pipeFunctioin = "grip and turn pipes";
+    private final String allenFunction = "install or remove fasteners with a hexagon head";
+    private final String socketFunction = "turn nuts and bolts";
+    private final String maintanence = "regularly clean to remove debris and grease/lubricate moving parts if applicable";
 
     public Wrench(Condition condition, int age, boolean checkedOut, Wrenches wrenchType, double size) {
 
@@ -34,7 +41,7 @@ public class Wrench extends Tool {
      */
     public String getMaintenance() {
         
-        return null;
+        return maintanence;
 
     }
 
@@ -46,16 +53,67 @@ public class Wrench extends Tool {
      */
     public String getFunction() {
     
-        return null;
+        switch(wrenchType) {
+
+            case Wrenches.Pipe:
+
+                return pipeFunctioin;
+
+            case Wrenches.Allen:
+            
+                return allenFunction;
+
+            case Wrenches.Socket:
+
+                return socketFunction;
+
+            default:
+
+                return "You don't have a hammer on hand";
+
+        }
+
 
     }
 
+    /**
+     * replacement urgency of the tool
+     * 
+     * @return a string of the replacment urgency 
+     */
     public String getReplacementUrgency() {
 
-        return null;
+       // based on age and condition, returns the urgency in which it needs to be replaced 
+       if (condition == Condition.Awful && (age >= 5)) {
+
+            return "Very Urgent";
+
+        } else if ((condition == Condition.Awful && (age <= 5)) || (condition == Condition.Bad && (age >= 5))) {
+
+            return "Urgent";
+
+        } else if ((condition == Condition.Bad && (age <= 5)) || (condition == Condition.Average && (age >= 5))) {
+
+            return "Soon";
+
+        } else if ((condition == Condition.Average && (age <= 5)) || (condition == Condition.Good && (age >= 5))) {
+
+            return "Not Soon";
+
+        } else {
+
+            return "Long Time";
+
+        } 
+
 
     }
 
+    /**
+     * gets the name of the wrench
+     * 
+     * @return the name of the wrench 
+     */
     public String getName() {
 
         return wrenchType + " wrench";
@@ -70,7 +128,7 @@ public class Wrench extends Tool {
      */
     public String toString() {
 
-        return null;
+        return wrenchType + " wrench - Condition: "  + condition + " - Age: " + age + " years old \n";
 
     }
     

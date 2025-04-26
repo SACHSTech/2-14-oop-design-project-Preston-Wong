@@ -84,6 +84,8 @@ public class Screwdriver extends Tool {
 
     /**
      * gets the replacement urgency of the tool 
+     * 
+     * @return how due the tool is to be replaced 
      */
     public String getReplacementUrgency() {
 
@@ -110,6 +112,8 @@ public class Screwdriver extends Tool {
 
     /**
      * returns the name of the screwdriver
+     * 
+     * @return the name of the screwdriver 
      */
     public String getName() {
 

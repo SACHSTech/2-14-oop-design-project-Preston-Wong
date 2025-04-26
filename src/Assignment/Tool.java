@@ -23,9 +23,7 @@ public abstract class Tool {
         Awful
 
     }
-
-    public abstract String getReplacementUrgency();
-
+    
     /**
      * checks if the tool is checked out 
      * 
@@ -37,12 +35,22 @@ public abstract class Tool {
 
     }
 
+    /**
+     * gets condition of the tool 
+     * 
+     * @return condition of the tool 
+     */
     public Condition geCondition() {
 
         return condition;
 
     }
 
+    /**
+     * gets the age of the tool 
+     * 
+     * @return the age of the tool 
+     */
     public int getAge() {
 
         return age;
@@ -50,6 +58,7 @@ public abstract class Tool {
     }
 
     // abstract classes
+    public abstract String getReplacementUrgency();
     public abstract String getMaintenance();
     public abstract String getFunction();
     public abstract String toString();

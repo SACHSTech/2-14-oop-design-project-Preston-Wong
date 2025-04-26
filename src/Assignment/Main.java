@@ -14,7 +14,6 @@ import Assignment.Wrench.Wrenches;;
 
 public class Main {
     
-    
     public static void main(String[] args) throws IOException{
 
         Tool hammer1 = new Hammer(Condition.Awful, 9, false , Hammers.Hatchet);
