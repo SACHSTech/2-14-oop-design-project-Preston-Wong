@@ -1,11 +1,14 @@
 package Assignment;
 
+/**
+ * child class of tool, includes an ENUM of all valid drills and keeps track of each specific drills
+ * function, age, maintenance, checking status, condition, and if the drill is cordless or not 
+ */
 public class Drill extends Tool {
     
     private Drills drillType;
     private int age;
     private Condition condition;
-    private boolean checkedOut;
     private boolean isCordless;
     private final String hammerFunctioin = "break up concreate or stones";
     private final String impactFunction = "installing bolts with higher torque";
@@ -18,7 +21,6 @@ public class Drill extends Tool {
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
-        this.checkedOut = checkedOut;
         this.drillType = drillType;
         this.isCordless = isCordless;
 
@@ -90,15 +92,15 @@ public class Drill extends Tool {
     public String getReplacementUrgency() {
 
         // based on age and condition, returns the urgency in which it needs to be replaced 
-       if (condition == Condition.Awful && (age >= 5)) {
+       if ((condition == Condition.Awful) || (age >= 5)) {
 
             return "Very Urgent";
 
-        } else if ((condition == Condition.Awful && (age <= 5)) || (condition == Condition.Bad && (age >= 5))) {
+        } else if ((condition == Condition.Awful) || (condition == Condition.Bad)) {
 
             return "Urgent";
 
-        } else if ((condition == Condition.Average && (age <= 5)) || (condition == Condition.Good && (age >= 5))) {
+        } else if ((condition == Condition.Average) || (condition == Condition.Good)) {
 
             return "Soon";
 
@@ -119,6 +121,17 @@ public class Drill extends Tool {
     public String getName() {
 
         return drillType + " drill";
+
+    }
+
+    /**
+     * checks to see if the drill is cordless or not 
+     * 
+     * @return a boolean value 
+     */
+    public boolean isCordless() {
+
+        return isCordless;
 
     }
 

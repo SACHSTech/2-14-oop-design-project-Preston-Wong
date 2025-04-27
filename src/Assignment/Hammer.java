@@ -1,11 +1,14 @@
 package Assignment;
 
+/**
+ * child class of tool, includes an ENUM of all valid hammers and keeps track of each specific hammer
+ * function, age, maintenance, checking status, and condition
+ */
 public class Hammer extends Tool {
     
     private Hammers hammerType;
     private int age;
     private Condition condition;
-    private boolean checkedOut;
     private final String rockHammerFunction = "break or split rocks";
     private final String hatchetHammerFunction = "drive nails with a hatchet on the other side";
     private final String blockingHammerFunction = "bend and shape metals";
@@ -16,7 +19,6 @@ public class Hammer extends Tool {
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
-        this.checkedOut = checkedOut;
         this.hammerType = hammerType;
 
     }

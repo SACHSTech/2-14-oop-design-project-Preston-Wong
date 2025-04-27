@@ -1,4 +1,10 @@
 package Assignment;
+
+/**
+ * abstract tool class that keeps track of condition, age, and the checking status of the tool. 
+ * It also contains an enum of all valid conditions that the tools can fall under, but allows for all 
+ * child classes to specify their own tool further with any needed details 
+ */
 public abstract class Tool {
     
     private Condition condition;

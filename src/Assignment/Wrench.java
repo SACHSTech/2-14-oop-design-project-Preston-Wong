@@ -1,12 +1,15 @@
 package Assignment;
 
+/**
+ * child class of tool, includes an ENUM of all valid wrenches and keeps track of each specific wrenches
+ * function, age, maintenance, checking status, condition, and size
+ */
 public class Wrench extends Tool {
  
     private Wrenches wrenchType;
     private int age;
     private double size;
     private Condition condition;
-    private boolean checkedOut;
     private final String pipeFunctioin = "grip and turn pipes";
     private final String allenFunction = "install or remove fasteners with a hexagon head";
     private final String socketFunction = "turn nuts and bolts";
@@ -17,7 +20,6 @@ public class Wrench extends Tool {
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
-        this.checkedOut = checkedOut;
         this.wrenchType = wrenchType;
         this.size = size;
 
@@ -115,6 +117,17 @@ public class Wrench extends Tool {
     public String getName() {
 
         return wrenchType + " wrench";
+
+    }
+
+    /**
+     * gets the wrench size 
+     * 
+     * @return a dobule value of the wrench size 
+     */
+    public double getSize() {
+
+        return size;
 
     }
 

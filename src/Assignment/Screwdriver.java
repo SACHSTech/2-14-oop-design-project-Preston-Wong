@@ -1,10 +1,14 @@
 package Assignment;
+
+/**
+ * child class of tool, includes an ENUM of all valid screwdriver heads and keeps track of each specific screwdriver
+ * function, age, maintenance, checking status, and condition
+ */
 public class Screwdriver extends Tool {
 
     private Heads headType;
     private int age;
     private Condition condition;
-    private boolean checkedOut;
     private final String philipsFunction = "screw in screws that have a cross on the top";
     private final String flatFunction = "screw in screws that have a line on the top";
     private final String starFunction = "screw in screws that have a star on the top";
@@ -17,7 +21,6 @@ public class Screwdriver extends Tool {
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
-        this.checkedOut = checkedOut;
         this.headType = headType;
 
     }
