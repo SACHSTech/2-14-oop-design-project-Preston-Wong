@@ -7,8 +7,6 @@ import Assignment.Screwdriver.Heads;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.classfile.ClassFile.ConstantPoolSharingOption;
-import java.util.concurrent.TransferQueue;
 
 import Assignment.Drill.Drills;
 import Assignment.Wrench.Wrenches;;
@@ -41,13 +39,21 @@ public class Main {
 
     }
 
+    /**
+     * gets what the user wants to do with their toolbox
+     * 
+     * @param toolbox toolbox, which is a list of all the tools inside it 
+     * @return an int of the value of the user input 
+     * @throws IOException
+     */
     public static int getUserInput(ToolBox toolbox) throws IOException{
 
-
+        // setting up varaibles 
         BufferedReader userInputReader = new BufferedReader(new InputStreamReader(System.in));
         int userInput = 0;
         String userInput2 = "";
 
+        // asks thee user for what they want to do 
         System.out.println("What do you want to do? ");
         System.out.println("1: Get oldest tool");
         System.out.println("2: Get replacement urgency for tool");
@@ -97,6 +103,7 @@ public class Main {
                     System.out.println(maintenance);
 
                 }
+
                 break;
 
             case 6:
@@ -108,6 +115,7 @@ public class Main {
                     System.out.println(tool.toString());
 
                 }
+
                 break;
 
             case 7:
@@ -129,17 +137,26 @@ public class Main {
  
     }
 
+    /**
+     * helper method to add a tool into the tool box
+     * 
+     * @param toolbox the same toolbox object from the main class
+     * @return a Tool object 
+     * @throws IOException
+     */
     public static Tool addToolToToolbox(ToolBox toolbox) throws IOException {
 
+        // setting up variables 
         BufferedReader toolInputReader = new BufferedReader(new InputStreamReader(System.in));
         int userInput = 0;
         int userInputForTypeOfTool = 0;
         int toolConditionInput = 0;
         int toolAgeInput = 0;
-        double toolSize = 0.0;
         int isDrillCordless = 0;
+        double toolSize = 0.0;
         Tool newTool;
         
+        // asks the user for what type of tool they want to add
         System.out.println("What type of tool do you want to add?");
         System.out.println("1: Screwdriver");
         System.out.println("2: Hammer");
@@ -148,9 +165,11 @@ public class Main {
         System.out.print("Input: ");
         userInput = Integer.parseInt(toolInputReader.readLine());
 
+        // asks for tool age
         System.out.print("How old is your tool? ");
         toolAgeInput = Integer.parseInt(toolInputReader.readLine());
 
+        // asks for the condition of the tool 
         System.out.println("What condition is your tool in currently? ");
         System.out.println("1: Awful");
         System.out.println("2: Bad");
@@ -160,10 +179,12 @@ public class Main {
         System.out.print("Input: ");
         toolConditionInput = Integer.parseInt(toolInputReader.readLine());
 
+        // switch case for different types of tools 
         switch(userInput) {
 
             case 1:
 
+                // asks the user for what type of screwdriver 
                 System.out.println("What type of screwdriver?");
                 System.out.println("1: Philips");
                 System.out.println("2: Flat");
@@ -178,6 +199,7 @@ public class Main {
             
             case 2:
 
+                // asks the user what type of wrench 
                 System.out.println("What type of Wrench?");
                 System.out.println("1: Pipe");
                 System.out.println("2: Allen");
@@ -190,6 +212,7 @@ public class Main {
 
             case 3:
 
+                // asks the user for what type of hammer 
                 System.out.println("What type of Hammer?");
                 System.out.println("1: Rock");
                 System.out.println("2: Hatchet");
@@ -205,6 +228,7 @@ public class Main {
 
             case 4:
 
+                // asks the user for what type of drill 
                 System.out.println("What type of Drill?");
                 System.out.println("1: Hammer");
                 System.out.println("2: Impact");
@@ -212,11 +236,13 @@ public class Main {
                 System.out.print("Input: ");
                 userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
 
+                // asks the user if the drill is cordless 
                 System.out.println("Is your drill cordless? ");
                 System.out.println("1: True");
                 System.out.println("2: False");
                 isDrillCordless = Integer.parseInt(toolInputReader.readLine());
 
+                // creates a different drill depending on if the drill is cordless or not 
                 switch (isDrillCordless) {
 
                     case 1:
@@ -239,6 +265,7 @@ public class Main {
 
     }
 
+    // helper method to conert the user int input to a condition value 
     public static Condition convertIntToCondition(int input) {
 
         switch (input) {
@@ -268,6 +295,7 @@ public class Main {
 
     }
 
+    // helper method to convert the user int input to a screw driver head type 
     public static Heads convertIntToHeadType(int input) {
 
         switch (input) {
@@ -296,6 +324,8 @@ public class Main {
 
 
     }
+
+    // helper method to convert the user int input to a hammer type 
     public static Hammers convertIntToHammerType(int input) {
 
         switch (input) {
@@ -316,6 +346,8 @@ public class Main {
 
 
     }
+
+    // helper method to convert the user int value to a wrench type 
     public static Wrenches convertIntToWrenchType(int input) {
 
         switch (input) {
@@ -337,6 +369,7 @@ public class Main {
 
     }
     
+    // helper method to convert the user int input to a drill type 
     public static Drills convertIntToDrillType(int input) {
 
         switch (input) {
