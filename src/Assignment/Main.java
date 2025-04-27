@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.classfile.ClassFile.ConstantPoolSharingOption;
+import java.util.concurrent.TransferQueue;
 
 import Assignment.Drill.Drills;
 import Assignment.Wrench.Wrenches;;
@@ -135,9 +136,10 @@ public class Main {
         int userInputForTypeOfTool = 0;
         int toolConditionInput = 0;
         int toolAgeInput = 0;
+        double toolSize = 0.0;
+        int isDrillCordless = 0;
         Tool newTool;
         
-
         System.out.println("What type of tool do you want to add?");
         System.out.println("1: Screwdriver");
         System.out.println("2: Hammer");
@@ -155,11 +157,12 @@ public class Main {
         System.out.println("3: Average");
         System.out.println("4: Good");
         System.out.println("5: Perfect");
+        System.out.print("Input: ");
         toolConditionInput = Integer.parseInt(toolInputReader.readLine());
 
         switch(userInput) {
 
-            default :
+            case 1:
 
                 System.out.println("What type of screwdriver?");
                 System.out.println("1: Philips");
@@ -170,10 +173,68 @@ public class Main {
                 System.out.print("Input: ");
                 userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
 
-                newTool  = new Screwdriver(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHeadType(userInputForTypeOfTool));
+                newTool = new Screwdriver(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHeadType(userInputForTypeOfTool));
+                return newTool;
+            
+            case 2:
+
+                System.out.println("What type of Wrench?");
+                System.out.println("1: Pipe");
+                System.out.println("2: Allen");
+                System.out.println("3: Socket");
+                System.out.print("Input: ");
+                userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
+
+                newTool = new Hammer(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHammerType(userInputForTypeOfTool));
                 return newTool;
 
+            case 3:
+
+                System.out.println("What type of Hammer?");
+                System.out.println("1: Rock");
+                System.out.println("2: Hatchet");
+                System.out.println("3: Blocking");
+                System.out.print("Input: ");
+                userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
+
+                System.out.print("What is the size of your wrench? ");
+                toolSize = Double.parseDouble(toolInputReader.readLine());
+
+                newTool = new Wrench(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToWrenchType(userInputForTypeOfTool), toolSize);
+                return newTool;
+
+            case 4:
+
+                System.out.println("What type of Drill?");
+                System.out.println("1: Hammer");
+                System.out.println("2: Impact");
+                System.out.println("3: Core");
+                System.out.print("Input: ");
+                userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
+
+                System.out.println("Is your drill cordless? ");
+                System.out.println("1: True");
+                System.out.println("2: False");
+                isDrillCordless = Integer.parseInt(toolInputReader.readLine());
+
+                switch (isDrillCordless) {
+
+                    case 1:
+                        
+                        newTool = new Drill(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToDrillType(userInputForTypeOfTool), true);
+                        return newTool;
+                
+                    default:
+
+                        newTool = new Drill(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToDrillType(userInputForTypeOfTool), false);
+                        return newTool;
+              
+                }
+
+
         }
+
+        return null;
 
 
     }
@@ -235,86 +296,62 @@ public class Main {
 
 
     }
-    public static Condition convertIntToHammerType(int input) {
+    public static Hammers convertIntToHammerType(int input) {
 
         switch (input) {
 
             case 1:
 
-                return Condition.Awful;
+                return Hammers.Rock;
 
             case 2:
 
-                return Condition.Bad;
-
-            case 3:
-
-                return Condition.Average;
-
-            case 4:
-
-                return Condition.Good;
+                return Hammers.Hatchet;
 
             default:
 
-                return Condition.Perfect;
+                return Hammers.Blocking;
 
         }
 
 
     }
-    public static Condition convertIntToWrenchType(int input) {
+    public static Wrenches convertIntToWrenchType(int input) {
 
         switch (input) {
 
             case 1:
 
-                return Condition.Awful;
+                return Wrenches.Pipe;
 
             case 2:
 
-                return Condition.Bad;
-
-            case 3:
-
-                return Condition.Average;
-
-            case 4:
-
-                return Condition.Good;
+                return Wrenches.Allen;
 
             default:
 
-                return Condition.Perfect;
+                return Wrenches.Socket;
 
         }
 
 
     }
     
-    public static Condition convertIntToDrillType(int input) {
+    public static Drills convertIntToDrillType(int input) {
 
         switch (input) {
 
             case 1:
 
-                return Condition.Awful;
+                return Drills.Hammer;
 
             case 2:
 
-                return Condition.Bad;
-
-            case 3:
-
-                return Condition.Average;
-
-            case 4:
-
-                return Condition.Good;
+                return Drills.Impact;
 
             default:
 
-                return Condition.Perfect;
+                return Drills.Core;
 
         }
 

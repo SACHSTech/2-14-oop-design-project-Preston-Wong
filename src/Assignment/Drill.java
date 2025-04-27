@@ -130,7 +130,7 @@ public class Drill extends Tool {
      */
     public String toString() {
 
-        return drillType + " wrench - Condition: "  + condition + " - Age: " + age + " years old \n";
+        return drillType + " drill - Condition: "  + condition + " - Age: " + age + " years old \n";
 
     }
 
