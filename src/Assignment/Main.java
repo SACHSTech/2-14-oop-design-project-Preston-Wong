@@ -7,6 +7,7 @@ import Assignment.Screwdriver.Heads;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.classfile.ClassFile.ConstantPoolSharingOption;
 
 import Assignment.Drill.Drills;
 import Assignment.Wrench.Wrenches;;
@@ -110,7 +111,8 @@ public class Main {
 
             case 7:
 
-                // how do you put in ENUMS!
+                toolbox.addTool(addToolToToolbox(toolbox));
+                break;
                 
             case 8:
 
@@ -124,6 +126,199 @@ public class Main {
         return userInput;
    
  
+    }
+
+    public static Tool addToolToToolbox(ToolBox toolbox) throws IOException {
+
+        BufferedReader toolInputReader = new BufferedReader(new InputStreamReader(System.in));
+        int userInput = 0;
+        int userInputForTypeOfTool = 0;
+        int toolConditionInput = 0;
+        int toolAgeInput = 0;
+        Tool newTool;
+        
+
+        System.out.println("What type of tool do you want to add?");
+        System.out.println("1: Screwdriver");
+        System.out.println("2: Hammer");
+        System.out.println("3: Wrench");
+        System.out.println("4: Drill");
+        System.out.print("Input: ");
+        userInput = Integer.parseInt(toolInputReader.readLine());
+
+        System.out.print("How old is your tool? ");
+        toolAgeInput = Integer.parseInt(toolInputReader.readLine());
+
+        System.out.println("What condition is your tool in currently? ");
+        System.out.println("1: Awful");
+        System.out.println("2: Bad");
+        System.out.println("3: Average");
+        System.out.println("4: Good");
+        System.out.println("5: Perfect");
+        toolConditionInput = Integer.parseInt(toolInputReader.readLine());
+
+        switch(userInput) {
+
+            default :
+
+                System.out.println("What type of screwdriver?");
+                System.out.println("1: Philips");
+                System.out.println("2: Flat");
+                System.out.println("3: Star");
+                System.out.println("4: Square");
+                System.out.println("5: Hexagon");
+                System.out.print("Input: ");
+                userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
+
+                newTool  = new Screwdriver(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHeadType(userInputForTypeOfTool));
+                return newTool;
+
+        }
+
+
+    }
+
+    public static Condition convertIntToCondition(int input) {
+
+        switch (input) {
+
+            case 1:
+
+                return Condition.Awful;
+
+            case 2:
+
+                return Condition.Bad;
+
+            case 3:
+
+                return Condition.Average;
+
+            case 4:
+
+                return Condition.Good;
+
+            default:
+
+                return Condition.Perfect;
+
+        }
+
+
+    }
+
+    public static Heads convertIntToHeadType(int input) {
+
+        switch (input) {
+
+            case 1:
+
+                return Heads.Philips;
+
+            case 2:
+
+                return Heads.Flat;
+
+            case 3:
+
+                return Heads.Star;
+
+            case 4:
+
+                return Heads.Square;
+
+            default:
+
+                return Heads.Hexagon;
+
+        }
+
+
+    }
+    public static Condition convertIntToHammerType(int input) {
+
+        switch (input) {
+
+            case 1:
+
+                return Condition.Awful;
+
+            case 2:
+
+                return Condition.Bad;
+
+            case 3:
+
+                return Condition.Average;
+
+            case 4:
+
+                return Condition.Good;
+
+            default:
+
+                return Condition.Perfect;
+
+        }
+
+
+    }
+    public static Condition convertIntToWrenchType(int input) {
+
+        switch (input) {
+
+            case 1:
+
+                return Condition.Awful;
+
+            case 2:
+
+                return Condition.Bad;
+
+            case 3:
+
+                return Condition.Average;
+
+            case 4:
+
+                return Condition.Good;
+
+            default:
+
+                return Condition.Perfect;
+
+        }
+
+
+    }
+    
+    public static Condition convertIntToDrillType(int input) {
+
+        switch (input) {
+
+            case 1:
+
+                return Condition.Awful;
+
+            case 2:
+
+                return Condition.Bad;
+
+            case 3:
+
+                return Condition.Average;
+
+            case 4:
+
+                return Condition.Good;
+
+            default:
+
+                return Condition.Perfect;
+
+        }
+
+
     }
 
 }
