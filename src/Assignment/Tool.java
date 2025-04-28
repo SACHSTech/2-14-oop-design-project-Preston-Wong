@@ -58,7 +58,7 @@ public abstract class Tool {
      * 
      * @return condition of the tool 
      */
-    public Condition geCondition() {
+    public Condition getCondition() {
 
         return condition;
 

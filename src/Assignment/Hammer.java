@@ -19,6 +19,7 @@ public class Hammer extends Tool {
         this.condition = condition;
         this.age = age;
         this.hammerType = hammerType;
+        getRentalPrice();
 
     }
 
@@ -188,7 +189,7 @@ public class Hammer extends Tool {
      */
     public String toString() {
 
-        return hammerType + " hammer - Rental Price: " + getRentalPrice() + " - Actual Value " + getCurrentValue() + "\n";
+        return hammerType + " hammer - Rental Price: " + rentalPrice + " - Actual Value " + price + "\n";
 
     }
 

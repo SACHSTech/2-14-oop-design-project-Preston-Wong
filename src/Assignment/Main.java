@@ -33,6 +33,7 @@ public class Main {
 
         }
 
+
     }
 
     /**
@@ -142,9 +143,8 @@ public class Main {
                 System.out.println("5: Perfect");
                 System.out.print("Input: ");
                 toolConditionInput = Integer.parseInt(userInputReader.readLine());
-                System.out.println("$" + 
-                (toolbox.getTool(userInput2).getRentalPrice() + 
-                toolbox.getTool(userInput2).getAdditionalFees(convertIntToCondition(toolConditionInput))));
+                System.out.println("$" + (toolbox.getTool(userInput2).getRentalPrice() + 
+                toolbox.getTool(userInput2).getAdditionalFees(convertIntToCondition(toolConditionInput))) + " is the rental cost.");
                 toolbox.getTool(userInput2).returned();
                 break;
             

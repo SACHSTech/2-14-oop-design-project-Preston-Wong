@@ -1,6 +1,8 @@
 package Assignment;
 import java.util.ArrayList;
 
+import Assignment.Tool.Condition;
+
 /**
  * contians a list of tools and is what the user interacts with to get specific tools or details about them.
  * Allows the user to sort tools by most urgent to be repalced, find a certain tool by name, add or remove tools,
@@ -35,7 +37,7 @@ public class ToolBox {
         return null;
 
     }
-    
+
     /**
      * adds a tool to the toolbox
      * 
@@ -244,7 +246,7 @@ public class ToolBox {
 
         for (Tool tool : tools) {
 
-            if (tool.isCheckedOut() != true) {
+            if ((tool.isCheckedOut() != true) && (tool.getCondition() != Condition.Awful)) {
 
                 toBeReturend += tool.toString();
 

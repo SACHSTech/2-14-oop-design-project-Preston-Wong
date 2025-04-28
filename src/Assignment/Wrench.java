@@ -21,6 +21,7 @@ public class Wrench extends Tool {
         this.age = age;
         this.wrenchType = wrenchType;
         this.size = size;
+        getRentalPrice();
 
     }
 
@@ -201,7 +202,7 @@ public class Wrench extends Tool {
      */
     public String toString() {
 
-        return wrenchType + " wrench - Rental Price: " + getRentalPrice() + " - Actual Value " + getCurrentValue() + "\n";
+        return wrenchType + " wrench - Rental Price: " + rentalPrice + " - Actual Value " + price + "\n";
 
     }
     

@@ -123,9 +123,9 @@ public class Screwdriver extends Tool {
             price = price * 0.9;
             return price;
 
-        } else if (((condition == Condition.Good) && (age > 20)) || (condition == Condition.Average && (age <= 20))) {
+        } else if (((condition == Condition.Good) || (condition == Condition.Good))) {
 
-            price = price * 0.5;
+            price = price * 0.75;
             return price;
 
         } else if (condition == Condition.Awful) {
@@ -135,7 +135,7 @@ public class Screwdriver extends Tool {
 
         } else {
 
-            price = price * 0.25;
+            price = price * 0.5;
             return price;
 
         }
@@ -177,7 +177,7 @@ public class Screwdriver extends Tool {
      */
     public String toString() {
 
-        return headType + " head screwdriver - Rental Price: " + getRentalPrice() + " - Actual Value " + getCurrentValue() + "\n";
+        return headType + " head screwdriver - Rental Price: " + rentalPrice + " - Actual Value " + price + "\n";
 
     }
 

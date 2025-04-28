@@ -22,6 +22,7 @@ public class Drill extends Tool {
         this.age = age;
         this.drillType = drillType;
         this.isCordless = isCordless;
+        getRentalPrice();
 
     }
 
@@ -203,7 +204,7 @@ public class Drill extends Tool {
      */
     public String toString() {
 
-        return drillType + " drill - Rental Price: " + getRentalPrice() + " - Actual Value " + getCurrentValue() + "\n";
+        return drillType + " drill - Rental Price: " + rentalPrice + " - Actual Value " + price + "\n";
 
     }
 
