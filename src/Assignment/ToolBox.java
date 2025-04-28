@@ -246,4 +246,18 @@ public class ToolBox {
 
     }
 
+    public double getTotalValue() {
+
+        double totalValue = 0;
+
+        for (Tool tool : tools) {
+
+            totalValue += tool.getPrice();
+
+        }
+
+        return totalValue;
+
+    }
+
 }

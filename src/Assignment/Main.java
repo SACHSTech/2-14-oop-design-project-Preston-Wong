@@ -19,17 +19,17 @@ public class Main {
         Tool hammer1 = new Hammer(Condition.Awful, 9, false , Hammers.Hatchet);
         Tool hammer2 = new Hammer(Condition.Perfect, 1, false , Hammers.Rock);
         Tool hammer3 = new Hammer(Condition.Average, 11, false , Hammers.Blocking); 
-        Tool SD1 = new Screwdriver(Condition.Awful, 19, false, Heads.Philips, 20.0);
-        Tool SD2 = new Screwdriver(Condition.Awful, 50, false, Heads.Flat, 20.0);
+        Tool SD1 = new Screwdriver(Condition.Awful, 19, false, Heads.Philips);
+        Tool SD2 = new Screwdriver(Condition.Awful, 50, false, Heads.Flat);
         ToolBox toolbox = new ToolBox();
 
-        toolbox.addTool(hammer1);
-        toolbox.addTool(hammer2);
-        toolbox.addTool(hammer3);
+        // toolbox.addTool(hammer1);
+        // toolbox.addTool(hammer2);
+        // toolbox.addTool(hammer3);
         toolbox.addTool(SD1);
         toolbox.addTool(SD2);
 
-        while (getUserInput(toolbox) != 9) {
+        while (getUserInput(toolbox) != 11) {
 
         }
 
@@ -55,12 +55,14 @@ public class Main {
         System.out.println("What do you want to do? ");
         System.out.println("1: Get oldest tool");
         System.out.println("2: Get replacement urgency for tool");
-        System.out.println("3: Recommend tool for occasion");
+        //System.out.println("3: Recommend tool for occasion");
         System.out.println("4: Get tool maintenance");
         System.out.println("5: Get all tool maintenance");
         System.out.println("6: Print a list of each tool by a certain replacement urgency");
         System.out.println("7: Add tool");
         System.out.println("8: Remove tool");
+        System.out.println("9: Rent out a tool");
+        System.out.println("10: Return a tool");
         System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
@@ -127,6 +129,12 @@ public class Main {
                 userInput2 = userInputReader.readLine();
                 toolbox.removeTool(userInput2);
                 break;
+            
+            case 9:
+
+                
+
+            case 10:
 
         }
 
@@ -192,7 +200,7 @@ public class Main {
                 System.out.print("Input: ");
                 userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
 
-                newTool = new Screwdriver(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHeadType(userInputForTypeOfTool), 20.0);
+                newTool = new Screwdriver(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHeadType(userInputForTypeOfTool));
                 return newTool;
             
             case 2:
