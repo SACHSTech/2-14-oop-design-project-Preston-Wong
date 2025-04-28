@@ -103,9 +103,14 @@ public class Screwdriver extends Tool {
             rentalPrice = price * 4;
             return rentalPrice;
 
-        } else {
+        } else if (condition == Condition.Awful) {
 
             return 0.0;
+
+        } else {
+
+            rentalPrice = price * 2;
+            return rentalPrice;
 
         }
 
@@ -123,9 +128,14 @@ public class Screwdriver extends Tool {
             price = price * 0.5;
             return price;
 
-        } else {
+        } else if (condition == Condition.Awful) {
 
             price = 0.0;
+            return price;
+
+        } else {
+
+            price = price * 0.25;
             return price;
 
         }

@@ -8,7 +8,7 @@ public class Drill extends Tool {
     
     private Drills drillType;
     private int age;
-    private double price = 40;
+    private double price = 100;
     private double rentalPrice;
     private Condition condition;
     private boolean isCordless;
@@ -118,40 +118,50 @@ public class Drill extends Tool {
 
     public double getRentalPrice() {
 
+        getCurrentValue();
         if ((condition == Condition.Perfect) && (age <= 5)) {
 
-            rentalPrice = 100;
+            rentalPrice = price * 5;
+            return rentalPrice;
 
+        } else if (((condition == Condition.Good) && (age > 5)) || (condition == Condition.Average && (age <= 5))) {
+
+            rentalPrice = price * 4;
+            return rentalPrice;
+
+        } else if ((condition == Condition.Awful) || (condition == Condition.Bad)) {
+         
+            return 0.0;
+        
         } else {
 
-            rentalPrice = 30;
+            rentalPrice = price * 2;
+            return rentalPrice;
 
         }
-
-        return rentalPrice;
 
     }
 
     public double getCurrentValue() {
 
-        if (condition == Condition.Awful && (age >= 20)) {
-
-            return 0.0;
-
-        } else if ((condition == Condition.Awful && (age <= 20)) || (condition == Condition.Bad && (age >= 20))) {
-
-            price = price * 0.5;
-            return price;
-
-        } else if ((condition == Condition.Bad && (age <= 20)) || (condition == Condition.Average && (age >= 20))) {
-
-            price = price * 0.8;
-            return price;
-
-        } else {
+        if ((condition == Condition.Perfect) && (age <= 5)) {
 
             price = price * 0.9;
             return price;
+
+        } else if (((condition == Condition.Good) && (age > 5)) || (condition == Condition.Average && (age <= 5))) {
+
+            price = price * 0.75;
+            return price;
+
+        } else if ((condition == Condition.Awful) || (condition == Condition.Bad)) {
+         
+            price = 0.0;
+            return 0.0;
+        
+        } else {
+
+            return price * .25;
 
         }
 

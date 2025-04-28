@@ -104,15 +104,20 @@ public class Hammer extends Tool {
             rentalPrice = price * 4;
             return rentalPrice;
 
-        } else if (((condition == Condition.Average) && (age > 10)) || (condition == Condition.Bad && (age <= 10))) {
+        } else if (((condition == Condition.Average) && (age > 10))) {
 
             rentalPrice = price * 2;
             return rentalPrice;
 
-        } else {
+        } else if (condition == Condition.Awful) {
          
             return 0.0;
         
+        } else {
+
+            rentalPrice = price * 1.4;
+            return rentalPrice;
+
         }
 
     }
@@ -129,16 +134,20 @@ public class Hammer extends Tool {
             price = price * 0.75;
             return price;
 
-        } else if (((condition == Condition.Average) && (age > 10)) || (condition == Condition.Bad && (age <= 10))) {
+        } else if (((condition == Condition.Average) && (age > 10))) {
 
             price = price * 0.5;
             return price;
 
-        } else {
+        } else if (condition == Condition.Awful) {
          
             price = 0.0;
             return 0.0;
         
+        } else {
+
+            return price * .25;
+
         }
 
 
