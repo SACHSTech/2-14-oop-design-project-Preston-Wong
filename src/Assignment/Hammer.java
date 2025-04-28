@@ -93,41 +93,52 @@ public class Hammer extends Tool {
 
     public double getRentalPrice() {
 
-        if ((condition == Condition.Perfect) && (age <= 5)) {
+        getCurrentValue();
+        if ((condition == Condition.Perfect) && (age <= 10)) {
 
-            rentalPrice = 50.0;
+            rentalPrice = price * 5;
+            return rentalPrice;
+
+        } else if (((condition == Condition.Good) && (age > 10)) || (condition == Condition.Average && (age <= 10))) {
+
+            rentalPrice = price * 4;
+            return rentalPrice;
+
+        } else if (((condition == Condition.Average) && (age > 10)) || (condition == Condition.Bad && (age <= 10))) {
+
+            rentalPrice = price * 2;
+            return rentalPrice;
 
         } else {
-
-            rentalPrice = 30;
-
+         
+            return 0.0;
+        
         }
-
-        return rentalPrice;
 
     }
 
     public double getCurrentValue() {
 
-        if (condition == Condition.Awful && (age >= 20)) {
-
-            return 0.0;
-
-        } else if ((condition == Condition.Awful && (age <= 20)) || (condition == Condition.Bad && (age >= 20))) {
-
-            price = price * 0.5;
-            return price;
-
-        } else if ((condition == Condition.Bad && (age <= 20)) || (condition == Condition.Average && (age >= 20))) {
-
-            price = price * 0.8;
-            return price;
-
-        } else {
+        if ((condition == Condition.Perfect) && (age <= 10)) {
 
             price = price * 0.9;
             return price;
 
+        } else if (((condition == Condition.Good) && (age > 10)) || (condition == Condition.Average && (age <= 10))) {
+
+            price = price * 0.75;
+            return price;
+
+        } else if (((condition == Condition.Average) && (age > 10)) || (condition == Condition.Bad && (age <= 10))) {
+
+            price = price * 0.5;
+            return price;
+
+        } else {
+         
+            price = 0.0;
+            return 0.0;
+        
         }
 
 
