@@ -20,7 +20,7 @@ public class Main {
         Tool hammer2 = new Hammer(Condition.Perfect, 1, false , Hammers.Rock);
         Tool hammer3 = new Hammer(Condition.Average, 11, false , Hammers.Blocking); 
         Tool SD1 = new Screwdriver(Condition.Good, 4, false, Heads.Philips);
-        Tool SD2 = new Screwdriver(Condition.Perfect, 1, false, Heads.Flat);
+        Tool SD2 = new Screwdriver(Condition.Perfect, 1, true, Heads.Flat);
         ToolBox toolbox = new ToolBox();
 
         // toolbox.addTool(hammer1);
@@ -158,7 +158,9 @@ public class Main {
                 System.out.println("5: Perfect");
                 System.out.print("Input: ");
                 toolConditionInput = Integer.parseInt(userInputReader.readLine());
-                System.out.println("$" + toolbox.getTool(userInput2).getAdditionalFees(convertIntToCondition(toolConditionInput)));
+                System.out.println("$" + 
+                (toolbox.getTool(userInput2).getRentalPrice() + 
+                toolbox.getTool(userInput2).getAdditionalFees(convertIntToCondition(toolConditionInput))));
                 toolbox.getTool(userInput2).returned();
                 break;
             

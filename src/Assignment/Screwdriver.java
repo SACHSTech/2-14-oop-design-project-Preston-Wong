@@ -177,7 +177,7 @@ public class Screwdriver extends Tool {
 
     public double getAdditionalFees(Condition returnCondition) {
 
-        if (!condition.equals(returnCondition)) {
+        if (!(condition.equals(returnCondition))) {
 
             condition = returnCondition;
 
@@ -185,21 +185,21 @@ public class Screwdriver extends Tool {
 
                 case Good:
                     
-                    return rentalPrice * 1.1;
+                    return rentalPrice * .1;
             
                 case Average:
 
-                    return rentalPrice * 1.5;
+                    return rentalPrice * .5;
 
                 default:
 
-                    return rentalPrice * 2;
+                    return rentalPrice;
 
             }
 
         }
-        
-        return rentalPrice;
+
+        return 0.0;
 
     }
 
