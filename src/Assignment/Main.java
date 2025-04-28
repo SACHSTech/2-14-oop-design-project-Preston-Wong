@@ -19,8 +19,8 @@ public class Main {
         Tool hammer1 = new Hammer(Condition.Awful, 9, false , Hammers.Hatchet);
         Tool hammer2 = new Hammer(Condition.Perfect, 1, false , Hammers.Rock);
         Tool hammer3 = new Hammer(Condition.Average, 11, false , Hammers.Blocking); 
-        Tool SD1 = new Screwdriver(Condition.Awful, 19, false, Heads.Philips);
-        Tool SD2 = new Screwdriver(Condition.Awful, 50, false, Heads.Flat);
+        Tool SD1 = new Screwdriver(Condition.Good, 4, false, Heads.Philips);
+        Tool SD2 = new Screwdriver(Condition.Perfect, 1, false, Heads.Flat);
         ToolBox toolbox = new ToolBox();
 
         // toolbox.addTool(hammer1);
@@ -29,7 +29,7 @@ public class Main {
         toolbox.addTool(SD1);
         toolbox.addTool(SD2);
 
-        while (getUserInput(toolbox) != 11) {
+        while (getUserInput(toolbox) != 100) {
 
         }
 
@@ -48,6 +48,7 @@ public class Main {
 
         // setting up varaibles 
         BufferedReader userInputReader = new BufferedReader(new InputStreamReader(System.in));
+        int toolConditionInput = 0;
         int userInput = 0;
         String userInput2 = "";
 
@@ -57,12 +58,13 @@ public class Main {
         System.out.println("2: Get replacement urgency for tool");
         //System.out.println("3: Recommend tool for occasion");
         System.out.println("4: Get tool maintenance");
-        System.out.println("5: Get all tool maintenance");
+     //   System.out.println("5: Get all tool maintenance");
         System.out.println("6: Print a list of each tool by a certain replacement urgency");
         System.out.println("7: Add tool");
         System.out.println("8: Remove tool");
-        System.out.println("9: Rent out a tool");
-        System.out.println("10: Return a tool");
+        System.out.println("9: Get total rental tool value");
+        System.out.println("10: Get tool rental price");
+        System.out.println("11: Return rental");
         System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
@@ -132,9 +134,30 @@ public class Main {
             
             case 9:
 
-                
+                System.out.println(toolbox.getTotalValue());     
+                break;          
 
             case 10:
+
+                System.out.println("What is the tool? ");
+                userInput2 = userInputReader.readLine();
+                System.out.println(toolbox.getTool(userInput2).getRentalPrice());
+                break;
+
+            case 11:
+
+            System.out.println("What is the tool you are returning? ");
+            userInput2 = userInputReader.readLine();
+            System.out.println("What is the return condition? ");
+            System.out.println("1: Awful");
+            System.out.println("2: Bad");
+            System.out.println("3: Average");
+            System.out.println("4: Good");
+            System.out.println("5: Perfect");
+            System.out.print("Input: ");
+            toolConditionInput = Integer.parseInt(userInputReader.readLine());
+            System.out.println("$" + toolbox.getTool(userInput2).getAdditionalFees(convertIntToCondition(toolConditionInput)));
+                
 
         }
 

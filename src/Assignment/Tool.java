@@ -70,7 +70,7 @@ public abstract class Tool {
     public abstract String toString();
     public abstract String getName();
     public abstract double getPrice();
-    public abstract double calculateRentalPrice();
+    public abstract double getRentalPrice();
     public abstract double getAdditionalFees(Condition condition);
     public abstract double getCurrentValue();
     

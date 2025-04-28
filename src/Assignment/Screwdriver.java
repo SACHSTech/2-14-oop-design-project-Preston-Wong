@@ -132,11 +132,15 @@ public class Screwdriver extends Tool {
 
     }
 
-    public double calculateRentalPrice() {
+    public double getRentalPrice() {
 
         if ((condition == Condition.Perfect) && (age <= 5)) {
 
             rentalPrice = 50.0;
+
+        } else {
+
+            rentalPrice = 30;
 
         }
 
@@ -169,6 +173,8 @@ public class Screwdriver extends Tool {
 
     public double getAdditionalFees(Condition returnCondition) {
 
+        getRentalPrice();
+
         if (!condition.equals(returnCondition)) {
 
             switch (returnCondition) {
@@ -189,7 +195,7 @@ public class Screwdriver extends Tool {
 
         }
 
-        return price;
+        return rentalPrice;
 
     }
 
@@ -200,7 +206,7 @@ public class Screwdriver extends Tool {
      */
     public String toString() {
 
-        return headType + " head screwdriver - Condition: " + condition + " - Age: " + age + " years old \n";
+        return headType + " head screwdriver - Price: " + rentalPrice + "\n";
 
     }
 

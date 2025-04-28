@@ -14,27 +14,27 @@ public class ToolBox {
 
     }
 
-    // /**
-    //  * get a tool by name
-    //  * 
-    //  * @param name name of the tool
-    //  * @return the tool 
-    //  */
-    // public String getTool(String toolName) {
+    /**
+     * get a tool by name
+     * 
+     * @param name name of the tool
+     * @return the tool 
+     */
+    public Tool getTool(String toolName) {
 
-    //     for (Tool tool : tools) {
+        for (Tool tool : tools) {
 
-    //         if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
+            if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
 
-    //             return tool.getFunction();
+                return tool;
 
-    //         }
+            }
 
-    //     }
+        }
 
-    //     return "You don't have a tool by that name";
+        return null;
 
-    // }
+    }
 
     // /**
     //  * get the correct tool for the job 
@@ -252,7 +252,7 @@ public class ToolBox {
 
         for (Tool tool : tools) {
 
-            totalValue += tool.getPrice();
+            totalValue += tool.getCurrentValue();
 
         }
 
