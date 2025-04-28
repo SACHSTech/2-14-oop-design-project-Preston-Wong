@@ -9,6 +9,8 @@ public class Hammer extends Tool {
     private Hammers hammerType;
     private int age;
     private Condition condition;
+    private double price = 10;
+    private double rentalPrice;
     private final String rockHammerFunction = "break or split rocks";
     private final String hatchetHammerFunction = "drive nails with a hatchet on the other side";
     private final String blockingHammerFunction = "bend and shape metals";
@@ -113,6 +115,82 @@ public class Hammer extends Tool {
     public String getName() {
 
         return hammerType + " hammer";
+
+    }
+
+    public double getPrice() {
+
+        return price;
+
+    }
+
+    public double getRentalPrice() {
+
+        if ((condition == Condition.Perfect) && (age <= 5)) {
+
+            rentalPrice = 50.0;
+
+        } else {
+
+            rentalPrice = 30;
+
+        }
+
+        return rentalPrice;
+
+    }
+
+    public double getCurrentValue() {
+
+        if (condition == Condition.Awful && (age >= 20)) {
+
+            return 0.0;
+
+        } else if ((condition == Condition.Awful && (age <= 20)) || (condition == Condition.Bad && (age >= 20))) {
+
+            price = price * 0.5;
+            return price;
+
+        } else if ((condition == Condition.Bad && (age <= 20)) || (condition == Condition.Average && (age >= 20))) {
+
+            price = price * 0.8;
+            return price;
+
+        } else {
+
+            price = price * 0.9;
+            return price;
+
+        }
+
+
+    }
+
+    public double getAdditionalFees(Condition returnCondition) {
+
+        if (!(condition.equals(returnCondition))) {
+
+            condition = returnCondition;
+
+            switch (returnCondition) {
+
+                case Good:
+                    
+                    return rentalPrice * .1;
+            
+                case Average:
+
+                    return rentalPrice * .5;
+
+                default:
+
+                    return rentalPrice;
+
+            }
+
+        }
+
+        return 0.0;
 
     }
 

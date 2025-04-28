@@ -57,16 +57,16 @@ public class Main {
         System.out.println("1: Get oldest tool");
         System.out.println("2: Get replacement urgency for tool");
         //System.out.println("3: Recommend tool for occasion");
-        System.out.println("4: Get tool maintenance");
+        System.out.println("3: Get tool maintenance");
      //   System.out.println("5: Get all tool maintenance");
-        System.out.println("6: Print a list of each tool by a certain replacement urgency");
-        System.out.println("7: Add tool");
-        System.out.println("8: Remove tool");
-        System.out.println("9: Get total rental tool value");
-        System.out.println("10: Get tool rental price");
-        System.out.println("11: Return rental");
-        System.out.println("12: Get all avaliable tools");
-        System.out.println("13: Rent out a tool");
+        System.out.println("4: Print a list of each tool by a certain replacement urgency");
+        System.out.println("5: Add tool");
+        System.out.println("6: Remove tool");
+        System.out.println("7: Get total rental tool value");
+        System.out.println("8: Get tool rental price");
+        System.out.println("9: Return rental");
+        System.out.println("10: Get all avaliable tools");
+        System.out.println("11: Rent out a tool");
         System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
@@ -88,29 +88,12 @@ public class Main {
 
             case 3:
 
-                // System.out.print("Describe the occasion. ");
-                // userInput2 = userInputReader.readLine();
-                // System.out.println(toolbox.getToolForOcssion(userInput2));
-                // break;
-
-            case 4:
-
                 System.out.print("What is the tool you want to get the maintenance of? ");
                 userInput2 = userInputReader.readLine();
                 System.out.print(toolbox.getMaintenance(userInput2));
                 break;
 
-            case 5:
-
-                for (String maintenance : toolbox.getAllToolMaintenance()) {
-
-                    System.out.println(maintenance);
-
-                }
-
-                break;
-
-            case 6:
+            case 4:
 
                 System.out.print("What urgency of replacement of tools do you want to see? ");
                 userInput2 = userInputReader.readLine();
@@ -122,31 +105,31 @@ public class Main {
 
                 break;
 
-            case 7:
+            case 5:
 
                 toolbox.addTool(addToolToToolbox(toolbox));
                 break;
                 
-            case 8:
+            case 6:
 
                 System.out.print("What is the tool that you want to remove? ");
                 userInput2 = userInputReader.readLine();
                 toolbox.removeTool(userInput2);
                 break;
             
-            case 9:
+            case 7:
 
                 System.out.println(toolbox.getTotalValue());     
                 break;          
 
-            case 10:
+            case 8:
 
                 System.out.println("What is the tool? ");
                 userInput2 = userInputReader.readLine();
                 System.out.println(toolbox.getTool(userInput2).getRentalPrice());
                 break;
 
-            case 11:
+            case 9:
 
                 System.out.println("What is the tool you are returning? ");
                 userInput2 = userInputReader.readLine();
@@ -164,12 +147,12 @@ public class Main {
                 toolbox.getTool(userInput2).returned();
                 break;
             
-            case 12:
+            case 10:
 
                 System.out.println(toolbox.getAllToolsAvalaible());
                 break;
 
-            case 13:
+            case 11:
                 
                 System.out.println("Which tool do you want to rent out? ");
                 userInput2 = userInputReader.readLine();
