@@ -178,10 +178,16 @@ public class ToolBox {
 
     }
 
+    /**
+     * gets the total value of the toolbox
+     * 
+     * @return a double value of the total value of the tools in the toolbox
+     */
     public double getTotalValue() {
 
         double totalValue = 0;
 
+        // loops through all the tools in the toolbox
         for (Tool tool : tools) {
 
             totalValue += tool.getCurrentValue();
@@ -192,15 +198,22 @@ public class ToolBox {
 
     }
 
-    public String getAllToolsAvaliable() {
+    /**
+     * gets all tools that can be rented out 
+     * 
+     * @return a list of all tools that can be rented out 
+     */
+    public ArrayList<Tool> getAllToolsAvaliable() {
 
-        String toBeReturend = "";
+        ArrayList<Tool> toBeReturend = new ArrayList<>();
 
+        // loops through all the tools in the toolbox
         for (Tool tool : tools) {
 
+            // can only be rented if the condtiion is above awful and if its currently in inventory 
             if ((tool.isCheckedOut() != true) && (tool.getCondition() != Condition.Awful)) {
 
-                toBeReturend += tool.toString();
+                toBeReturend.add(tool);
 
             }
 

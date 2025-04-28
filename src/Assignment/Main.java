@@ -128,7 +128,11 @@ public class Main {
 
             case 9:
 
-                System.out.println(toolbox.getAllToolsAvaliable());
+                for (Tool tool : toolbox.getAllToolsAvaliable()) {
+
+                    System.out.print(tool.toString());
+                }
+
                 break;
 
             case 10:
