@@ -86,15 +86,16 @@ public class Hammer extends Tool {
 
     }
 
-    public double getPrice() {
-
-        return price;
-
-    }
-
+    /**
+     * calculate sthe rental price of the hammer based on condition and age 
+     * 
+     * @return a double value fo the current rental price 
+     */
     public double getRentalPrice() {
 
         getCurrentValue();
+
+        // calculates rental price based on condition, age, and current value  
         if ((condition == Condition.Perfect) && (age <= 10)) {
 
             rentalPrice = price * 5;
@@ -123,8 +124,14 @@ public class Hammer extends Tool {
 
     }
 
+    /**
+     * calculates the current value of the hammer
+     * 
+     * @return a double value of the hammer 
+     */
     public double getCurrentValue() {
 
+        // calculates the current value based on age and condition of the hammer 
         if ((condition == Condition.Perfect) && (age <= 10)) {
 
             price = price * 0.9;
@@ -154,12 +161,20 @@ public class Hammer extends Tool {
 
     }
 
+    /**
+     * calculates the additional fees that need to be paid
+     * 
+     * @return a double value of the additional fees that needs to be paid 
+     */
     public double getAdditionalFees(Condition returnCondition) {
 
+        // checks to see if the returned condition is the same as the original 
         if (!(condition.equals(returnCondition))) {
 
+            // sets the current condition to be the same as the returend condition 
             condition = returnCondition;
 
+            // checks to see how poor shape it was returned and adds an additional fee accordingly 
             switch (returnCondition) {
 
                 case Good:

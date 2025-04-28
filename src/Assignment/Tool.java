@@ -86,7 +86,6 @@ public abstract class Tool {
     public abstract String getMaintenance();
     public abstract String toString();
     public abstract String getName();
-    public abstract double getPrice();
     public abstract double getRentalPrice();
     public abstract double getAdditionalFees(Condition condition);
     public abstract double getCurrentValue();

@@ -106,21 +106,16 @@ public class Drill extends Tool {
 
     }
 
-    public double getPrice() {
-
-        if (isCordless == true) {
-
-            price = price + 20;
-            return price;
-        }
-
-        return price;
-
-    }
-
+    /**
+     * calculates the rental price
+     * 
+     * @return a double value of the renal price 
+     */
     public double getRentalPrice() {
 
         getCurrentValue();
+
+        // calculates the rental price based on age, condition, and current value 
         if ((condition == Condition.Perfect) && (age <= 5)) {
 
             rentalPrice = price * 5;
@@ -144,8 +139,21 @@ public class Drill extends Tool {
 
     }
 
+    /**
+     * gets the current value of the drill
+     * 
+     * @return a double value of the current value of the drill 
+     */
     public double getCurrentValue() {
 
+        // increases the current valeu of the drill if it's a cordless drill 
+        if (isCordless == true) {
+
+            price = price + 20;
+
+        }
+
+        // calculates the current value based on condition and age 
         if ((condition == Condition.Perfect) && (age <= 5)) {
 
             price = price * 0.9;
@@ -170,12 +178,20 @@ public class Drill extends Tool {
 
     }
 
+    /**
+     * calculates the additional fees that needs to be paid 
+     * 
+     * @return a double value of all additional fees that need to be paid 
+     */
     public double getAdditionalFees(Condition returnCondition) {
 
+        // checks to see if the returned condition mathces the condition when it left 
         if (!(condition.equals(returnCondition))) {
 
+            // sets the current condition to match the returend condition 
             condition = returnCondition;
 
+            // checks to see how poor of a condition it was returend and calculates the fee accordingly 
             switch (returnCondition) {
 
                 case Good:

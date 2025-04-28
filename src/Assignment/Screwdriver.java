@@ -85,17 +85,6 @@ public class Screwdriver extends Tool {
     }
 
     /**
-     * allows the user to get the current value of the tool 
-     * 
-     * @return a double value of the value of the object 
-     */
-    public double getPrice() {
-
-        return price;
-
-    }
-
-    /**
      * allows the user to get the rental price of the screwdriver 
      * 
      * @return a double value of the rental price 
@@ -103,6 +92,8 @@ public class Screwdriver extends Tool {
     public double getRentalPrice() {
         
         getCurrentValue();
+
+        // clculates the rental price based on condition, age, and current value 
         if ((condition == Condition.Perfect) && (age <= 20)) {
 
             rentalPrice = price * 5;
@@ -134,6 +125,7 @@ public class Screwdriver extends Tool {
      */
     public double getCurrentValue() {
 
+        // calculates the current valeu based on condition and age 
         if ((condition == Condition.Perfect) && (age <= 20)) {
 
             price = price * 0.9;
@@ -165,10 +157,13 @@ public class Screwdriver extends Tool {
      */
     public double getAdditionalFees(Condition returnCondition) {
 
+        // checks to see if the tool was returned in the original condition it left 
         if (!(condition.equals(returnCondition))) {
 
+            // sets the condition to be the same as the returend condition 
             condition = returnCondition;
 
+            // checks to see how bad it was returend and adds an additional priced based on it 
             switch (returnCondition) {
 
                 case Good:

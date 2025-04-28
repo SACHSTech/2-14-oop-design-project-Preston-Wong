@@ -100,15 +100,16 @@ public class Wrench extends Tool {
 
     }
 
-    public double getPrice() {
-
-        return price;
-
-    }
-
+    /**
+     * calculates the rental price
+     * 
+     * @return a double value of the rental price 
+     */
     public double getRentalPrice() {
 
         getCurrentValue();
+
+        // calculates the rental priced based off the current value, condition, and age 
         if ((condition == Condition.Perfect) && (age <= 5)) {
 
             rentalPrice = price * 5;
@@ -137,8 +138,14 @@ public class Wrench extends Tool {
 
     }
 
+    /**
+     * calculates and returns the current value
+     * 
+     * @return a double value of the current wrench value 
+     */
     public double getCurrentValue() {
 
+        // calculate the current value baesd on condition and age 
         if ((condition == Condition.Perfect) && (age <= 5)) {
 
             price = price * 0.9;
@@ -167,12 +174,20 @@ public class Wrench extends Tool {
 
     }
 
+    /**
+     * calculates if any additional fees needs to be paid 
+     * 
+     * @return a double value of the additional fees that needs to be paid 
+     */
     public double getAdditionalFees(Condition returnCondition) {
 
+        // checks to see if the returend condition is the same as it left the rental company
         if (!(condition.equals(returnCondition))) {
 
+            // sets the current condition to be the same as the returend condition 
             condition = returnCondition;
 
+            // checks to see how poor shape it was returend and calculatess fees accordingly 
             switch (returnCondition) {
 
                 case Good:
