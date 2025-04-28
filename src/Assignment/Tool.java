@@ -41,6 +41,18 @@ public abstract class Tool {
 
     }
 
+    public void rentOut() {
+
+        checkedOut = true;
+
+    }
+
+    public void returned() {
+
+        checkedOut = false;
+
+    }
+
     /**
      * gets condition of the tool 
      * 

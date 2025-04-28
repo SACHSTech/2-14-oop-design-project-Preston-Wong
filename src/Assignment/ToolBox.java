@@ -260,4 +260,22 @@ public class ToolBox {
 
     }
 
+    public String getAllToolsAvalaible() {
+
+        String toBeReturend = "";
+
+        for (Tool tool : tools) {
+
+            if (tool.isCheckedOut() != true) {
+
+                toBeReturend += tool.toString();
+
+            }
+
+        }
+
+        return toBeReturend;
+
+    }
+
 }

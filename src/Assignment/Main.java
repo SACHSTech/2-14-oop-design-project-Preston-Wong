@@ -65,6 +65,8 @@ public class Main {
         System.out.println("9: Get total rental tool value");
         System.out.println("10: Get tool rental price");
         System.out.println("11: Return rental");
+        System.out.println("12: Get all avaliable tools");
+        System.out.println("13: Rent out a tool");
         System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
@@ -146,18 +148,33 @@ public class Main {
 
             case 11:
 
-            System.out.println("What is the tool you are returning? ");
-            userInput2 = userInputReader.readLine();
-            System.out.println("What is the return condition? ");
-            System.out.println("1: Awful");
-            System.out.println("2: Bad");
-            System.out.println("3: Average");
-            System.out.println("4: Good");
-            System.out.println("5: Perfect");
-            System.out.print("Input: ");
-            toolConditionInput = Integer.parseInt(userInputReader.readLine());
-            System.out.println("$" + toolbox.getTool(userInput2).getAdditionalFees(convertIntToCondition(toolConditionInput)));
+                System.out.println("What is the tool you are returning? ");
+                userInput2 = userInputReader.readLine();
+                System.out.println("What is the return condition? ");
+                System.out.println("1: Awful");
+                System.out.println("2: Bad");
+                System.out.println("3: Average");
+                System.out.println("4: Good");
+                System.out.println("5: Perfect");
+                System.out.print("Input: ");
+                toolConditionInput = Integer.parseInt(userInputReader.readLine());
+                System.out.println("$" + toolbox.getTool(userInput2).getAdditionalFees(convertIntToCondition(toolConditionInput)));
+                toolbox.getTool(userInput2).returned();
+                break;
+            
+            case 12:
+
+                System.out.println(toolbox.getAllToolsAvalaible());
+                break;
+
+            case 13:
                 
+                System.out.println("Which tool do you want to rent out? ");
+                userInput2 = userInputReader.readLine();
+                toolbox.getTool(userInput2).rentOut();
+                break;
+
+
 
         }
 

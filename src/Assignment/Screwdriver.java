@@ -24,6 +24,7 @@ public class Screwdriver extends Tool {
         this.condition = condition;
         this.age = age;
         this.headType = headType;
+        getRentalPrice();
 
     }
 
@@ -156,15 +157,18 @@ public class Screwdriver extends Tool {
 
         } else if ((condition == Condition.Awful && (age <= 20)) || (condition == Condition.Bad && (age >= 20))) {
 
-            return price * 0.5;
+            price = price * 0.5;
+            return price;
 
         } else if ((condition == Condition.Bad && (age <= 20)) || (condition == Condition.Average && (age >= 20))) {
 
-            return price * 0.8;
+            price = price * 0.8;
+            return price;
 
         } else {
 
-            return price * 0.9;
+            price = price * 0.9;
+            return price;
 
         }
 
@@ -173,9 +177,9 @@ public class Screwdriver extends Tool {
 
     public double getAdditionalFees(Condition returnCondition) {
 
-        getRentalPrice();
-
         if (!condition.equals(returnCondition)) {
+
+            condition = returnCondition;
 
             switch (returnCondition) {
 
@@ -194,7 +198,7 @@ public class Screwdriver extends Tool {
             }
 
         }
-
+        
         return rentalPrice;
 
     }
@@ -206,7 +210,7 @@ public class Screwdriver extends Tool {
      */
     public String toString() {
 
-        return headType + " head screwdriver - Price: " + rentalPrice + "\n";
+        return headType + " head screwdriver - Rental Price: " + getRentalPrice() + " - Actual Value " + getCurrentValue() + "\n";
 
     }
 
