@@ -12,9 +12,9 @@ public class Wrench extends Tool {
     private double price = 10;
     private double rentalPrice;
     private Condition condition;
-    private final String pipeFunctioin = "grip and turn pipes";
-    private final String allenFunction = "install or remove fasteners with a hexagon head";
-    private final String socketFunction = "turn nuts and bolts";
+    // private final String pipeFunctioin = "grip and turn pipes";
+    // private final String allenFunction = "install or remove fasteners with a hexagon head";
+    // private final String socketFunction = "turn nuts and bolts";
     private final String maintanence = "regularly clean to remove debris and grease/lubricate moving parts if applicable";
 
     public Wrench(Condition condition, int age, boolean checkedOut, Wrenches wrenchType, double size) {
@@ -48,35 +48,35 @@ public class Wrench extends Tool {
     }
 
 
-    /**
-     * gets the function
-     * 
-     * @return the function of the tool 
-     */
-    public String getFunction() {
+    // /**
+    //  * gets the function
+    //  * 
+    //  * @return the function of the tool 
+    //  */
+    // public String getFunction() {
     
-        switch(wrenchType) {
+    //     switch(wrenchType) {
 
-            case Wrenches.Pipe:
+    //         case Wrenches.Pipe:
 
-                return pipeFunctioin;
+    //             return pipeFunctioin;
 
-            case Wrenches.Allen:
+    //         case Wrenches.Allen:
             
-                return allenFunction;
+    //             return allenFunction;
 
-            case Wrenches.Socket:
+    //         case Wrenches.Socket:
 
-                return socketFunction;
+    //             return socketFunction;
 
-            default:
+    //         default:
 
-                return "You don't have a hammer on hand";
+    //             return "You don't have a hammer on hand";
 
-        }
+    //     }
 
 
-    }
+    // }
 
     /**
      * replacement urgency of the tool
@@ -216,7 +216,7 @@ public class Wrench extends Tool {
      */
     public String toString() {
 
-        return wrenchType + " wrench - Condition: "  + condition + " - Age: " + age + " years old \n";
+        return wrenchType + " wrench - Rental Price: " + getRentalPrice() + " - Actual Value " + getCurrentValue() + "\n";
 
     }
     

@@ -23,9 +23,9 @@ public class Main {
         Tool SD2 = new Screwdriver(Condition.Perfect, 1, true, Heads.Flat);
         ToolBox toolbox = new ToolBox();
 
-        // toolbox.addTool(hammer1);
-        // toolbox.addTool(hammer2);
-        // toolbox.addTool(hammer3);
+        toolbox.addTool(hammer1);
+        toolbox.addTool(hammer2);
+        toolbox.addTool(hammer3);
         toolbox.addTool(SD1);
         toolbox.addTool(SD2);
 

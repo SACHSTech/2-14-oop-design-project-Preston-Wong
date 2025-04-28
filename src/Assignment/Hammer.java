@@ -11,9 +11,9 @@ public class Hammer extends Tool {
     private Condition condition;
     private double price = 10;
     private double rentalPrice;
-    private final String rockHammerFunction = "break or split rocks";
-    private final String hatchetHammerFunction = "drive nails with a hatchet on the other side";
-    private final String blockingHammerFunction = "bend and shape metals";
+    // private final String rockHammerFunction = "break or split rocks";
+    // private final String hatchetHammerFunction = "drive nails with a hatchet on the other side";
+    // private final String blockingHammerFunction = "bend and shape metals";
     private final String maintenance = "regulalry clean and and inspect for any damages on it";
 
     public Hammer(Condition condition, int age, boolean checkedOut, Hammers hammerType) {
@@ -46,34 +46,34 @@ public class Hammer extends Tool {
     }
 
 
-    /**
-     * gets the function
-     * 
-     * @return the function of the tool 
-     */
-    public String getFunction() {
+    // /**
+    //  * gets the function
+    //  * 
+    //  * @return the function of the tool 
+    //  */
+    // public String getFunction() {
     
-        switch(hammerType) {
+    //     switch(hammerType) {
 
-            case Hammers.Rock:
+    //         case Hammers.Rock:
 
-                return rockHammerFunction;
+    //             return rockHammerFunction;
 
-            case Hammers.Hatchet:
+    //         case Hammers.Hatchet:
             
-                return hatchetHammerFunction;
+    //             return hatchetHammerFunction;
 
-            case Hammers.Blocking:
+    //         case Hammers.Blocking:
 
-                return blockingHammerFunction;
+    //             return blockingHammerFunction;
 
-            default:
+    //         default:
 
-                return "You don't have a hammer on hand";
+    //             return "You don't have a hammer on hand";
 
-        }
+    //     }
 
-    }
+    // }
 
     /**
      * gets the replacement urgency for hammers 
@@ -201,7 +201,7 @@ public class Hammer extends Tool {
      */
     public String toString() {
 
-        return hammerType + " hammer - Condition: "  + condition + " - Age: " + age + " years old \n";
+        return hammerType + " hammer - Rental Price: " + getRentalPrice() + " - Actual Value " + getCurrentValue() + "\n";
 
     }
 
