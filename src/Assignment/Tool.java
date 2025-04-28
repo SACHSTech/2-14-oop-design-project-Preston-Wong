@@ -66,8 +66,9 @@ public abstract class Tool {
     // abstract classes
     public abstract String getReplacementUrgency();
     public abstract String getMaintenance();
-    public abstract String getFunction();
+   // public abstract String getFunction();
     public abstract String toString();
     public abstract String getName();
+    
 
 }

@@ -14,49 +14,49 @@ public class ToolBox {
 
     }
 
-    /**
-     * get a tool by name
-     * 
-     * @param name name of the tool
-     * @return the tool 
-     */
-    public String getTool(String toolName) {
+    // /**
+    //  * get a tool by name
+    //  * 
+    //  * @param name name of the tool
+    //  * @return the tool 
+    //  */
+    // public String getTool(String toolName) {
 
-        for (Tool tool : tools) {
+    //     for (Tool tool : tools) {
 
-            if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
+    //         if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
 
-                return tool.getFunction();
+    //             return tool.getFunction();
 
-            }
+    //         }
 
-        }
+    //     }
 
-        return "You don't have a tool by that name";
+    //     return "You don't have a tool by that name";
 
-    }
+    // }
 
-    /**
-     * get the correct tool for the job 
-     * 
-     * @param occasion the scenario that the user needs the tool for 
-     * @return the tool that fits the scenario 
-     */
-    public Tool getToolForOcssion(String occasion) {
+    // /**
+    //  * get the correct tool for the job 
+    //  * 
+    //  * @param occasion the scenario that the user needs the tool for 
+    //  * @return the tool that fits the scenario 
+    //  */
+    // public Tool getToolForOcssion(String occasion) {
 
-        for (Tool tool : tools) {
+    //     for (Tool tool : tools) {
 
-            if (tool.getFunction().toUpperCase().equals(occasion.toUpperCase())) {
+    //         if (tool.getFunction().toUpperCase().equals(occasion.toUpperCase())) {
 
-                return tool;
+    //             return tool;
 
-            }
+    //         }
 
-        }
+    //     }
 
-        return null;
+    //     return null;
 
-    }
+    // }
 
     /**
      * adds a tool to the toolbox

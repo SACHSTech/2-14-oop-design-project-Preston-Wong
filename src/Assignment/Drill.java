@@ -13,7 +13,7 @@ public class Drill extends Tool {
     private final String hammerFunctioin = "break up concreate or stones";
     private final String impactFunction = "installing bolts with higher torque";
     private final String coreFunction = "create a cylindrical hole in concreate or stone";
-    private final String cordlessMaintanence = "keep clean, dry, and well lubricated. Ensure that the battery terminal is clena before placing in the battery, and always check battery health";
+    private final String cordlessMaintanence = "keep clean, dry, and well lubricated. Ensure that the battery terminal is clean before placing in the battery, and always check battery health";
     private final String cordedMaintanence = "keep clean, dry, and well lubricated. Ensure that the wire does not get tangeled and is tear free";
 
     public Drill(Condition condition, int age, boolean checkedOut, Drills drillType, boolean isCordless) {

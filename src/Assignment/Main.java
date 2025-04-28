@@ -3,24 +3,24 @@ package Assignment;
 import Assignment.Tool.Condition;
 import Assignment.Hammer.Hammers;
 import Assignment.Screwdriver.Heads;
+import Assignment.Drill.Drills;
+import Assignment.Wrench.Wrenches;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import Assignment.Drill.Drills;
-import Assignment.Wrench.Wrenches;;
 
 
 public class Main {
     
     public static void main(String[] args) throws IOException{
 
+        // testing tools that are preloaded for now 
         Tool hammer1 = new Hammer(Condition.Awful, 9, false , Hammers.Hatchet);
         Tool hammer2 = new Hammer(Condition.Perfect, 1, false , Hammers.Rock);
         Tool hammer3 = new Hammer(Condition.Average, 11, false , Hammers.Blocking); 
-        Tool SD1 = new Screwdriver(Condition.Awful, 19, false, Heads.Philips);
-        Tool SD2 = new Screwdriver(Condition.Awful, 50, false, Heads.Flat);
+        Tool SD1 = new Screwdriver(Condition.Awful, 19, false, Heads.Philips, 20.0);
+        Tool SD2 = new Screwdriver(Condition.Awful, 50, false, Heads.Flat, 20.0);
         ToolBox toolbox = new ToolBox();
 
         toolbox.addTool(hammer1);
@@ -30,8 +30,6 @@ public class Main {
         toolbox.addTool(SD2);
 
         while (getUserInput(toolbox) != 9) {
-
-
 
         }
 
@@ -84,10 +82,10 @@ public class Main {
 
             case 3:
 
-                System.out.print("Describe the occasion. ");
-                userInput2 = userInputReader.readLine();
-                System.out.println(toolbox.getToolForOcssion(userInput2));
-                break;
+                // System.out.print("Describe the occasion. ");
+                // userInput2 = userInputReader.readLine();
+                // System.out.println(toolbox.getToolForOcssion(userInput2));
+                // break;
 
             case 4:
 
@@ -194,7 +192,7 @@ public class Main {
                 System.out.print("Input: ");
                 userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
 
-                newTool = new Screwdriver(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHeadType(userInputForTypeOfTool));
+                newTool = new Screwdriver(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHeadType(userInputForTypeOfTool), 20.0);
                 return newTool;
             
             case 2:

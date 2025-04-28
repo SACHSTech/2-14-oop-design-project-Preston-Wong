@@ -9,19 +9,21 @@ public class Screwdriver extends Tool {
     private Heads headType;
     private int age;
     private Condition condition;
-    private final String philipsFunction = "screw in screws that have a cross on the top";
-    private final String flatFunction = "screw in screws that have a line on the top";
-    private final String starFunction = "screw in screws that have a star on the top";
-    private final String squareFunction = "screw in screws that have a square on the top";
-    private final String hexagonFunction = "screw in screws that have a hexagon on the top";
+    private double price;
+    // private final String philipsFunction = "screw in screws that have a cross on the top";
+    // private final String flatFunction = "screw in screws that have a line on the top";
+    // private final String starFunction = "screw in screws that have a star on the top";
+    // private final String squareFunction = "screw in screws that have a square on the top";
+    // private final String hexagonFunction = "screw in screws that have a hexagon on the top";
     private final String maintanence = "Keep away from water and avoid bending the tip out of shape";
 
-    public Screwdriver(Condition condition, int age, boolean checkedOut, Heads headType) {
+    public Screwdriver(Condition condition, int age, boolean checkedOut, Heads headType, double price) {
 
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
         this.headType = headType;
+        this.price = price;
 
     }
 
@@ -48,42 +50,42 @@ public class Screwdriver extends Tool {
     }
 
 
-    /**
-     * gets the function
-     * 
-     * @return the function of the tool 
-     */
-    public String getFunction() {
+    // /**
+    //  * gets the function
+    //  * 
+    //  * @return the function of the tool 
+    //  */
+    // public String getFunction() {
     
-        switch(headType) {
+    //     switch(headType) {
 
-            case Heads.Philips:
+    //         case Heads.Philips:
 
-                return philipsFunction;
+    //             return philipsFunction;
 
-            case Heads.Flat:
+    //         case Heads.Flat:
             
-                return flatFunction;
+    //             return flatFunction;
 
-            case Heads.Star:
+    //         case Heads.Star:
 
-                return starFunction;
+    //             return starFunction;
 
-            case Heads.Square:
+    //         case Heads.Square:
 
-                return squareFunction;
+    //             return squareFunction;
             
-            case Heads.Hexagon:
+    //         case Heads.Hexagon:
 
-                return hexagonFunction;
+    //             return hexagonFunction;
 
-            default:
+    //         default:
 
-                return "You don't have a screwdriver on hand";
+    //             return "You don't have a screwdriver on hand";
 
-        }
+    //     }
 
-    }
+    // }
 
     /**
      * gets the replacement urgency of the tool 
@@ -124,6 +126,36 @@ public class Screwdriver extends Tool {
 
     }
 
+    public double getPrice() {
+
+        return price;
+
+    }
+
+    public double additionalFees(Condition returnCondition) {
+
+        if (!condition.equals(returnCondition)) {
+
+            switch (returnCondition) {
+                case Good:
+                    
+                    return price * 1.1;
+            
+                case Average:
+
+                    return price * 1.5;
+
+                default:
+
+                    return price * 2;
+
+            }
+
+        }
+
+        return price;
+
+    }
 
     /**
      * converts tool object ot a string
