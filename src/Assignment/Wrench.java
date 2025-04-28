@@ -54,23 +54,23 @@ public class Wrench extends Tool {
        // based on age and condition, returns the urgency in which it needs to be replaced 
        if (condition == Condition.Awful && (age >= 5)) {
 
-            return "Very Urgent";
+            return "Now";
 
         } else if ((condition == Condition.Awful && (age <= 5)) || (condition == Condition.Bad && (age >= 5))) {
 
-            return "Urgent";
+            return "Very Urgent";
 
         } else if ((condition == Condition.Bad && (age <= 5)) || (condition == Condition.Average && (age >= 5))) {
 
-            return "Soon";
+            return "Urgent";
 
         } else if ((condition == Condition.Average && (age <= 5)) || (condition == Condition.Good && (age >= 5))) {
 
-            return "Not Soon";
+            return "Medium Priority";
 
         } else {
 
-            return "Long Time";
+            return "Low Priority";
 
         } 
 

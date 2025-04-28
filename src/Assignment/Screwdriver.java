@@ -63,7 +63,7 @@ public class Screwdriver extends Tool {
 
         } else if ((condition == Condition.Bad && (age <= 20)) || (condition == Condition.Average && (age >= 20))) {
 
-            return "Priority";
+            return "Urgent";
 
         } else {
 
@@ -92,17 +92,21 @@ public class Screwdriver extends Tool {
 
     public double getRentalPrice() {
 
-        if ((condition == Condition.Perfect) && (age <= 5)) {
+        if ((condition == Condition.Perfect) && (age <= 20)) {
 
-            rentalPrice = 50.0;
+            rentalPrice = price * 5;
+            return rentalPrice;
+
+        } else if ((condition == Condition.Good) && (age > 20) || (condition == Condition.Average && (age <= 20))) {
+
+            rentalPrice = price * 4;
+            return rentalPrice;
 
         } else {
 
-            rentalPrice = 30;
+            return 0.0;
 
         }
-
-        return rentalPrice;
 
     }
 
@@ -128,7 +132,6 @@ public class Screwdriver extends Tool {
             return price;
 
         }
-
 
     }
 

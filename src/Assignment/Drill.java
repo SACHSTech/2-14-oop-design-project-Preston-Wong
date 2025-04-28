@@ -8,7 +8,7 @@ public class Drill extends Tool {
     
     private Drills drillType;
     private int age;
-    private double price = 10;
+    private double price = 40;
     private double rentalPrice;
     private Condition condition;
     private boolean isCordless;
@@ -63,19 +63,19 @@ public class Drill extends Tool {
         // based on age and condition, returns the urgency in which it needs to be replaced 
        if ((condition == Condition.Awful) || (age >= 5)) {
 
-            return "Very Urgent";
+            return "Now";
 
         } else if ((condition == Condition.Awful) || (condition == Condition.Bad)) {
 
-            return "Urgent";
+            return "Very Urgent";
 
         } else if ((condition == Condition.Average) || (condition == Condition.Good)) {
 
-            return "Soon";
+            return "Medium Priority";
 
         } else {
 
-            return "Long Time";
+            return "Low Priority";
 
         } 
 
@@ -106,6 +106,12 @@ public class Drill extends Tool {
 
     public double getPrice() {
 
+        if (isCordless == true) {
+
+            price = price + 20;
+            return price;
+        }
+
         return price;
 
     }
@@ -114,7 +120,7 @@ public class Drill extends Tool {
 
         if ((condition == Condition.Perfect) && (age <= 5)) {
 
-            rentalPrice = 50.0;
+            rentalPrice = 100;
 
         } else {
 
