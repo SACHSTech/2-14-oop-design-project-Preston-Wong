@@ -41,12 +41,18 @@ public abstract class Tool {
 
     }
 
+    /**
+     * takes the tool out of inventory while it is rented out 
+     */
     public void rentOut() {
 
         checkedOut = true;
 
     }
 
+    /**
+     * adds the tool back into inventory to be rented out again 
+     */
     public void returned() {
 
         checkedOut = false;
