@@ -1,8 +1,8 @@
 package Assignment;
 
 /**
- * child class of tool, includes an ENUM of all valid screwdriver heads and keeps track of each specific screwdriver
- * function, age, maintenance, checking status, and condition
+ * child class of tool, includes an ENUM of all valid screwdriver heads and keeps track of each specific screwdriver, 
+ * age, maintenance, checking status, rental price, additional fees associated with renting, and current value
  */
 public class Screwdriver extends Tool {
 
@@ -84,12 +84,22 @@ public class Screwdriver extends Tool {
 
     }
 
+    /**
+     * allows the user to get the current value of the tool 
+     * 
+     * @return a double value of the value of the object 
+     */
     public double getPrice() {
 
         return price;
 
     }
 
+    /**
+     * allows the user to get the rental price of the screwdriver 
+     * 
+     * @return a double value of the rental price 
+     */
     public double getRentalPrice() {
         
         getCurrentValue();
@@ -116,6 +126,12 @@ public class Screwdriver extends Tool {
 
     }
 
+    /**
+     * calculates the current value based on age and condition
+     * 
+     * @return a double value of the current value 
+     * 
+     */
     public double getCurrentValue() {
 
         if ((condition == Condition.Perfect) && (age <= 20)) {
@@ -142,6 +158,11 @@ public class Screwdriver extends Tool {
 
     }
 
+    /**
+     * calculates any additional fees if the product was damaged on return
+     * 
+     * @return the amount of additional fees that the user has to pay 
+     */
     public double getAdditionalFees(Condition returnCondition) {
 
         if (!(condition.equals(returnCondition))) {

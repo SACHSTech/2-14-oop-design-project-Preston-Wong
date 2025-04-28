@@ -1,8 +1,8 @@
 package Assignment;
 
 /**
- * child class of tool, includes an ENUM of all valid wrenches and keeps track of each specific wrenches
- * function, age, maintenance, checking status, condition, and size
+ * child class of tool, includes an ENUM of all valid wrenches and keeps track of each specific wrenches, 
+ * age, maintenance, checking status, condition, size, rental price, current value, and any other additional fees associated form renting 
  */
 public class Wrench extends Tool {
  

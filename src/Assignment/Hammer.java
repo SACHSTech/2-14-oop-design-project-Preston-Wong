@@ -1,8 +1,8 @@
 package Assignment;
 
 /**
- * child class of tool, includes an ENUM of all valid hammers and keeps track of each specific hammer
- * function, age, maintenance, checking status, and condition
+ * child class of tool, includes an ENUM of all valid hammers and keeps track of each specific hammer,
+ * age, maintenance, checking status, condition, renting price, current price, and any additaion fees from renting
  */
 public class Hammer extends Tool {
     

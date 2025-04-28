@@ -6,7 +6,7 @@ import Assignment.Tool.Condition;
 /**
  * contians a list of tools and is what the user interacts with to get specific tools or details about them.
  * Allows the user to sort tools by most urgent to be repalced, find a certain tool by name, add or remove tools,
- * get a specific tool for a task, get oldest and checked out tools 
+ * get oldest, checked out tools 
  */
 public class ToolBox {
     

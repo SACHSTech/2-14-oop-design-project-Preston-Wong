@@ -1,8 +1,9 @@
 package Assignment;
 
 /**
- * child class of tool, includes an ENUM of all valid drills and keeps track of each specific drills
- * function, age, maintenance, checking status, condition, and if the drill is cordless or not 
+ * child class of tool, includes an ENUM of all valid drills and keeps track of each specific drills, 
+ * age, maintenance, checking status, condition, if the drill is cordless or not, renting price, current value
+ * and any additional fees that are associated with renting 
  */
 public class Drill extends Tool {
     
