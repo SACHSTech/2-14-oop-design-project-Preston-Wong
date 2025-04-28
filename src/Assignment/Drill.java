@@ -12,9 +12,6 @@ public class Drill extends Tool {
     private double rentalPrice;
     private Condition condition;
     private boolean isCordless;
-    // private final String hammerFunctioin = "break up concreate or stones";
-    // private final String impactFunction = "installing bolts with higher torque";
-    // private final String coreFunction = "create a cylindrical hole in concreate or stone";
     private final String cordlessMaintanence = "keep clean, dry, and well lubricated. Ensure that the battery terminal is clean before placing in the battery, and always check battery health";
     private final String cordedMaintanence = "keep clean, dry, and well lubricated. Ensure that the wire does not get tangeled and is tear free";
 
@@ -55,36 +52,6 @@ public class Drill extends Tool {
         }
 
     }
-
-
-    // /**
-    //  * gets the function
-    //  * 
-    //  * @return the function of the tool 
-    //  */
-    // public String getFunction() {
-    
-    //     switch(drillType) {
-
-    //         case Drills.Hammer:
-
-    //             return hammerFunctioin;
-
-    //         case Drills.Impact:
-            
-    //             return impactFunction;
-
-    //         case Drills.Core:
-
-    //             return coreFunction;
-
-    //         default:
-
-    //             return "You don't have a hammer on hand";
-
-    //     }
-
-    // }
 
     /**
      * returns how due the tool is for replacement

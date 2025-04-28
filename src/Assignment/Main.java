@@ -56,16 +56,14 @@ public class Main {
         System.out.println("What do you want to do? ");
         System.out.println("1: Get oldest tool");
         System.out.println("2: Get replacement urgency for tool");
-        //System.out.println("3: Recommend tool for occasion");
         System.out.println("3: Get tool maintenance");
-     //   System.out.println("5: Get all tool maintenance");
         System.out.println("4: Print a list of each tool by a certain replacement urgency");
         System.out.println("5: Add tool");
         System.out.println("6: Remove tool");
-        System.out.println("7: Get total rental tool value");
+        System.out.println("7: Get total toolbox value");
         System.out.println("8: Get tool rental price");
-        System.out.println("9: Return rental");
-        System.out.println("10: Get all avaliable tools");
+        System.out.println("9: Get all avaliable tools");
+        System.out.println("10: Return rental");
         System.out.println("11: Rent out a tool");
         System.out.println("9: Exit");
         System.out.print("Input: ");
@@ -131,6 +129,11 @@ public class Main {
 
             case 9:
 
+                System.out.println(toolbox.getAllToolsAvalaible());
+                break;
+
+            case 10:
+
                 System.out.println("What is the tool you are returning? ");
                 userInput2 = userInputReader.readLine();
                 System.out.println("What is the return condition? ");
@@ -147,10 +150,6 @@ public class Main {
                 toolbox.getTool(userInput2).returned();
                 break;
             
-            case 10:
-
-                System.out.println(toolbox.getAllToolsAvalaible());
-                break;
 
             case 11:
                 
@@ -181,8 +180,6 @@ public class Main {
         BufferedReader toolInputReader = new BufferedReader(new InputStreamReader(System.in));
         int userInput = 0;
         int userInputForTypeOfTool = 0;
-        int toolConditionInput = 0;
-        int toolAgeInput = 0;
         int isDrillCordless = 0;
         double toolSize = 0.0;
         Tool newTool;
@@ -195,20 +192,6 @@ public class Main {
         System.out.println("4: Drill");
         System.out.print("Input: ");
         userInput = Integer.parseInt(toolInputReader.readLine());
-
-        // asks for tool age
-        System.out.print("How old is your tool? ");
-        toolAgeInput = Integer.parseInt(toolInputReader.readLine());
-
-        // asks for the condition of the tool 
-        System.out.println("What condition is your tool in currently? ");
-        System.out.println("1: Awful");
-        System.out.println("2: Bad");
-        System.out.println("3: Average");
-        System.out.println("4: Good");
-        System.out.println("5: Perfect");
-        System.out.print("Input: ");
-        toolConditionInput = Integer.parseInt(toolInputReader.readLine());
 
         // switch case for different types of tools 
         switch(userInput) {
@@ -225,7 +208,7 @@ public class Main {
                 System.out.print("Input: ");
                 userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
 
-                newTool = new Screwdriver(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHeadType(userInputForTypeOfTool));
+                newTool = new Screwdriver(Condition.Perfect, 0, false, convertIntToHeadType(userInputForTypeOfTool));
                 return newTool;
             
             case 2:
@@ -238,7 +221,7 @@ public class Main {
                 System.out.print("Input: ");
                 userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
 
-                newTool = new Hammer(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToHammerType(userInputForTypeOfTool));
+                newTool = new Hammer(Condition.Perfect, 0, false, convertIntToHammerType(userInputForTypeOfTool));
                 return newTool;
 
             case 3:
@@ -254,7 +237,7 @@ public class Main {
                 System.out.print("What is the size of your wrench? ");
                 toolSize = Double.parseDouble(toolInputReader.readLine());
 
-                newTool = new Wrench(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToWrenchType(userInputForTypeOfTool), toolSize);
+                newTool = new Wrench(Condition.Perfect, 0, false, convertIntToWrenchType(userInputForTypeOfTool), toolSize);
                 return newTool;
 
             case 4:
@@ -278,12 +261,12 @@ public class Main {
 
                     case 1:
                         
-                        newTool = new Drill(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToDrillType(userInputForTypeOfTool), true);
+                        newTool = new Drill(Condition.Perfect, 0, false, convertIntToDrillType(userInputForTypeOfTool), true);
                         return newTool;
                 
                     default:
 
-                        newTool = new Drill(convertIntToCondition(toolConditionInput), toolAgeInput, false, convertIntToDrillType(userInputForTypeOfTool), false);
+                        newTool = new Drill(Condition.Perfect, 0, false, convertIntToDrillType(userInputForTypeOfTool), false);
                         return newTool;
               
                 }

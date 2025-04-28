@@ -35,29 +35,7 @@ public class ToolBox {
         return null;
 
     }
-
-    // /**
-    //  * get the correct tool for the job 
-    //  * 
-    //  * @param occasion the scenario that the user needs the tool for 
-    //  * @return the tool that fits the scenario 
-    //  */
-    // public Tool getToolForOcssion(String occasion) {
-
-    //     for (Tool tool : tools) {
-
-    //         if (tool.getFunction().toUpperCase().equals(occasion.toUpperCase())) {
-
-    //             return tool;
-
-    //         }
-
-    //     }
-
-    //     return null;
-
-    // }
-
+    
     /**
      * adds a tool to the toolbox
      * 

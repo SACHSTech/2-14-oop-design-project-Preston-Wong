@@ -12,9 +12,6 @@ public class Wrench extends Tool {
     private double price = 10;
     private double rentalPrice;
     private Condition condition;
-    // private final String pipeFunctioin = "grip and turn pipes";
-    // private final String allenFunction = "install or remove fasteners with a hexagon head";
-    // private final String socketFunction = "turn nuts and bolts";
     private final String maintanence = "regularly clean to remove debris and grease/lubricate moving parts if applicable";
 
     public Wrench(Condition condition, int age, boolean checkedOut, Wrenches wrenchType, double size) {
@@ -46,37 +43,6 @@ public class Wrench extends Tool {
         return maintanence;
 
     }
-
-
-    // /**
-    //  * gets the function
-    //  * 
-    //  * @return the function of the tool 
-    //  */
-    // public String getFunction() {
-    
-    //     switch(wrenchType) {
-
-    //         case Wrenches.Pipe:
-
-    //             return pipeFunctioin;
-
-    //         case Wrenches.Allen:
-            
-    //             return allenFunction;
-
-    //         case Wrenches.Socket:
-
-    //             return socketFunction;
-
-    //         default:
-
-    //             return "You don't have a hammer on hand";
-
-    //     }
-
-
-    // }
 
     /**
      * replacement urgency of the tool

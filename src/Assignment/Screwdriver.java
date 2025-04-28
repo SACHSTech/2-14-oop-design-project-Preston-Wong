@@ -11,11 +11,6 @@ public class Screwdriver extends Tool {
     private Condition condition;
     private double price = 10;
     private double rentalPrice;
-    // private final String philipsFunction = "screw in screws that have a cross on the top";
-    // private final String flatFunction = "screw in screws that have a line on the top";
-    // private final String starFunction = "screw in screws that have a star on the top";
-    // private final String squareFunction = "screw in screws that have a square on the top";
-    // private final String hexagonFunction = "screw in screws that have a hexagon on the top";
     private final String maintanence = "Keep away from water and avoid bending the tip out of shape";
 
     public Screwdriver(Condition condition, int age, boolean checkedOut, Heads headType) {
@@ -49,44 +44,6 @@ public class Screwdriver extends Tool {
         return maintanence;
 
     }
-
-
-    // /**
-    //  * gets the function
-    //  * 
-    //  * @return the function of the tool 
-    //  */
-    // public String getFunction() {
-    
-    //     switch(headType) {
-
-    //         case Heads.Philips:
-
-    //             return philipsFunction;
-
-    //         case Heads.Flat:
-            
-    //             return flatFunction;
-
-    //         case Heads.Star:
-
-    //             return starFunction;
-
-    //         case Heads.Square:
-
-    //             return squareFunction;
-            
-    //         case Heads.Hexagon:
-
-    //             return hexagonFunction;
-
-    //         default:
-
-    //             return "You don't have a screwdriver on hand";
-
-    //     }
-
-    // }
 
     /**
      * gets the replacement urgency of the tool 
