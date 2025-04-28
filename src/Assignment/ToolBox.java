@@ -69,34 +69,6 @@ public class ToolBox {
     }
 
     /**
-     * sort by tools that need to be repalced the most
-     * 
-     * @return an organized list of tools 
-     */
-    public ArrayList<Tool> sortByMostDueForReplacement() {
-
-        ArrayList<Tool> filteredToolList = new ArrayList<>();
-        String[] urgency = {"Very Urgent", "Urgent", "Soon", "Not Soon", "Long Time"};
-
-        for (int i = 0; i < urgency.length; i++) {
-
-            for (Tool filterTool : tools) {
-
-                if (filterTool.getReplacementUrgency().toUpperCase().equals(urgency[i].toUpperCase())) {
-
-                    filteredToolList.add(filterTool);
-
-                }
-
-            }
-
-        }
-
-        return filteredToolList;
-
-    }
-
-    /**
      * finds all tools that are checked out 
      * 
      * @return an organized list of all tools that are checked out 
@@ -152,26 +124,6 @@ public class ToolBox {
         }
 
         return filteredTool;
-
-    }
-
-    /**
-     * a list of all the maintenance for each tool
-     * 
-     * @return list of string of all the maintenance for all tools 
-     */
-    public ArrayList<String> getAllToolMaintenance() {
-
-        ArrayList<String> maintenance = new ArrayList<>();
-
-        // cycles through each tool 
-        for (Tool tool : tools) {
-
-            maintenance.add(tool.getName() + " - " + tool.getMaintenance());
-
-        }
-
-        return maintenance;
 
     }
 
@@ -240,7 +192,7 @@ public class ToolBox {
 
     }
 
-    public String getAllToolsAvalaible() {
+    public String getAllToolsAvaliable() {
 
         String toBeReturend = "";
 
