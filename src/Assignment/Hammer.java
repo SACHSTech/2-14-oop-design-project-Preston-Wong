@@ -98,17 +98,17 @@ public class Hammer extends Tool {
         // calculates rental price based on condition, age, and current value  
         if ((condition == Condition.Perfect) && (age <= 10)) {
 
-            rentalPrice = price * 5;
+            rentalPrice = price * .5;
             return rentalPrice;
 
         } else if (((condition == Condition.Good) && (age > 10)) || (condition == Condition.Average && (age <= 10))) {
 
-            rentalPrice = price * 4;
+            rentalPrice = price * .3;
             return rentalPrice;
 
         } else if (((condition == Condition.Average) && (age > 10))) {
 
-            rentalPrice = price * 2;
+            rentalPrice = price * .2;
             return rentalPrice;
 
         } else if (condition == Condition.Awful) {
@@ -117,7 +117,7 @@ public class Hammer extends Tool {
         
         } else {
 
-            rentalPrice = price * 1.4;
+            rentalPrice = price * .14;
             return rentalPrice;
 
         }

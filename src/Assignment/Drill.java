@@ -118,12 +118,12 @@ public class Drill extends Tool {
         // calculates the rental price based on age, condition, and current value 
         if ((condition == Condition.Perfect) && (age <= 5)) {
 
-            rentalPrice = price * 5;
+            rentalPrice = price * .9;
             return rentalPrice;
 
         } else if (((condition == Condition.Good) && (age > 5)) || (condition == Condition.Average && (age <= 5))) {
 
-            rentalPrice = price * 4;
+            rentalPrice = price * .75;
             return rentalPrice;
 
         } else if ((condition == Condition.Awful) || (condition == Condition.Bad)) {
@@ -132,7 +132,7 @@ public class Drill extends Tool {
         
         } else {
 
-            rentalPrice = price * 2;
+            rentalPrice = price * .4;
             return rentalPrice;
 
         }

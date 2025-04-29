@@ -9,7 +9,7 @@ public class Wrench extends Tool {
     private Wrenches wrenchType;
     private int age;
     private double size;
-    private double price = 10;
+    private double price = 15;
     private double rentalPrice;
     private Condition condition;
     private final String maintanence = "regularly clean to remove debris and grease/lubricate moving parts if applicable";
@@ -112,17 +112,17 @@ public class Wrench extends Tool {
         // calculates the rental priced based off the current value, condition, and age 
         if ((condition == Condition.Perfect) && (age <= 5)) {
 
-            rentalPrice = price * 5;
+            rentalPrice = price * .8;
             return rentalPrice;
 
         } else if (((condition == Condition.Good) && (age <= 5)) || (condition == Condition.Average && (age <= 5))) {
 
-            rentalPrice = price * 4;
+            rentalPrice = price * .6;
             return rentalPrice;
 
         } else if (((condition == Condition.Average) && (age > 5)) || (condition == Condition.Good && (age > 5))) {
 
-            rentalPrice = price * 2;
+            rentalPrice = price * .4;
             return rentalPrice;
 
         } else if (condition == Condition.Awful) {
@@ -131,7 +131,7 @@ public class Wrench extends Tool {
         
         } else {
 
-            rentalPrice = price * 1.4;
+            rentalPrice = price * .24;
             return rentalPrice;
 
         }

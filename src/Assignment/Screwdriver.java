@@ -96,12 +96,12 @@ public class Screwdriver extends Tool {
         // clculates the rental price based on condition, age, and current value 
         if ((condition == Condition.Perfect) && (age <= 20)) {
 
-            rentalPrice = price * 5;
+            rentalPrice = price * .75;
             return rentalPrice;
 
         } else if (((condition == Condition.Good) && (age > 20)) || (condition == Condition.Average && (age <= 20))) {
 
-            rentalPrice = price * 4;
+            rentalPrice = price * .5;
             return rentalPrice;
 
         } else if (condition == Condition.Awful) {
@@ -110,7 +110,7 @@ public class Screwdriver extends Tool {
 
         } else {
 
-            rentalPrice = price * 2;
+            rentalPrice = price * .3;
             return rentalPrice;
 
         }
