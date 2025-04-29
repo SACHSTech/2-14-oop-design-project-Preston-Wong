@@ -64,6 +64,7 @@ public class Main {
         System.out.println("9: Get all avaliable tools");
         System.out.println("10: Return rental");
         System.out.println("11: Rent out a tool");
+        System.out.println("12: Get all tools");
         System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
@@ -159,6 +160,14 @@ public class Main {
                 userInput2 = userInputReader.readLine();
                 toolbox.getTool(userInput2).rentOut();
                 break;
+
+            case 12:
+
+                for (Tool tool : toolbox.getAllTolls()) {
+
+                    System.out.print(tool.toString());
+
+                }
 
 
 

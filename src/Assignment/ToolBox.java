@@ -52,7 +52,7 @@ public class ToolBox {
     /**
      * removes a tool from the toolbox
      * 
-     * @param tool tool that is removed 
+     * @param String tool name wants to be removed that is removed 
      */
     public void removeTool(String toolName) {
 
@@ -61,6 +61,7 @@ public class ToolBox {
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
 
                 tools.remove(tool);
+                break;
 
             }
 
@@ -220,6 +221,12 @@ public class ToolBox {
         }
 
         return toBeReturend;
+
+    }
+
+    public ArrayList<Tool> getAllTolls() {
+
+        return tools;
 
     }
 
