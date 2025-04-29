@@ -216,7 +216,37 @@ public class Drill extends Tool {
 
     public double getPriceToFix() {
 
-        return 0.0;
+        double repairCost = 0.0;
+
+        // checks to see how poor of a condition it was returend and calculates the repair fee accordingly 
+        switch (condition) {
+
+            case Good:
+                
+                repairCost = 25.0;
+                return repairCost;
+        
+            case Average:
+
+                repairCost = 37.0;
+                return repairCost;
+
+            case Bad:
+
+                repairCost = 50.0;
+                return repairCost;
+
+            case Perfect: 
+
+                repairCost = 0;
+                return repairCost;
+
+            default: 
+
+                repairCost = 100.0;
+                return repairCost;
+
+        }
 
     }
 

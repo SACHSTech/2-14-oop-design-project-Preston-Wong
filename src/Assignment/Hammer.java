@@ -203,7 +203,38 @@ public class Hammer extends Tool {
 
     public double getPriceToFix() {
 
-        return 0.0;
+        double repairCost = 0.0;
+
+        // checks to see how poor of a condition it was returend and calculates the repair fee accordingly 
+        switch (condition) {
+
+            case Good:
+                
+                repairCost = 10.0;
+                return repairCost;
+        
+            case Average:
+
+                repairCost = 15.0;
+                return repairCost;
+
+            case Bad:
+
+                repairCost = 20.0;
+                return repairCost;
+
+            case Perfect:
+
+                repairCost = 0.0;
+                return repairCost;
+
+            default: 
+
+                repairCost = 30.0;
+                return repairCost;
+
+        }
+
 
     }
 
