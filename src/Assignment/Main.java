@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 
 public class Main {
     
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
 
         // testing tools that are preloaded for now 
         ToolBox toolbox = new ToolBox();
@@ -43,7 +43,7 @@ public class Main {
      * @return an int of the value of the user input 
      * @throws IOException
      */
-    public static int getUserInput(ToolBox toolbox) throws IOException{
+    public static int getUserInput(ToolBox toolbox) throws IOException {
 
         // setting up varaibles 
         BufferedReader userInputReader = new BufferedReader(new InputStreamReader(System.in));
@@ -156,9 +156,10 @@ public class Main {
                 System.out.print("Input: ");
                 toolConditionInput = Integer.parseInt(userInputReader.readLine());
 
-                System.out.println("$" + (Math.round((toolbox.getTool(secondUserInput).getRentalPrice() + 
-                toolbox.getTool(secondUserInput).getAdditionalFees(convertIntToCondition(toolConditionInput))) * 100.0) / 100.0) + " is the rental cost. \n");
-                
+                double rentalPrice = (Math.round((toolbox.getTool(secondUserInput).getRentalPrice() * 100.0))) / 100.0;
+                double additionalFees = (Math.round(((toolbox.getTool(secondUserInput).getAdditionalFees(convertIntToCondition(toolConditionInput))) * 100.0)) / 100.0);
+
+                System.out.println("The rental price  is: $" + rentalPrice + " - additional fees is $" + additionalFees + " - Total $" + (rentalPrice + additionalFees));
                 toolbox.getTool(secondUserInput).returned();
                 break;
             
