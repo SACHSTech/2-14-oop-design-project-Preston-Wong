@@ -195,7 +195,7 @@ public class ToolBox {
 
         }
 
-        return totalValue;
+        return Math.round(totalValue * 100.0) / 100.0;
 
     }
 

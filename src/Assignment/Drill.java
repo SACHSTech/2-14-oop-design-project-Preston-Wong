@@ -221,7 +221,7 @@ public class Drill extends Tool {
      */
     public String toString() {
 
-        return drillType + " drill - Rental Price: " + rentalPrice + " - Actual Value " + price + "\n";
+        return drillType + " drill - Rental Price: $" + Math.round(rentalPrice * 100.0) / 100.0 + " - Actual Value: $" + Math.round(price * 100.0) / 100.0 + "\n";
 
     }
 

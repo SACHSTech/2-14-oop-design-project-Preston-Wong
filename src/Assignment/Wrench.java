@@ -217,7 +217,7 @@ public class Wrench extends Tool {
      */
     public String toString() {
 
-        return wrenchType + " wrench - Rental Price: " + rentalPrice + " - Actual Value " + price + "\n";
+        return wrenchType + " wrench - Rental Price: $" + Math.round(rentalPrice * 100.0) / 100.0 + " - Actual Value: $" + Math.round(price * 100.0) / 100.0 + "\n";
 
     }
     

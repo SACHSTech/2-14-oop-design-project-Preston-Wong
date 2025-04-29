@@ -29,6 +29,7 @@ public class Main {
         toolbox.addTool(SD1);
         toolbox.addTool(SD2);
 
+        // keeps running until the user enters the value to exit 
         while (getUserInput(toolbox) != 100) {
 
         }
@@ -49,7 +50,7 @@ public class Main {
         BufferedReader userInputReader = new BufferedReader(new InputStreamReader(System.in));
         int toolConditionInput = 0;
         int userInput = 0;
-        String userInput2 = "";
+        String secondUserInput = "";
 
         // asks thee user for what they want to do 
         System.out.println("What do you want to do? ");
@@ -74,61 +75,67 @@ public class Main {
 
             case 1:
 
-                System.out.println(toolbox.getOldestTool());
+                System.out.println(toolbox.getOldestTool() + " is the oldest tool at " + toolbox.getOldestTool().getAge() + "\n");
                 break;
 
             case 2:
 
                 System.out.print("What is the tool you want the replacement urgency? ");
-                userInput2 = userInputReader.readLine();
-                System.out.println(toolbox.getToolReplacementUrgency(userInput2));
+                secondUserInput = userInputReader.readLine();
+                System.out.println(toolbox.getToolReplacementUrgency(secondUserInput) + "\n");
                 break;
 
             case 3:
 
                 System.out.print("What is the tool you want to get the maintenance of? ");
-                userInput2 = userInputReader.readLine();
-                System.out.print(toolbox.getMaintenance(userInput2));
+                secondUserInput = userInputReader.readLine();
+                System.out.print(toolbox.getMaintenance(secondUserInput) + "\n");
                 break;
 
             case 4:
 
                 System.out.print("What urgency of replacement of tools do you want to see? ");
-                userInput2 = userInputReader.readLine();
-                for (Tool tool : toolbox.getToolsThatNeedToBeReplaced(userInput2)) {
+                secondUserInput = userInputReader.readLine();
+
+                // loops through all tools 
+                for (Tool tool : toolbox.getToolsThatNeedToBeReplaced(secondUserInput)) {
 
                     System.out.println(tool.toString());
 
                 }
+                System.out.println();
 
                 break;
 
             case 5:
 
                 toolbox.addTool(addToolToToolbox(toolbox));
+                System.out.println("Tool was successfully added to toolbox \n");
                 break;
                 
             case 6:
 
                 System.out.print("What is the tool that you want to remove? ");
-                userInput2 = userInputReader.readLine();
-                toolbox.removeTool(userInput2);
+                secondUserInput = userInputReader.readLine();
+                toolbox.removeTool(secondUserInput);
+                System.out.println(secondUserInput + " was removed from the toolbox \n");
                 break;
             
             case 7:
 
-                System.out.println(toolbox.getTotalValue());     
+                System.out.println("The entire toolbox is worth $" + toolbox.getTotalValue() + "\n");     
                 break;          
 
             case 8:
 
                 System.out.println("What is the tool? ");
-                userInput2 = userInputReader.readLine();
-                System.out.println(toolbox.getTool(userInput2).getRentalPrice());
+                secondUserInput = userInputReader.readLine();
+                System.out.println("$" + Math.round(toolbox.getTool(secondUserInput).getRentalPrice() * 100.0) / 100.0 + " is the rental price \n");
                 break;
 
             case 9:
 
+                // loops through all tools 
                 for (Tool tool : toolbox.getAllToolsAvaliable()) {
 
                     System.out.print(tool.toString());
@@ -139,7 +146,8 @@ public class Main {
             case 10:
 
                 System.out.println("What is the tool you are returning? ");
-                userInput2 = userInputReader.readLine();
+                secondUserInput = userInputReader.readLine();
+
                 System.out.println("What is the return condition? ");
                 System.out.println("1: Awful");
                 System.out.println("2: Bad");
@@ -148,33 +156,34 @@ public class Main {
                 System.out.println("5: Perfect");
                 System.out.print("Input: ");
                 toolConditionInput = Integer.parseInt(userInputReader.readLine());
-                System.out.println("$" + (toolbox.getTool(userInput2).getRentalPrice() + 
-                toolbox.getTool(userInput2).getAdditionalFees(convertIntToCondition(toolConditionInput))) + " is the rental cost.");
-                toolbox.getTool(userInput2).returned();
+
+                System.out.println("$" + (Math.round((toolbox.getTool(secondUserInput).getRentalPrice() + 
+                toolbox.getTool(secondUserInput).getAdditionalFees(convertIntToCondition(toolConditionInput))) * 100.0) / 100.0) + " is the rental cost. \n");
+                
+                toolbox.getTool(secondUserInput).returned();
                 break;
             
 
             case 11:
                 
                 System.out.println("Which tool do you want to rent out? ");
-                userInput2 = userInputReader.readLine();
-                toolbox.getTool(userInput2).rentOut();
+                secondUserInput = userInputReader.readLine();
+                toolbox.getTool(secondUserInput).rentOut();
                 break;
 
             case 12:
 
+                // loops through all the tools
                 for (Tool tool : toolbox.getAllTolls()) {
 
                     System.out.print(tool.toString());
 
                 }
-
-
+                System.out.println();
 
         }
 
         return userInput;
-   
  
     }
 
@@ -287,7 +296,6 @@ public class Main {
 
         return null;
 
-
     }
 
     // helper method to conert the user int input to a condition value 
@@ -316,7 +324,6 @@ public class Main {
                 return Condition.Perfect;
 
         }
-
 
     }
 
@@ -347,7 +354,6 @@ public class Main {
 
         }
 
-
     }
 
     // helper method to convert the user int input to a hammer type 
@@ -368,7 +374,6 @@ public class Main {
                 return Hammers.Blocking;
 
         }
-
 
     }
 
@@ -391,7 +396,6 @@ public class Main {
 
         }
 
-
     }
     
     // helper method to convert the user int input to a drill type 
@@ -413,8 +417,6 @@ public class Main {
 
         }
 
-
     }
 
 }
-
