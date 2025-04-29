@@ -63,9 +63,8 @@ public class Main {
         System.out.println("9: Get all avaliable tools");
         System.out.println("10: Return rental");
         System.out.println("11: Rent out a tool");
-        System.out.println("12: Get all tools");
-        System.out.println("13: Get price to fix a certain tool");
-        System.out.println("14: Should you keep or throw out a tool?");
+        System.out.println("12: Get price to fix a certain tool");
+        System.out.println("13: Should you keep or throw out a tool?");
         System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
@@ -165,24 +164,13 @@ public class Main {
 
             case 12:
 
-                // loops through all the tools
-                for (Tool tool : toolbox.getAllTolls()) {
-
-                    System.out.print(tool.toString());
-
-                }
-                System.out.println();
-                break;
-
-            case 13:
-
                 System.out.println("What tool do you want to find the repair cost of? ");
                 System.out.print("Tool Name: ");
                 secondUserInput = userInputReader.readLine();
                 System.out.println(toolbox.getRepairCost(secondUserInput) + "\n");
                 break;
 
-            case 14:
+            case 13:
 
                 System.out.println("What is the tool that you want to know if you should repair or throw out?");
                 System.out.print("Tool Name: ");
