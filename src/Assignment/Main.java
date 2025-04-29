@@ -52,7 +52,7 @@ public class Main {
 
         // asks thee user for what they want to do 
         System.out.println("What do you want to do? ");
-        System.out.println("1: Get oldest tool");
+        System.out.println("1: Get Cheapest tool");
         System.out.println("2: Get replacement urgency for tool");
         System.out.println("3: Get tool maintenance");
         System.out.println("4: Print a list of each tool by a certain replacement urgency");
@@ -75,7 +75,7 @@ public class Main {
 
             case 1:
 
-                System.out.println(toolbox.getOldestTool() + " is the oldest tool at " + toolbox.getOldestTool().getAge() + " years old\n");
+                System.out.println("The cheapest tool in our toolbox is " + toolbox.getCheapestTool().getName() + " at a price of $" + toolbox.getCheapestTool().getRentalPrice());
                 break;
 
             case 2:

@@ -287,4 +287,28 @@ public class ToolBox {
 
     }
 
+    /**
+     * gets the cheapest tool 
+     * 
+     * @return the tool that is the cheapest 
+     */
+    public Tool getCheapestTool() {
+
+        double currentCheapestTool = tools.get(0).getRentalPrice();
+        int index = 0;
+
+        for (int i = 0; i < tools.size(); i++) {
+
+            if (tools.get(i).getRentalPrice() < currentCheapestTool) {
+
+                index = i;
+
+            }
+
+        }
+
+        return tools.get(index);
+
+    }
+
 }

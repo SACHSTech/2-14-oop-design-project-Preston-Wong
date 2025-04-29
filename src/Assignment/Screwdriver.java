@@ -186,6 +186,11 @@ public class Screwdriver extends Tool {
 
     }
 
+    /**
+     * calculate the price ot fix
+     * 
+     * @return a double value of how much it will cost of fix 
+     */
     public double getPriceToFix() {
         
         double repairCost = 0.0;
