@@ -76,32 +76,19 @@ public class ToolBox {
      */
     public ArrayList<Tool> getCheckedOutTools() {
 
-        return null;
+        ArrayList<Tool> checkedOutTools = new ArrayList<>();
 
-    }
+        for (Tool tool : tools) {
 
-    /**
-     * gets the oldest tool in the toolbox
-     * 
-     * @return the oldest tool 
-     */
-    public Tool getOldestTool() {
+            if (tool.isCheckedOut() == true) {
 
-        int index = 0;
-        int oldestAge = 0;
-
-        for (int i = 0; i < tools.size(); i++) {
-
-            if (tools.get(i).getAge() > oldestAge) {
-
-                oldestAge = tools.get(i).getAge();
-                index = i;
+                checkedOutTools.add(tool);
 
             }
 
         }
 
-        return tools.get(index);
+        return checkedOutTools;
 
     }
 
@@ -221,17 +208,6 @@ public class ToolBox {
         }
 
         return toBeReturend;
-
-    }
-
-    /**
-     * gets all tools registed in the toolbox
-     * 
-     * @return an arraylist of all the tools 
-     */
-    public ArrayList<Tool> getAllTolls() {
-
-        return tools;
 
     }
 

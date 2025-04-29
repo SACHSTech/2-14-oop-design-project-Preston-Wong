@@ -61,10 +61,11 @@ public class Main {
         System.out.println("7: Get total toolbox value");
         System.out.println("8: Get tool rental price");
         System.out.println("9: Get all avaliable tools");
-        System.out.println("10: Return rental");
-        System.out.println("11: Rent out a tool");
-        System.out.println("12: Get price to fix a certain tool");
-        System.out.println("13: Should you keep or throw out a tool?");
+        System.out.println("10: Get all checked out tools ");
+        System.out.println("11: Return rental");
+        System.out.println("12: Rent out a tool");
+        System.out.println("13: Get price to fix a certain tool");
+        System.out.println("14: Should you keep or throw out a tool?");
         System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
@@ -103,7 +104,6 @@ public class Main {
 
                 }
                 System.out.println();
-
                 break;
 
             case 5:
@@ -129,8 +129,20 @@ public class Main {
 
                 System.out.println("What is the tool? ");
                 secondUserInput = userInputReader.readLine();
-                System.out.println("$" + Math.round(toolbox.getTool(secondUserInput).getRentalPrice() * 100.0) / 100.0 + " is the rental price for the " + secondUserInput + "\n");
-                break;
+
+                // checks to see if the inputted name is valid, if not, it will tell the user
+                if ((toolbox.getTool(secondUserInput) != null)) {
+
+                    System.out.println("$" + Math.round(toolbox.getTool(secondUserInput).getRentalPrice() * 100.0) / 100.0 + " is the rental price for the " + secondUserInput + "\n");
+                    break;
+
+                } else {
+
+                    System.out.println("Not a valid tool name");
+                    break;
+
+                }
+
 
             case 9:
 
@@ -144,33 +156,74 @@ public class Main {
 
             case 10:
 
+                for (Tool tool : toolbox.getCheckedOutTools()) {
+
+                    System.out.print(tool.toString());
+
+                }
+
+                break;
+
+            case 11:
+
                 System.out.println("What is the tool you are returning? ");
                 secondUserInput = userInputReader.readLine();
 
-                double rentalPrice = (Math.round((toolbox.getTool(secondUserInput).getRentalPrice() * 100.0))) / 100.0;
-                double additionalFees = (Math.round(((toolbox.getTool(secondUserInput).getAdditionalFees(convertIntToCondition())) * 100.0)) / 100.0);
+                // checks to see if the inputted name is valid, if not, it will tell the user
+                if ((toolbox.getTool(secondUserInput) != null)) {
 
-                System.out.println("The rental price  is: $" + rentalPrice + " - additional fees is $" + additionalFees + " - Total $" + (rentalPrice + additionalFees));
-                toolbox.getTool(secondUserInput).returned();
-                break;
+                    double rentalPrice = (Math.round((toolbox.getTool(secondUserInput).getRentalPrice() * 100.0))) / 100.0;
+                    double additionalFees = (Math.round(((toolbox.getTool(secondUserInput).getAdditionalFees(convertIntToCondition())) * 100.0)) / 100.0);
+
+                    System.out.println("The rental price  is: $" + rentalPrice + " - additional fees is $" + additionalFees + " - Total $" + (rentalPrice + additionalFees));
+                    toolbox.getTool(secondUserInput).returned();
+                    break;
+
+                } else {
+
+                    System.out.println("Not a valid tool name");
+                    break;
+
+                }
             
 
-            case 11:
+            case 12:
                 
                 System.out.println("Which tool do you want to rent out? ");
                 secondUserInput = userInputReader.readLine();
-                toolbox.getTool(secondUserInput).rentOut();
-                break;
+                
+                // checks to see if the inputted name is valid, if not, it will tell the user
+                if (toolbox.getTool(secondUserInput) != null) {
 
-            case 12:
+                    toolbox.getTool(secondUserInput).rentOut();
+                    break;
+
+                } else {
+
+                    System.out.println("Not a valid tool name");
+                    break;
+
+                }
+
+            case 13:
 
                 System.out.println("What tool do you want to find the repair cost of? ");
                 System.out.print("Tool Name: ");
                 secondUserInput = userInputReader.readLine();
-                System.out.println(toolbox.getRepairCost(secondUserInput) + "\n");
-                break;
+                if (toolbox.getRepairCost(secondUserInput) == -1) {
 
-            case 13:
+                    System.out.println("Not a valid tool name"); 
+                    break;
+
+                } else {
+
+                    System.out.println("To repair this tool fully, it will cost $" + toolbox.getRepairCost(secondUserInput) + "\n");
+                    break;
+
+
+                }
+
+            case 14:
 
                 System.out.println("What is the tool that you want to know if you should repair or throw out?");
                 System.out.print("Tool Name: ");
