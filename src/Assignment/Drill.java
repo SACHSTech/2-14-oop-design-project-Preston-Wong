@@ -196,19 +196,25 @@ public class Drill extends Tool {
 
                 case Good:
                     
-                    return rentalPrice * .1;
+                    return rentalPrice * .5;
             
                 case Average:
 
-                    return rentalPrice * .5;
+                    return rentalPrice * .75;
 
                 default:
 
-                    return rentalPrice;
+                    return rentalPrice * 1.25;
 
             }
 
         }
+
+        return 0.0;
+
+    }
+
+    public double getPriceToFix() {
 
         return 0.0;
 

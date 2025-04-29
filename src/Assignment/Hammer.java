@@ -185,13 +185,23 @@ public class Hammer extends Tool {
 
                     return rentalPrice * .5;
 
-                default:
+                case Bad:
+
+                    return rentalPrice * .75;
+
+                default: 
 
                     return rentalPrice;
 
             }
 
         }
+
+        return 0.0;
+
+    }
+
+    public double getPriceToFix() {
 
         return 0.0;
 

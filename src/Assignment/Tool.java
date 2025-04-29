@@ -89,6 +89,7 @@ public abstract class Tool {
     public abstract double getRentalPrice();
     public abstract double getAdditionalFees(Condition condition);
     public abstract double getCurrentValue();
+    public abstract double getPriceToFix();
     
 
 }

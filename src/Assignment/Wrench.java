@@ -192,7 +192,7 @@ public class Wrench extends Tool {
 
                 case Good:
                     
-                    return rentalPrice * .1;
+                    return rentalPrice * .25;
             
                 case Average:
 
@@ -205,6 +205,12 @@ public class Wrench extends Tool {
             }
 
         }
+
+        return 0.0;
+
+    }
+
+    public double getPriceToFix() {
 
         return 0.0;
 

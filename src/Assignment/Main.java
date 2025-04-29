@@ -74,7 +74,7 @@ public class Main {
 
             case 1:
 
-                System.out.println(toolbox.getOldestTool() + " is the oldest tool at " + toolbox.getOldestTool().getAge() + "\n");
+                System.out.println(toolbox.getOldestTool() + " is the oldest tool at " + toolbox.getOldestTool().getAge() + " years old\n");
                 break;
 
             case 2:

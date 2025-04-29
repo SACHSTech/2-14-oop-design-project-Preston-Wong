@@ -186,6 +186,12 @@ public class Screwdriver extends Tool {
 
     }
 
+    public double getPriceToFix() {
+
+        return 0.0;
+
+    }
+
     /**
      * converts tool object ot a string
      * 
