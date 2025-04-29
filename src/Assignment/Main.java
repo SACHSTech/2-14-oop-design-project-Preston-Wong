@@ -130,7 +130,7 @@ public class Main {
 
                 System.out.println("What is the tool? ");
                 secondUserInput = userInputReader.readLine();
-                System.out.println("$" + Math.round(toolbox.getTool(secondUserInput).getRentalPrice() * 100.0) / 100.0 + " is the rental price \n");
+                System.out.println("$" + Math.round(toolbox.getTool(secondUserInput).getRentalPrice() * 100.0) / 100.0 + " is the rental price for the " + secondUserInput + "\n");
                 break;
 
             case 9:
