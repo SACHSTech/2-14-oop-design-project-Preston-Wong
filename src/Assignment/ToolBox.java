@@ -224,9 +224,66 @@ public class ToolBox {
 
     }
 
+    /**
+     * gets all tools registed in the toolbox
+     * 
+     * @return an arraylist of all the tools 
+     */
     public ArrayList<Tool> getAllTolls() {
 
         return tools;
+
+    }
+
+    /**
+     * gets the repair cost for a tool 
+     * 
+     * @param toolName name of the tool 
+     * @return a double value of how much it will take to repair it 
+     */
+    public double getRepairCost(String toolName) {
+
+        for (Tool tool : tools) {
+
+            if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
+
+                return tool.getPriceToFix();
+
+            }
+
+        }
+
+        return -1;
+
+    }
+
+    /**
+     * determines if you should repair the tool or just throw it away 
+     * 
+     * @param toolName
+     * @return
+     */
+    public String shouldRemove(String toolName) {
+
+        for (Tool tool: tools) {
+
+            if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
+
+                if ((tool.getRentalPrice() >= tool.getPriceToFix()) && ((tool.getCondition() != Condition.Good) || (tool.getCondition() != Condition.Perfect))) {
+
+                    return "You should repair it and not throw it away. ";
+
+                } else if (tool.getRentalPrice() < tool.getPriceToFix()) {
+
+                    return "You should just throw it away, the price to fix it is higher than the rental price, it's not worth fixing.";
+
+                }
+
+            }
+
+        }
+
+        return "No need to fix or throw away the tool, the tool is fine as is.";
 
     }
 

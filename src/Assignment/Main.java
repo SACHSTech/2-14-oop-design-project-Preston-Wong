@@ -47,7 +47,6 @@ public class Main {
 
         // setting up varaibles 
         BufferedReader userInputReader = new BufferedReader(new InputStreamReader(System.in));
-        int toolConditionInput = 0;
         int userInput = 0;
         String secondUserInput = "";
 
@@ -65,6 +64,8 @@ public class Main {
         System.out.println("10: Return rental");
         System.out.println("11: Rent out a tool");
         System.out.println("12: Get all tools");
+        System.out.println("13: Get price to fix a certain tool");
+        System.out.println("14: Should you keep or throw out a tool?");
         System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
@@ -147,17 +148,8 @@ public class Main {
                 System.out.println("What is the tool you are returning? ");
                 secondUserInput = userInputReader.readLine();
 
-                System.out.println("What is the return condition? ");
-                System.out.println("1: Awful");
-                System.out.println("2: Bad");
-                System.out.println("3: Average");
-                System.out.println("4: Good");
-                System.out.println("5: Perfect");
-                System.out.print("Input: ");
-                toolConditionInput = Integer.parseInt(userInputReader.readLine());
-
                 double rentalPrice = (Math.round((toolbox.getTool(secondUserInput).getRentalPrice() * 100.0))) / 100.0;
-                double additionalFees = (Math.round(((toolbox.getTool(secondUserInput).getAdditionalFees(convertIntToCondition(toolConditionInput))) * 100.0)) / 100.0);
+                double additionalFees = (Math.round(((toolbox.getTool(secondUserInput).getAdditionalFees(convertIntToCondition())) * 100.0)) / 100.0);
 
                 System.out.println("The rental price  is: $" + rentalPrice + " - additional fees is $" + additionalFees + " - Total $" + (rentalPrice + additionalFees));
                 toolbox.getTool(secondUserInput).returned();
@@ -180,6 +172,23 @@ public class Main {
 
                 }
                 System.out.println();
+                break;
+
+            case 13:
+
+                System.out.println("What tool do you want to find the repair cost of? ");
+                System.out.print("Tool Name: ");
+                secondUserInput = userInputReader.readLine();
+                System.out.println(toolbox.getRepairCost(secondUserInput) + "\n");
+                break;
+
+            case 14:
+
+                System.out.println("What is the tool that you want to know if you should repair or throw out?");
+                System.out.print("Tool Name: ");
+                secondUserInput = userInputReader.readLine();
+                System.out.println(toolbox.shouldRemove(secondUserInput) + "\n");
+                break;
 
         }
 
@@ -199,7 +208,6 @@ public class Main {
         // setting up variables 
         BufferedReader toolInputReader = new BufferedReader(new InputStreamReader(System.in));
         int userInput = 0;
-        int userInputForTypeOfTool = 0;
         int isDrillCordless = 0;
         double toolSize = 0.0;
         Tool newTool;
@@ -218,57 +226,23 @@ public class Main {
 
             case 1:
 
-                // asks the user for what type of screwdriver 
-                System.out.println("What type of screwdriver?");
-                System.out.println("1: Philips");
-                System.out.println("2: Flat");
-                System.out.println("3: Star");
-                System.out.println("4: Square");
-                System.out.println("5: Hexagon");
-                System.out.print("Input: ");
-                userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
-
-                newTool = new Screwdriver(Condition.Perfect, 0, false, convertIntToHeadType(userInputForTypeOfTool));
+                newTool = new Screwdriver(Condition.Perfect, 0, false, convertIntToHeadType());
                 return newTool;
             
             case 2:
 
-                // asks the user what type of wrench 
-                System.out.println("What type of Wrench?");
-                System.out.println("1: Pipe");
-                System.out.println("2: Allen");
-                System.out.println("3: Socket");
-                System.out.print("Input: ");
-                userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
-
-                newTool = new Hammer(Condition.Perfect, 0, false, convertIntToHammerType(userInputForTypeOfTool));
+                newTool = new Hammer(Condition.Perfect, 0, false, convertIntToHammerType());
                 return newTool;
 
             case 3:
 
-                // asks the user for what type of hammer 
-                System.out.println("What type of Hammer?");
-                System.out.println("1: Rock");
-                System.out.println("2: Hatchet");
-                System.out.println("3: Blocking");
-                System.out.print("Input: ");
-                userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
-
                 System.out.print("What is the size of your wrench? ");
                 toolSize = Double.parseDouble(toolInputReader.readLine());
 
-                newTool = new Wrench(Condition.Perfect, 0, false, convertIntToWrenchType(userInputForTypeOfTool), toolSize);
+                newTool = new Wrench(Condition.Perfect, 0, false, convertIntToWrenchType(), toolSize);
                 return newTool;
 
             case 4:
-
-                // asks the user for what type of drill 
-                System.out.println("What type of Drill?");
-                System.out.println("1: Hammer");
-                System.out.println("2: Impact");
-                System.out.println("3: Core");
-                System.out.print("Input: ");
-                userInputForTypeOfTool = Integer.parseInt(toolInputReader.readLine());
 
                 // asks the user if the drill is cordless 
                 System.out.println("Is your drill cordless? ");
@@ -281,12 +255,12 @@ public class Main {
 
                     case 1:
                         
-                        newTool = new Drill(Condition.Perfect, 0, false, convertIntToDrillType(userInputForTypeOfTool), true);
+                        newTool = new Drill(Condition.Perfect, 0, false, convertIntToDrillType(), true);
                         return newTool;
                 
                     default:
 
-                        newTool = new Drill(Condition.Perfect, 0, false, convertIntToDrillType(userInputForTypeOfTool), false);
+                        newTool = new Drill(Condition.Perfect, 0, false, convertIntToDrillType(), false);
                         return newTool;
               
                 }
@@ -299,7 +273,18 @@ public class Main {
     }
 
     // helper method to conert the user int input to a condition value 
-    public static Condition convertIntToCondition(int input) {
+    public static Condition convertIntToCondition() throws IOException{
+
+        BufferedReader userInputReader = new BufferedReader(new InputStreamReader(System.in));
+        int input = 0;
+        System.out.println("What is the return condition? ");
+        System.out.println("1: Awful");
+        System.out.println("2: Bad");
+        System.out.println("3: Average");
+        System.out.println("4: Good");
+        System.out.println("5: Perfect");
+        System.out.print("Input: ");
+        input = Integer.parseInt(userInputReader.readLine());
 
         switch (input) {
 
@@ -328,7 +313,20 @@ public class Main {
     }
 
     // helper method to convert the user int input to a screw driver head type 
-    public static Heads convertIntToHeadType(int input) {
+    public static Heads convertIntToHeadType() throws IOException{
+
+        BufferedReader toolInputReader = new BufferedReader(new InputStreamReader(System.in));
+        int input = 0;
+
+        // asks the user for what type of screwdriver 
+        System.out.println("What type of screwdriver?");
+        System.out.println("1: Philips");
+        System.out.println("2: Flat");
+        System.out.println("3: Star");
+        System.out.println("4: Square");
+        System.out.println("5: Hexagon");
+        System.out.print("Input: ");
+        input = Integer.parseInt(toolInputReader.readLine());
 
         switch (input) {
 
@@ -357,7 +355,18 @@ public class Main {
     }
 
     // helper method to convert the user int input to a hammer type 
-    public static Hammers convertIntToHammerType(int input) {
+    public static Hammers convertIntToHammerType() throws IOException{
+
+        BufferedReader toolInputReader = new BufferedReader(new InputStreamReader(System.in));
+        int input = 0;
+
+        // asks the user for what type of hammer 
+        System.out.println("What type of Hammer?");
+        System.out.println("1: Rock");
+        System.out.println("2: Hatchet");
+        System.out.println("3: Blocking");
+        System.out.print("Input: ");
+        input = Integer.parseInt(toolInputReader.readLine());
 
         switch (input) {
 
@@ -378,7 +387,18 @@ public class Main {
     }
 
     // helper method to convert the user int value to a wrench type 
-    public static Wrenches convertIntToWrenchType(int input) {
+    public static Wrenches convertIntToWrenchType() throws IOException{
+
+        BufferedReader toolInputReader = new BufferedReader(new InputStreamReader(System.in));
+        int input = 0;
+
+        // asks the user what type of wrench 
+        System.out.println("What type of Wrench?");
+        System.out.println("1: Pipe");
+        System.out.println("2: Allen");
+        System.out.println("3: Socket");
+        System.out.print("Input: ");
+        input = Integer.parseInt(toolInputReader.readLine());
 
         switch (input) {
 
@@ -399,7 +419,18 @@ public class Main {
     }
     
     // helper method to convert the user int input to a drill type 
-    public static Drills convertIntToDrillType(int input) {
+    public static Drills convertIntToDrillType() throws IOException{
+
+        BufferedReader toolInputReader = new BufferedReader(new InputStreamReader(System.in));
+        int input = 0;
+
+        // asks the user for what type of drill 
+        System.out.println("What type of Drill?");
+        System.out.println("1: Hammer");
+        System.out.println("2: Impact");
+        System.out.println("3: Core");
+        System.out.print("Input: ");
+        input = Integer.parseInt(toolInputReader.readLine());
 
         switch (input) {
 
