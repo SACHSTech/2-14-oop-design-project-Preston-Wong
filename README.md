@@ -3,7 +3,7 @@
 
 See instructions [here](INSTRUCTIONS.md) for details.
 
-*INSERT UML CLASS DIAGRAM HERE*  
+![diagram](src/Assignment/2-14-oop-design.drawio.png) 
 
 ## Summary
-*Write a brief summary that describes the real-world system you are modelling in your design.*
+A tool inventory system. It contains a toolbox that has a collectino of tools that have a current value, rental value, age, condtion, and specifics about the tool itself. It allows the user to rent out tools, see rental prices of a tool, and allows them to remove and add tools as needed. It includes an abstarct tool class that has 4 child classes that are used to further specify each tools rental price, current value, age, and specific details. Each child class has an enum for its specific details, like screwdriver heads or drill types, and the parent tool class has an enum class for conditions that the tool can have. 

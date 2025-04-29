@@ -16,12 +16,12 @@ public class Main {
     public static void main(String[] args) throws IOException{
 
         // testing tools that are preloaded for now 
+        ToolBox toolbox = new ToolBox();
         Tool hammer1 = new Hammer(Condition.Awful, 9, false , Hammers.Hatchet);
         Tool hammer2 = new Hammer(Condition.Perfect, 1, false , Hammers.Rock);
         Tool hammer3 = new Hammer(Condition.Average, 11, false , Hammers.Blocking); 
         Tool SD1 = new Screwdriver(Condition.Good, 4, false, Heads.Philips);
         Tool SD2 = new Screwdriver(Condition.Perfect, 1, true, Heads.Flat);
-        ToolBox toolbox = new ToolBox();
 
         toolbox.addTool(hammer1);
         toolbox.addTool(hammer2);
@@ -33,7 +33,6 @@ public class Main {
         while (getUserInput(toolbox) != 100) {
 
         }
-
 
     }
 
