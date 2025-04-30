@@ -245,11 +245,11 @@ public class ToolBox {
 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
 
-                if ((tool.getRentalPrice() >= tool.getPriceToFix()) && ((tool.getCondition() != Condition.Good) || (tool.getCondition() != Condition.Perfect))) {
+                if ((tool.getCurrentValue() >= tool.getPriceToFix()) && ((tool.getCondition() != Condition.Good) || (tool.getCondition() != Condition.Perfect))) {
 
                     return "You should repair it and not throw it away. ";
 
-                } else if (tool.getRentalPrice() < tool.getPriceToFix()) {
+                } else if (tool.getCurrentValue() < tool.getPriceToFix()) {
 
                     return "You should just throw it away, the price to fix it is higher than the rental price, it's not worth fixing.";
 

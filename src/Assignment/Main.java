@@ -22,12 +22,20 @@ public class Main {
         Tool hammer3 = new Hammer(Condition.Average, 11, false , Hammers.Blocking); 
         Tool SD1 = new Screwdriver(Condition.Good, 4, false, Heads.Philips);
         Tool SD2 = new Screwdriver(Condition.Perfect, 1, true, Heads.Flat);
+        Tool drill1 = new Drill(Condition.Average, 4, false, Drills.Impact, true);
+        Tool drill2 = new Drill(Condition.Perfect, 4, false, Drills.Hammer, true);
+        Tool wrench1 = new Wrench(Condition.Awful, 10, false, Wrenches.Allen, 2.0);
+        Tool wrench2 = new Wrench(Condition.Good, 10, false, Wrenches.Pipe,5.0);
 
         toolbox.addTool(hammer1);
         toolbox.addTool(hammer2);
         toolbox.addTool(hammer3);
         toolbox.addTool(SD1);
         toolbox.addTool(SD2);
+        toolbox.addTool(drill1);
+        toolbox.addTool(drill2);
+        toolbox.addTool(wrench1);
+        toolbox.addTool(wrench2);
 
         // keeps running until the user enters the value to exit 
         while (getUserInput(toolbox) != 100) {
@@ -75,7 +83,7 @@ public class Main {
 
             case 1:
 
-                System.out.println("The cheapest tool in our toolbox is " + toolbox.getCheapestTool().getName() + " at a price of $" + toolbox.getCheapestTool().getRentalPrice());
+                System.out.println("The cheapest tool in our toolbox is " + toolbox.getCheapestTool().getName() + " at a price of $" + toolbox.getCheapestTool().getRentalPrice() + "\n");
                 break;
 
             case 2:
@@ -230,6 +238,10 @@ public class Main {
                 secondUserInput = userInputReader.readLine();
                 System.out.println(toolbox.shouldRemove(secondUserInput) + "\n");
                 break;
+
+            default:
+
+                System.out.println("Not a valid option, please input a VALID option \n");
 
         }
 
