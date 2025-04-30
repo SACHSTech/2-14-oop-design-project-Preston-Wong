@@ -79,6 +79,7 @@ public class Main {
         System.out.println("9: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
+        System.out.println();
 
         // switch case for user input 
         switch(userInput) {
@@ -144,15 +145,13 @@ public class Main {
                 if ((toolbox.getTool(secondUserInput) != null)) {
 
                     System.out.println("$" + Math.round(toolbox.getTool(secondUserInput).getRentalPrice() * 100.0) / 100.0 + " is the rental price for the " + secondUserInput + "\n");
-                    break;
 
                 } else {
 
-                    System.out.println("Not a valid tool name");
-                    break;
+                    System.out.println("Not a valid tool name \n");
 
                 }
-
+                break;
 
             case 9:
 
@@ -161,7 +160,7 @@ public class Main {
 
                     System.out.print(tool.toString());
                 }
-
+                System.out.println();
                 break;
 
             case 10:
@@ -171,7 +170,7 @@ public class Main {
                     System.out.print(tool.toString());
 
                 }
-
+                System.out.println();
                 break;
 
             case 11:
@@ -225,15 +224,13 @@ public class Main {
 
                     System.out.println("The rental price  is: $" + rentalPrice + " - additional fees is $" + additionalFees + " - Total $" + (rentalPrice + additionalFees));
                     toolbox.getTool(secondUserInput).returned();
-                    break;
 
                 } else {
 
                     System.out.println("Not a valid tool name");
-                    break;
 
                 }
-            
+                break;
 
             case 12:
                 
@@ -244,14 +241,13 @@ public class Main {
                 if (toolbox.getTool(secondUserInput) != null) {
 
                     toolbox.getTool(secondUserInput).rentOut();
-                    break;
 
                 } else {
 
                     System.out.println("Not a valid tool name");
-                    break;
 
                 }
+                break;
 
             case 13:
 
@@ -261,15 +257,13 @@ public class Main {
                 if (toolbox.getRepairCost(secondUserInput) == -1) {
 
                     System.out.println("Not a valid tool name"); 
-                    break;
 
                 } else {
 
                     System.out.println("To repair this tool fully, it will cost $" + toolbox.getRepairCost(secondUserInput) + "\n");
-                    break;
-
 
                 }
+                break;
 
             case 14:
 
@@ -303,6 +297,7 @@ public class Main {
         String toolType = "";
         int userInput = 0;
         int isDrillCordless = 0;
+        int toolTypeInput = 0;
         double toolSize = 0.0;
         Tool newTool;
         
@@ -322,13 +317,43 @@ public class Main {
 
                 // asks the user for what type of screwdriver 
                 System.out.println("What type of screwdriver?");
-                System.out.println("Philips");
-                System.out.println("Flat");
-                System.out.println("Star");
-                System.out.println("Square");
-                System.out.println("Hexagon");
+                System.out.println("1. Philips");
+                System.out.println("2. Flat");
+                System.out.println("3. Star");
+                System.out.println("4. Square");
+                System.out.println("5. Hexagon");
                 System.out.print("Input: ");
-                toolType = toolInputReader.readLine();
+                toolTypeInput = Integer.parseInt(toolInputReader.readLine());
+
+                // sets the string to be a certian screwdriver type
+                switch(toolTypeInput) {
+
+                    case 1:
+
+                        toolType = "Philips";
+                        break;
+
+                    case 2:
+
+                        toolType = "Flat";
+                        break;
+
+                    case 3:
+
+                        toolType = "Star";
+                        break;
+
+                    case 4:
+
+                        toolType = "Square";
+                        break;
+
+                    case 5:
+
+                        toolType = "Hexagon";
+                        break;
+
+                }
 
                 newTool = new Screwdriver(Condition.Perfect, 0, false, Heads.valueOf(toolType));
                 return newTool;
@@ -337,11 +362,31 @@ public class Main {
 
                 // asks the user for what type of hammer 
                 System.out.println("What type of Hammer?");
-                System.out.println("Rock");
-                System.out.println("Hatchet");
-                System.out.println("Blocking");
+                System.out.println("1. Rock");
+                System.out.println("2. Hatchet");
+                System.out.println("3. Blocking");
                 System.out.print("Input: ");
-                toolType = toolInputReader.readLine();
+                toolTypeInput = Integer.parseInt(toolInputReader.readLine());
+
+                // sets the string to be a certian hammer type
+                switch(toolTypeInput) {
+
+                    case 1:
+
+                        toolType = "Rock";
+                        break;
+
+                    case 2:
+
+                        toolType = "Hatchet";
+                        break;
+
+                    case 3:
+
+                        toolType = "Blocking";
+                        break;
+
+                }
 
                 newTool = new Hammer(Condition.Perfect, 0, false, Hammers.valueOf(toolType));
                 return newTool;
@@ -350,11 +395,31 @@ public class Main {
 
                 // asks the user what type of wrench 
                 System.out.println("What type of Wrench?");
-                System.out.println("Pipe");
-                System.out.println("Allen");
-                System.out.println("Socket");
+                System.out.println("1. Pipe");
+                System.out.println("2. Allen");
+                System.out.println("3. Socket");
                 System.out.print("Input: ");
-                toolType = toolInputReader.readLine();
+                toolTypeInput = Integer.parseInt(toolInputReader.readLine());
+
+                // sets the string to be a certian wrench type
+                switch(toolTypeInput) {
+
+                    case 1:
+
+                        toolType = "Pipe";
+                        break;
+
+                    case 2:
+
+                        toolType = "Allen";
+                        break;
+
+                    case 3:
+
+                        toolType = "Socket";
+                        break;
+
+                }
 
                 System.out.print("What is the size of your wrench? ");
                 toolSize = Double.parseDouble(toolInputReader.readLine());
@@ -370,12 +435,32 @@ public class Main {
                 System.out.println("2: Impact");
                 System.out.println("3: Core");
                 System.out.print("Input: ");
-                toolType = toolInputReader.readLine();
+                toolTypeInput = Integer.parseInt(toolInputReader.readLine());
+
+                // sets the string to be a certian drill type
+                switch(toolTypeInput) {
+
+                    case 1:
+
+                        toolType = "Hammer";
+                        break;
+
+                    case 2:
+
+                        toolType = "Impact";
+                        break;
+
+                    case 3:
+
+                        toolType = "Core";
+                        break;
+
+                }
 
                 // asks the user if the drill is cordless 
                 System.out.println("Is your drill cordless? ");
-                System.out.println("1: True");
-                System.out.println("2: False");
+                System.out.println("1: Yes");
+                System.out.println("2: No");
                 isDrillCordless = Integer.parseInt(toolInputReader.readLine());
 
                 // creates a different drill depending on if the drill is cordless or not 
