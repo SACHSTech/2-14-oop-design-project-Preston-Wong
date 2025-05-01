@@ -38,7 +38,7 @@ public class Main {
         toolbox.addTool(wrench2);
 
         // keeps running until the user enters the value to exit 
-        while (getUserInput(toolbox) != 100) {
+        while (getUserInput(toolbox) != 15) {
 
         }
 
@@ -76,7 +76,7 @@ public class Main {
         System.out.println("12: Rent out a tool");
         System.out.println("13: Get price to fix a certain tool");
         System.out.println("14: Should you keep or throw out a tool?");
-        System.out.println("9: Exit");
+        System.out.println("15: Exit");
         System.out.print("Input: ");
         userInput = Integer.parseInt(userInputReader.readLine());
         System.out.println();
@@ -118,6 +118,7 @@ public class Main {
                     System.out.println(tool.toString());
 
                 }
+                
                 System.out.println();
                 break;
 
@@ -159,6 +160,7 @@ public class Main {
                     System.out.println("Not a valid tool name \n");
 
                 }
+
                 break;
 
             case 9:
@@ -168,6 +170,7 @@ public class Main {
 
                     System.out.print(tool.toString());
                 }
+
                 System.out.println();
                 break;
 
@@ -179,6 +182,7 @@ public class Main {
                     System.out.print(tool.toString());
 
                 }
+
                 System.out.println();
                 break;
 
@@ -242,6 +246,7 @@ public class Main {
                     System.out.println("Not a valid tool name");
 
                 }
+
                 break;
 
             case 12:
@@ -260,6 +265,7 @@ public class Main {
                     System.out.println("Not a valid tool name");
 
                 }
+                
                 break;
 
             case 13:
@@ -279,6 +285,7 @@ public class Main {
                     System.out.println("To repair this tool fully, it will cost $" + toolbox.getRepairCost(secondUserInput) + "\n");
 
                 }
+
                 break;
 
             case 14:
