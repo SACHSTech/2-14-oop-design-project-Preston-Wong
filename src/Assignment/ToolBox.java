@@ -27,15 +27,10 @@ public class ToolBox {
         for (Tool tool : tools) {
 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
-
                 return tool;
-
             }
-
         }
-
         return null;
-
     }
 
     /**
@@ -59,14 +54,10 @@ public class ToolBox {
         for (Tool tool : tools) {
 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
-
                 tools.remove(tool);
                 break;
-
             }
-
         }
-
     }
 
     /**
@@ -81,15 +72,10 @@ public class ToolBox {
         for (Tool tool : tools) {
 
             if (tool.isCheckedOut() == true) {
-
                 checkedOutTools.add(tool);
-
             }
-
         }
-
         return checkedOutTools;
-
     }
 
     /**
@@ -104,15 +90,10 @@ public class ToolBox {
         for (Tool tool : tools) {
 
             if (tool.getReplacementUrgency().toUpperCase().equals(urgency.toUpperCase())) {
-
                 filteredTool.add(tool);
-
             }            
-
         }
-
         return filteredTool;
-
     }
 
     /**
@@ -128,16 +109,10 @@ public class ToolBox {
 
             // checks to see if the tool name matches with the inputted one 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
-
                 return "to maintain a " + tool.getName() + " - " + tool.getMaintenance();
-
             }
-
         }
-
-        // if none of them work, tells the user that the namew as not valid 
         return "that is not a valid tool name";
-
     }
 
     /**
@@ -153,17 +128,10 @@ public class ToolBox {
 
             // checks to see if the names match 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
-
-                // returns the urgency to replace
                 return tool.getReplacementUrgency();
-
             }
-
         }
-
-        // if all fail, it tells the user that it was not a valid input 
         return "not a valid tool name";
-
     }
 
     /**
@@ -177,13 +145,9 @@ public class ToolBox {
 
         // loops through all the tools in the toolbox
         for (Tool tool : tools) {
-
             totalValue += tool.getCurrentValue();
-
         }
-
         return Math.round(totalValue * 100.0) / 100.0;
-
     }
 
     /**
@@ -200,15 +164,11 @@ public class ToolBox {
 
             // can only be rented if the condtiion is above awful and if its currently in inventory 
             if ((tool.isCheckedOut() != true) && (tool.getCondition() != Condition.Awful)) {
-
                 toBeReturend.add(tool);
-
             }
 
         }
-
         return toBeReturend;
-
     }
 
     /**
@@ -222,15 +182,11 @@ public class ToolBox {
         for (Tool tool : tools) {
 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
-
                 return tool.getPriceToFix();
-
             }
 
         }
-
         return -1;
-
     }
 
     /**
@@ -246,21 +202,13 @@ public class ToolBox {
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
 
                 if ((tool.getCurrentValue() >= tool.getPriceToFix()) && ((tool.getCondition() != Condition.Good) || (tool.getCondition() != Condition.Perfect))) {
-
                     return "You should repair it and not throw it away. ";
-
                 } else if (tool.getCurrentValue() < tool.getPriceToFix()) {
-
                     return "You should just throw it away, the price to fix it is higher than the rental price, it's not worth fixing.";
-
                 }
-
             }
-
         }
-
         return "No need to fix or throw away the tool, the tool is fine as is.";
-
     }
 
     /**
@@ -276,15 +224,11 @@ public class ToolBox {
         for (int i = 0; i < tools.size(); i++) {
 
             if (tools.get(i).getRentalPrice() < currentCheapestTool) {
-
                 index = i;
-                
             }
 
         }
-
         return tools.get(index);
-
     }
 
     /**
@@ -298,15 +242,11 @@ public class ToolBox {
         for (Tool tool : tools) {
 
             if (tool.getName().toUpperCase().equals(toBeChecked.toUpperCase())) {
-
                 return true;
-
             }
 
         }
-
         return false;
-
     }
 
 }
