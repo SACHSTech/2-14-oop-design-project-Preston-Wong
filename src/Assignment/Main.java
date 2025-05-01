@@ -113,12 +113,12 @@ public class Main {
                 break;
             case 9: // gets all tools that are avaliable to be checked out 
                 for (Tool tool : toolbox.getAllToolsAvaliable()) {
-                    System.out.print(tool.toString());
+                    System.out.print(tool);
                 }
                 break;
             case 10: // Prints all tools that are checked out 
                 for (Tool tool : toolbox.getCheckedOutTools()) {
-                    System.out.print(tool.toString());
+                    System.out.print(tool);
                 }
                 break;
             case 11:

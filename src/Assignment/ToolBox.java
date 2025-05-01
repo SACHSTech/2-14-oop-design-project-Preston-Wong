@@ -26,6 +26,7 @@ public class ToolBox {
 
         for (Tool tool : tools) {
 
+            // checks tool name, not case sensitive 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
                 return tool;
             }
@@ -53,6 +54,7 @@ public class ToolBox {
 
         for (Tool tool : tools) {
 
+            // checks the tool name, not case sensitive 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
                 tools.remove(tool);
                 break;
@@ -181,26 +183,29 @@ public class ToolBox {
 
         for (Tool tool : tools) {
 
+            // checks the name, not case sensitive 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
                 return tool.getPriceToFix();
             }
 
         }
-        return -1;
+        return 0.0;
     }
 
     /**
      * determines if you should repair the tool or just throw it away 
      * 
      * @param toolName
-     * @return
+     * @return a string of if you should remove the tool or repair it 
      */
     public String shouldRemove(String toolName) {
 
         for (Tool tool: tools) {
 
+            // checks the tool name, not case sensitive 
             if (tool.getName().toUpperCase().equals(toolName.toUpperCase())) {
 
+                // checks to see if the value of the tool is greater than the pride to fix it, and if hte condition is within a certain range 
                 if ((tool.getCurrentValue() >= tool.getPriceToFix()) && ((tool.getCondition() != Condition.Good) || (tool.getCondition() != Condition.Perfect))) {
                     return "You should repair it and not throw it away. ";
                 } else if (tool.getCurrentValue() < tool.getPriceToFix()) {
@@ -218,6 +223,7 @@ public class ToolBox {
      */
     public Tool getCheapestTool() {
 
+        // the double value is set to the first tool in the toolbox 
         double currentCheapestTool = tools.get(0).getRentalPrice();
         int index = 0;
 
@@ -241,6 +247,7 @@ public class ToolBox {
 
         for (Tool tool : tools) {
 
+            // checks to see if the name inputted is valid, removing the need to check for casing 
             if (tool.getName().toUpperCase().equals(toBeChecked.toUpperCase())) {
                 return true;
             }
