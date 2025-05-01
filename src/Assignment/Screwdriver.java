@@ -54,21 +54,13 @@ public class Screwdriver extends Tool {
 
         // based on age and condition, it will returna replacement urgecy 
         if (condition == Condition.Awful && (age >= 20)) {
-
             return "Now";
-
         } else if ((condition == Condition.Awful && (age <= 20)) || (condition == Condition.Bad && (age >= 20))) {
-
             return "Very Urgent";
-
         } else if ((condition == Condition.Bad && (age <= 20)) || (condition == Condition.Average && (age >= 20))) {
-
             return "Urgent";
-
         } else {
-
             return "Low Priority";
-
         }
 
     }
@@ -95,26 +87,17 @@ public class Screwdriver extends Tool {
 
         // clculates the rental price based on condition, age, and current value 
         if ((condition == Condition.Perfect) && (age <= 20)) {
-
             rentalPrice = price * .75;
             return rentalPrice;
-
         } else if (((condition == Condition.Good) && (age > 20)) || (condition == Condition.Average && (age <= 20))) {
-
             rentalPrice = price * .5;
             return rentalPrice;
-
         } else if (condition == Condition.Awful) {
-
             return 0.0;
-
         } else {
-
             rentalPrice = price * .3;
             return rentalPrice;
-
         }
-
     }
 
     /**
@@ -127,27 +110,18 @@ public class Screwdriver extends Tool {
 
         // calculates the current valeu based on condition and age 
         if ((condition == Condition.Perfect) && (age <= 20)) {
-
             price = price * 0.9;
             return price;
-
         } else if (((condition == Condition.Good) || (condition == Condition.Good))) {
-
             price = price * 0.75;
             return price;
-
         } else if (condition == Condition.Awful) {
-
             price = 0.0;
             return price;
-
         } else {
-
             price = price * 0.5;
             return price;
-
         }
-
     }
 
     /**
@@ -159,31 +133,21 @@ public class Screwdriver extends Tool {
 
         // checks to see if the tool was returned in the original condition it left 
         if (!(condition.equals(returnCondition))) {
-
             // sets the condition to be the same as the returend condition 
             condition = returnCondition;
 
             // checks to see how bad it was returend and adds an additional priced based on it 
             switch (returnCondition) {
 
-                case Good:
-                    
+                case Good:                    
                     return rentalPrice * .1;
-            
                 case Average:
-
                     return rentalPrice * .5;
-
                 default:
-
                     return rentalPrice;
-
             }
-
         }
-
         return 0.0;
-
     }
 
     /**
@@ -198,35 +162,22 @@ public class Screwdriver extends Tool {
         // checks to see how poor of a condition it was returend and calculates the repair fee accordingly 
         switch (condition) {
 
-            case Good:
-                
+            case Good:        
                 repairCost = 10.0;
                 return repairCost;
-        
             case Average:
-
                 repairCost = 15.0;
                 return repairCost;
-
             case Bad:
-
                 repairCost = 20.0;
                 return repairCost;
-
             case Perfect:
-
                 repairCost = 0.0;
                 return repairCost;
-
             default: 
-
                 repairCost = 30.0;
                 return repairCost;
-
         }
-
-
-
     }
 
     /**
@@ -237,16 +188,12 @@ public class Screwdriver extends Tool {
     public String toString() {
 
         if (isCheckedOut() == false) {
-
             return headType + " head screwdriver - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
             " - Avaliability: Avaliable" + "\n";
-
         } 
 
         return headType + " head screwdriver - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
         " - Avaliability: Unavaliable" + "\n";
-
     }
-
     
 }

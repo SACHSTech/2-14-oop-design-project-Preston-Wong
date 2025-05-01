@@ -52,27 +52,16 @@ public class Hammer extends Tool {
 
         // based on age and condition, returns the urgency in which it needs to be replaced 
         if (condition == Condition.Awful && (age >= 10)) {
-
             return "Now";
-
         } else if ((condition == Condition.Awful && (age <= 10)) || (condition == Condition.Bad && (age >= 10))) {
-
             return "Very Urgent";
-
         } else if ((condition == Condition.Bad && (age <= 10)) || (condition == Condition.Average && (age >= 10))) {
-
             return "Urgent";
-
         } else if ((condition == Condition.Average && (age <= 10)) || (condition == Condition.Good && (age >= 10))) {
-
             return "Medium Priority";
-
         } else {
-
             return "Low Priority";
-
         } 
-
     }
 
     /**
@@ -97,31 +86,20 @@ public class Hammer extends Tool {
 
         // calculates rental price based on condition, age, and current value  
         if ((condition == Condition.Perfect) && (age <= 10)) {
-
             rentalPrice = price * .5;
             return rentalPrice;
-
         } else if (((condition == Condition.Good) && (age > 10)) || (condition == Condition.Average && (age <= 10))) {
-
             rentalPrice = price * .3;
             return rentalPrice;
-
         } else if (((condition == Condition.Average) && (age > 10))) {
-
             rentalPrice = price * .2;
             return rentalPrice;
-
         } else if (condition == Condition.Awful) {
-         
             return 0.0;
-        
         } else {
-
             rentalPrice = price * .14;
             return rentalPrice;
-
         }
-
     }
 
     /**
@@ -133,32 +111,20 @@ public class Hammer extends Tool {
 
         // calculates the current value based on age and condition of the hammer 
         if ((condition == Condition.Perfect) && (age <= 10)) {
-
             price = price * 0.9;
             return price;
-
         } else if (((condition == Condition.Good) && (age > 10)) || (condition == Condition.Average && (age <= 10))) {
-
             price = price * 0.75;
             return price;
-
         } else if (((condition == Condition.Average) && (age > 10))) {
-
             price = price * 0.5;
             return price;
-
         } else if (condition == Condition.Awful) {
-         
             price = 0.0;
             return 0.0;
-        
         } else {
-
             return price * .25;
-
         }
-
-
     }
 
     /**
@@ -178,27 +144,16 @@ public class Hammer extends Tool {
             switch (returnCondition) {
 
                 case Good:
-                    
                     return rentalPrice * .1;
-            
                 case Average:
-
                     return rentalPrice * .5;
-
                 case Bad:
-
                     return rentalPrice * .75;
-
                 default: 
-
                     return rentalPrice;
-
             }
-
         }
-
         return 0.0;
-
     }
 
     /**
@@ -214,33 +169,21 @@ public class Hammer extends Tool {
         switch (condition) {
 
             case Good:
-                
                 repairCost = 10.0;
                 return repairCost;
-        
             case Average:
-
                 repairCost = 15.0;
                 return repairCost;
-
             case Bad:
-
                 repairCost = 20.0;
                 return repairCost;
-
             case Perfect:
-
                 repairCost = 0.0;
                 return repairCost;
-
             default: 
-
                 repairCost = 30.0;
                 return repairCost;
-
         }
-
-
     }
 
     /**
@@ -251,10 +194,8 @@ public class Hammer extends Tool {
     public String toString() {
 
         if (isCheckedOut() == false) {
-
             return hammerType + " hammer - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
             " - Avaliability: Avaliable" + "\n";
-
         } 
 
         return hammerType + " hammer - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 

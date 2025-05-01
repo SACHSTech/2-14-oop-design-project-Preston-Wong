@@ -44,15 +44,10 @@ public class Drill extends Tool {
     public String getMaintenance() {
         
         if (isCordless == true) {
-
             return cordlessMaintanence;
-
         } else {
-
             return cordedMaintanence;
-
         }
-
     }
 
     /**
@@ -64,24 +59,14 @@ public class Drill extends Tool {
 
         // based on age and condition, returns the urgency in which it needs to be replaced 
        if ((condition == Condition.Awful) || (age >= 5)) {
-
             return "Now";
-
         } else if ((condition == Condition.Awful) || (condition == Condition.Bad)) {
-
             return "Very Urgent";
-
         } else if ((condition == Condition.Average) || (condition == Condition.Good)) {
-
             return "Medium Priority";
-
         } else {
-
             return "Low Priority";
-
         } 
-
-
     }
 
     /**
@@ -117,26 +102,17 @@ public class Drill extends Tool {
 
         // calculates the rental price based on age, condition, and current value 
         if ((condition == Condition.Perfect) && (age <= 5)) {
-
             rentalPrice = price * .9;
             return rentalPrice;
-
         } else if (((condition == Condition.Good) && (age > 5)) || (condition == Condition.Average && (age <= 5))) {
-
             rentalPrice = price * .75;
             return rentalPrice;
-
         } else if ((condition == Condition.Awful) || (condition == Condition.Bad)) {
-         
             return 0.0;
-        
         } else {
-
             rentalPrice = price * .4;
             return rentalPrice;
-
         }
-
     }
 
     /**
@@ -148,34 +124,22 @@ public class Drill extends Tool {
 
         // increases the current valeu of the drill if it's a cordless drill 
         if (isCordless == true) {
-
             price = price + 20;
-
         }
 
         // calculates the current value based on condition and age 
         if ((condition == Condition.Perfect) && (age <= 5)) {
-
             price = price * 0.9;
             return price;
-
         } else if (((condition == Condition.Good) && (age > 5)) || (condition == Condition.Average && (age <= 5))) {
-
             price = price * 0.75;
             return price;
-
         } else if ((condition == Condition.Awful) || (condition == Condition.Bad)) {
-         
             price = 0.0;
             return 0.0;
-        
         } else {
-
             return price * .25;
-
         }
-
-
     }
 
     /**
@@ -194,24 +158,15 @@ public class Drill extends Tool {
             // checks to see how poor of a condition it was returend and calculates the fee accordingly 
             switch (returnCondition) {
 
-                case Good:
-                    
+                case Good:                    
                     return rentalPrice * .5;
-            
                 case Average:
-
                     return rentalPrice * .75;
-
                 default:
-
                     return rentalPrice * 1.25;
-
             }
-
         }
-
         return 0.0;
-
     }
 
     /**
@@ -226,33 +181,22 @@ public class Drill extends Tool {
         // checks to see how poor of a condition it was returend and calculates the repair fee accordingly 
         switch (condition) {
 
-            case Good:
-                
+            case Good:  
                 repairCost = 25.0;
                 return repairCost;
-        
             case Average:
-
                 repairCost = 37.0;
                 return repairCost;
-
             case Bad:
-
                 repairCost = 50.0;
                 return repairCost;
-
             case Perfect: 
-
                 repairCost = 0;
                 return repairCost;
-
             default: 
-
                 repairCost = 100.0;
                 return repairCost;
-
         }
-
     }
 
     /**
@@ -263,15 +207,12 @@ public class Drill extends Tool {
     public String toString() {
 
         if (isCheckedOut() == false) {
-
             return drillType + " drill - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
             " - Avaliability: Avaliable" + "\n";
-
         } 
 
         return drillType + " drill - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
         " - Avaliability: Unavaliable" + "\n";
-
     }
 
 }
