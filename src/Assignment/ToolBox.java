@@ -278,12 +278,34 @@ public class ToolBox {
             if (tools.get(i).getRentalPrice() < currentCheapestTool) {
 
                 index = i;
-
+                
             }
 
         }
 
         return tools.get(index);
+
+    }
+
+    /**
+     * checks to see if the inputted tool name is a valid name 
+     * 
+     * @param toBeChecked name of the tool 
+     * @return true or false depending on if the tool is valid 
+     */
+    public boolean isValid(String toBeChecked) {
+
+        for (Tool tool : tools) {
+
+            if (tool.getName().toUpperCase().equals(toBeChecked.toUpperCase())) {
+
+                return true;
+
+            }
+
+        }
+
+        return false;
 
     }
 
