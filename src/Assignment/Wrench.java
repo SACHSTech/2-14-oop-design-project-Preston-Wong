@@ -62,6 +62,7 @@ public class Wrench extends Tool {
         } else {
             return "Low Priority";
         } 
+        
     }
 
     /**
@@ -100,6 +101,7 @@ public class Wrench extends Tool {
             rentalPrice = price * .24;
             return rentalPrice;
         }
+
     }
 
     /**
@@ -125,6 +127,7 @@ public class Wrench extends Tool {
         } else {
             return price * .25;
         }
+
     }
 
     /**
@@ -152,6 +155,7 @@ public class Wrench extends Tool {
             }
         }
         return 0.0;
+
     }
 
     /**
@@ -182,6 +186,7 @@ public class Wrench extends Tool {
                 repairCost = 50.0;
                 return repairCost;
         }
+
     }
 
     /**

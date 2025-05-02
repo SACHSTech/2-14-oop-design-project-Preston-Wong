@@ -32,6 +32,7 @@ public class ToolBox {
             }
         }
         return null;
+    
     }
 
     /**
@@ -42,7 +43,7 @@ public class ToolBox {
     public void addTool(Tool tool) {
 
         tools.add(tool);
-
+    
     }
 
     /**
@@ -60,6 +61,7 @@ public class ToolBox {
                 break;
             }
         }
+   
     }
 
     /**
@@ -78,6 +80,7 @@ public class ToolBox {
             }
         }
         return checkedOutTools;
+   
     }
 
     /**
@@ -96,6 +99,7 @@ public class ToolBox {
             }            
         }
         return filteredTool;
+   
     }
 
     /**
@@ -115,6 +119,7 @@ public class ToolBox {
             }
         }
         return "that is not a valid tool name";
+    
     }
 
     /**
@@ -134,6 +139,7 @@ public class ToolBox {
             }
         }
         return "not a valid tool name";
+   
     }
 
     /**
@@ -150,6 +156,7 @@ public class ToolBox {
             totalValue += tool.getCurrentValue();
         }
         return Math.round(totalValue * 100.0) / 100.0;
+    
     }
 
     /**
@@ -171,6 +178,7 @@ public class ToolBox {
 
         }
         return toBeReturend;
+    
     }
 
     /**
@@ -190,6 +198,7 @@ public class ToolBox {
 
         }
         return 0.0;
+    
     }
 
     /**
@@ -214,6 +223,7 @@ public class ToolBox {
             }
         }
         return "No need to fix or throw away the tool, the tool is fine as is.";
+
     }
 
     /**
@@ -235,6 +245,7 @@ public class ToolBox {
 
         }
         return tools.get(index);
+
     }
 
     /**
@@ -254,6 +265,7 @@ public class ToolBox {
 
         }
         return false;
+
     }
 
 }

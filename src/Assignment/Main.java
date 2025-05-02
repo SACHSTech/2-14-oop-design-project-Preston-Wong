@@ -175,6 +175,7 @@ public class Main {
                 System.out.println("\nNot a valid option, please input a VALID option");
         }
         return userOption;
+
     }
 
     /**
@@ -325,6 +326,7 @@ public class Main {
                 }
         }
         return null;
+
     }
 
     /**
@@ -369,6 +371,7 @@ public class Main {
                 break;
         }
         return condition;
+        
     }
 
     /**

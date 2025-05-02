@@ -62,6 +62,7 @@ public class Hammer extends Tool {
         } else {
             return "Low Priority";
         } 
+        
     }
 
     /**
@@ -100,6 +101,7 @@ public class Hammer extends Tool {
             rentalPrice = price * .14;
             return rentalPrice;
         }
+
     }
 
     /**
@@ -125,6 +127,7 @@ public class Hammer extends Tool {
         } else {
             return price * .25;
         }
+
     }
 
     /**
@@ -154,6 +157,7 @@ public class Hammer extends Tool {
             }
         }
         return 0.0;
+
     }
 
     /**
@@ -184,6 +188,7 @@ public class Hammer extends Tool {
                 repairCost = 30.0;
                 return repairCost;
         }
+
     }
 
     /**
@@ -198,6 +203,7 @@ public class Hammer extends Tool {
         } 
 
         return hammerType + " hammer - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Avaliability: Unavaliable" + "\n";
+    
     }
 
 }

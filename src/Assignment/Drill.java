@@ -48,6 +48,7 @@ public class Drill extends Tool {
         } else {
             return cordedMaintanence;
         }
+        
     }
 
     /**
@@ -67,6 +68,7 @@ public class Drill extends Tool {
         } else {
             return "Low Priority";
         } 
+
     }
 
     /**
@@ -113,6 +115,7 @@ public class Drill extends Tool {
             rentalPrice = price * .4;
             return rentalPrice;
         }
+        
     }
 
     /**
@@ -140,6 +143,7 @@ public class Drill extends Tool {
         } else {
             return price * .25;
         }
+
     }
 
     /**
@@ -167,6 +171,7 @@ public class Drill extends Tool {
             }
         }
         return 0.0;
+
     }
 
     /**
@@ -197,6 +202,7 @@ public class Drill extends Tool {
                 repairCost = 100.0;
                 return repairCost;
         }
+
     }
 
     /**
@@ -211,6 +217,7 @@ public class Drill extends Tool {
         } 
 
         return drillType + " drill - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Avaliability: Unavaliable" + "\n";
+    
     }
 
 }

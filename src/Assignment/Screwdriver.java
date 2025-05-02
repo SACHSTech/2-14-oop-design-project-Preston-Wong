@@ -98,6 +98,7 @@ public class Screwdriver extends Tool {
             rentalPrice = price * .3;
             return rentalPrice;
         }
+
     }
 
     /**
@@ -122,6 +123,7 @@ public class Screwdriver extends Tool {
             price = price * 0.5;
             return price;
         }
+
     }
 
     /**
@@ -148,6 +150,7 @@ public class Screwdriver extends Tool {
             }
         }
         return 0.0;
+
     }
 
     /**
@@ -178,6 +181,7 @@ public class Screwdriver extends Tool {
                 repairCost = 30.0;
                 return repairCost;
         }
+
     }
 
     /**
@@ -192,6 +196,7 @@ public class Screwdriver extends Tool {
         } 
 
         return headType + " head screwdriver - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Avaliability: Unavaliable" + "\n";
+    
     }
     
 }
