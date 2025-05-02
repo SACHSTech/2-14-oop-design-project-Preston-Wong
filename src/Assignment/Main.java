@@ -115,11 +115,13 @@ public class Main {
                 for (Tool tool : toolbox.getAllToolsAvaliable()) {
                     System.out.print(tool);
                 }
+
                 break;
             case 10: // Prints all tools that are checked out 
                 for (Tool tool : toolbox.getCheckedOutTools()) {
                     System.out.print(tool);
                 }
+
                 break;
             case 11:
                 System.out.println("\nWhat is the tool you are returning? ");
@@ -167,15 +169,12 @@ public class Main {
                 userChoice = choiceReader.readLine();
                 System.out.println("\n" + toolbox.shouldRemove(userChoice));
                 break;
-
             case 15: // exits
                 break;
             default: // prints out a message if the user inputs an invalid input 
                 System.out.println("\nNot a valid option, please input a VALID option");
         }
-
         return userOption;
- 
     }
 
     /**
@@ -236,6 +235,7 @@ public class Main {
                         toolType = "Hexagon";
                         break;
                 }
+
                 newTool = new Screwdriver(Condition.Perfect, 0, false, Heads.valueOf(toolType));
                 return newTool;
             case 2:
@@ -259,6 +259,7 @@ public class Main {
                         toolType = "Blocking";
                         break;
                 }
+
                 newTool = new Hammer(Condition.Perfect, 0, false, Hammers.valueOf(toolType));
                 return newTool;
             case 3:
