@@ -207,12 +207,10 @@ public class Drill extends Tool {
     public String toString() {
 
         if (isCheckedOut() == false) {
-            return drillType + " drill - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
-            " - Avaliability: Avaliable" + "\n";
+            return drillType + " drill - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Avaliability: Avaliable" + "\n";
         } 
 
-        return drillType + " drill - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
-        " - Avaliability: Unavaliable" + "\n";
+        return drillType + " drill - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Avaliability: Unavaliable" + "\n";
     }
 
 }

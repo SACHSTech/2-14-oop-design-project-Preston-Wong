@@ -188,12 +188,10 @@ public class Screwdriver extends Tool {
     public String toString() {
 
         if (isCheckedOut() == false) {
-            return headType + " head screwdriver - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
-            " - Avaliability: Avaliable" + "\n";
+            return headType + " head screwdriver - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 +  " - Avaliability: Avaliable" + "\n";
         } 
 
-        return headType + " head screwdriver - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
-        " - Avaliability: Unavaliable" + "\n";
+        return headType + " head screwdriver - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Avaliability: Unavaliable" + "\n";
     }
     
 }

@@ -23,8 +23,8 @@ public class Main {
         Tool SD2 = new Screwdriver(Condition.Perfect, 1, true, Heads.Flat);
         Tool drill1 = new Drill(Condition.Average, 4, false, Drills.Impact, true);
         Tool drill2 = new Drill(Condition.Perfect, 4, false, Drills.Hammer, true);
-        Tool wrench1 = new Wrench(Condition.Awful, 10, false, Wrenches.Allen, 2.0);
-        Tool wrench2 = new Wrench(Condition.Good, 10, false, Wrenches.Pipe,5.0);
+        Tool wrench1 = new Wrench(Condition.Awful, 10, false, Wrenches.Allen);
+        Tool wrench2 = new Wrench(Condition.Good, 10, false, Wrenches.Pipe);
 
         toolbox.addTool(hammer1);
         toolbox.addTool(hammer2);
@@ -193,7 +193,6 @@ public class Main {
         int userInput = 0;
         int isDrillCordless = 0;
         int toolTypeInput = 0;
-        double toolSize = 0.0;
         Tool newTool;
         
         // asks the user for what type of tool they want to add
@@ -270,9 +269,6 @@ public class Main {
                 System.out.print("Input: ");
                 toolTypeInput = Integer.parseInt(toolInputReader.readLine());
 
-                System.out.print("What is the size of your wrench? ");
-                toolSize = Double.parseDouble(toolInputReader.readLine());
-
                 // sets the string to be a certian wrench type
                 switch(toolTypeInput) {
 
@@ -287,7 +283,7 @@ public class Main {
                         break;
                 }
 
-                newTool = new Wrench(Condition.Perfect, 0, false, Wrenches.valueOf(toolType), toolSize);
+                newTool = new Wrench(Condition.Perfect, 0, false, Wrenches.valueOf(toolType));
                 return newTool;
             case 4:
                 System.out.println("\nWhat type of Drill?");

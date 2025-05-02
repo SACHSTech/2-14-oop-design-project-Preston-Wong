@@ -8,19 +8,17 @@ public class Wrench extends Tool {
  
     private Wrenches wrenchType;
     private int age;
-    private double size;
     private double price = 15;
     private double rentalPrice;
     private Condition condition;
     private final String maintanence = "regularly clean to remove debris and grease/lubricate moving parts if applicable";
 
-    public Wrench(Condition condition, int age, boolean checkedOut, Wrenches wrenchType, double size) {
+    public Wrench(Condition condition, int age, boolean checkedOut, Wrenches wrenchType) {
 
         super(condition, age, checkedOut);
         this.condition = condition;
         this.age = age;
         this.wrenchType = wrenchType;
-        this.size = size;
         getRentalPrice();
 
     }
@@ -74,17 +72,6 @@ public class Wrench extends Tool {
     public String getName() {
 
         return wrenchType + " wrench";
-
-    }
-
-    /**
-     * gets the wrench size 
-     * 
-     * @return a dobule value of the wrench size 
-     */
-    public double getSize() {
-
-        return size;
 
     }
 
@@ -205,12 +192,10 @@ public class Wrench extends Tool {
     public String toString() {
 
         if (isCheckedOut() == false) {
-            return wrenchType + " wrench - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
-            " - Avaliability: Avaliable" + "\n";
+            return wrenchType + " wrench - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Avaliability: Avaliable" + "\n";
         } 
 
-        return wrenchType + " wrench - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Actual Value: $" + Math.round(getCurrentValue() * 100.0) / 100.0 + 
-        " - Avaliability: Unavaliable" + "\n";
+        return wrenchType + " wrench - Rental Price: $" + Math.round(getRentalPrice() * 100.0) / 100.0 + " - Avaliability: Unavaliable" + "\n";
     }
     
 }
